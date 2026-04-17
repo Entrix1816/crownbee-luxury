@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Properties | Crownbee Global Services Ltd – Luxury Real Estate, Abuja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ============================================================
+   RESET & ROOT
+============================================================ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --gold:#D4A017;
+  --gold-light:#E8B830;
+  --crimson:#C8102E;
+  --black:#080808;
+  --charcoal:#111111;
+  --charcoal2:#181818;
+  --offwhite:#F5F0E8;
+  --muted:#888;
+  --border:rgba(212,160,23,0.2);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--offwhite);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none;}
+
+/* ============================================================
+   CUSTOM CURSOR
+============================================================ */
+.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(212,160,23,0.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s;transition-timing-function:ease-out;}
+.cursor.hover{width:6px;height:6px;background:var(--crimson);}
+.cursor-ring.hover{width:52px;height:52px;border-color:var(--crimson);}
+
+@media (max-width:768px){
+  .cursor,.cursor-ring{display:none;}
+  body{cursor:auto;}
+}
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--black);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+
+/* ============================================================
+   NAV (Same as homepage)
+============================================================ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  padding:1.2rem 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:linear-gradient(to bottom,rgba(0,0,0,0.9),transparent);
+  transition:background .4s,padding .4s;
+}
+nav.scrolled{
+  background:rgba(8,8,8,0.97);
+  padding:.9rem 5%;
+  border-bottom:1px solid var(--border);
+}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-icon{
+  width:40px;height:40px;
+  background:var(--gold);
+  clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;flex-shrink:0;
+}
+.logo-icon::after{
+  content:'CB';
+  font-family:'Bebas Neue',sans-serif;
+  font-size:.95rem;
+  color:var(--black);
+  letter-spacing:1px;
+}
+.logo-words{display:flex;flex-direction:column;}
+.logo-name{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:4px;color:var(--gold);line-height:1;}
+.logo-tagline{font-size:.52rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{
+  color:rgba(245,240,232,.75);text-decoration:none;
+  font-size:.75rem;letter-spacing:2px;text-transform:uppercase;
+  transition:color .3s;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;
+  background:var(--gold);transition:width .3s;
+}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a:hover::after{width:100%;}
+.nav-links a.active{color:var(--gold);}
+.nav-links a.active::after{width:100%;}
+.nav-cta{
+  background:var(--gold);color:var(--black);
+  padding:.65rem 1.8rem;
+  font-size:.72rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;
+  border:none;cursor:none;
+  transition:background .3s,transform .2s;
+}
+.nav-cta:hover{background:var(--crimson);color:#fff;transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:none;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--offwhite);transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.mobile-menu{
+  display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(8,8,8,.97);z-index:450;
+  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{
+  font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:4px;
+  color:var(--offwhite);text-decoration:none;transition:color .3s;
+}
+.mobile-menu a:hover{color:var(--gold);}
+.mobile-menu a.active{color:var(--gold);}
+
+/* ============================================================
+   PAGE HERO
+============================================================ */
+.page-hero{
+  height:45vh;
+  min-height:350px;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  padding:0 5% 5%;
+}
+.page-hero-bg{
+  position:absolute;
+  inset:0;
+  background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80');
+  background-size:cover;
+  background-position:center;
+}
+.page-hero-bg::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.2) 100%);
+}
+.page-hero-content{
+  position:relative;
+  z-index:10;
+}
+.page-hero-eyebrow{
+  font-size:.68rem;
+  letter-spacing:6px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1rem;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.page-hero-eyebrow::before{
+  content:'';
+  width:32px;
+  height:1px;
+  background:var(--gold);
+}
+.page-hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.5rem,6vw,4rem);
+  line-height:0.95;
+  letter-spacing:2px;
+}
+.page-hero-title span{color:var(--gold);}
+.page-hero-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1rem,2vw,1.2rem);
+  font-style:italic;
+  color:rgba(245,240,232,.8);
+  max-width:500px;
+  margin-top:1rem;
+}
+
+/* ============================================================
+   PROPERTIES LAYOUT
+============================================================ */
+.properties-main{
+  display:flex;
+  gap:2rem;
+  padding:4rem 5%;
+  background:var(--black);
+}
+
+/* FILTER SIDEBAR */
+.filter-sidebar{
+  width:280px;
+  flex-shrink:0;
+  background:var(--charcoal2);
+  padding:1.5rem;
+  border:1px solid var(--border);
+  position:sticky;
+  top:100px;
+  height:fit-content;
+}
+.filter-header{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.5rem;
+  margin-bottom:1.5rem;
+  color:var(--gold);
+  border-bottom:1px solid var(--border);
+  padding-bottom:.8rem;
+}
+.filter-group{
+  margin-bottom:1.5rem;
+}
+.filter-group label{
+  font-size:.65rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--muted);
+  display:block;
+  margin-bottom:.5rem;
+}
+.filter-group select{
+  width:100%;
+  background:rgba(255,255,255,.05);
+  border:1px solid var(--border);
+  color:var(--offwhite);
+  padding:.8rem;
+  font-family:'DM Sans',sans-serif;
+  font-size:.8rem;
+  cursor:pointer;
+}
+.filter-group select:focus{
+  border-color:var(--gold);
+  outline:none;
+}
+.filter-group select option{
+  background:var(--charcoal);
+}
+.filter-reset{
+  width:100%;
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--offwhite);
+  padding:.8rem;
+  font-size:.7rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all .3s;
+  margin-top:1rem;
+}
+.filter-reset:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.results-count{
+  font-size:.75rem;
+  color:var(--muted);
+  margin-bottom:1rem;
+  text-align:right;
+}
+
+/* PROPERTIES GRID */
+.properties-grid{
+  flex:1;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(380px,1fr));
+  gap:2rem;
+}
+
+/* PROPERTY CARD */
+.property-card{
+  background:var(--charcoal2);
+  border:1px solid var(--border);
+  overflow:hidden;
+  transition:transform .3s, border-color .3s;
+}
+.property-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--gold);
+}
+.property-img{
+  width:100%;
+  height:240px;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+.property-tag{
+  position:absolute;
+  top:1rem;
+  left:1rem;
+  background:var(--crimson);
+  color:#fff;
+  font-size:.6rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:4px 10px;
+}
+.property-tag.featured{
+  background:var(--gold);
+  color:var(--black);
+}
+.property-content{
+  padding:1.5rem;
+}
+.property-location{
+  font-size:.65rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:.5rem;
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+.property-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.6rem;
+  letter-spacing:1px;
+  margin-bottom:.5rem;
+  line-height:1.2;
+}
+.property-desc{
+  font-size:.8rem;
+  color:rgba(245,240,232,.6);
+  line-height:1.6;
+  margin-bottom:1rem;
+}
+.property-features{
+  display:flex;
+  gap:1rem;
+  margin-bottom:1rem;
+  flex-wrap:wrap;
+}
+.feature{
+  font-size:.65rem;
+  color:var(--muted);
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+.property-sizes{
+  background:rgba(212,160,23,.1);
+  padding:.8rem;
+  margin:1rem 0;
+  border-left:2px solid var(--gold);
+}
+.size-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:.75rem;
+  margin-bottom:.3rem;
+}
+.size-row:last-child{margin-bottom:0;}
+.size-label{color:var(--muted);}
+.size-price{color:var(--gold);font-weight:500;}
+.property-price{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.3rem;
+  color:var(--gold);
+  margin:1rem 0;
+}
+.property-btns{
+  display:flex;
+  gap:1rem;
+  margin-top:1rem;
+}
+.btn-details{
+  flex:1;
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--offwhite);
+  padding:.8rem;
+  font-size:.7rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all .3s;
+}
+.btn-details:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+.btn-contact{
+  flex:1;
+  background:var(--gold);
+  border:none;
+  color:var(--black);
+  padding:.8rem;
+  font-size:.7rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .3s;
+  text-decoration:none;
+  text-align:center;
+  display:inline-block;
+}
+.btn-contact:hover{
+  background:var(--gold-light);
+  transform:translateY(-2px);
+}
+
+/* ============================================================
+   PROPERTY MODAL (Full Details)
+============================================================ */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,.95);
+  z-index:2000;
+  overflow-y:auto;
+  padding:1rem;
+}
+.modal.active{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+.modal-content{
+  max-width:550px;  /* Reduced from 800px */
+  width:100%;
+  background:var(--charcoal2);
+  border:1px solid var(--gold);
+  position:relative;
+  animation:modalFade .3s ease;
+  margin:1rem auto;
+  border-radius:8px;
+  overflow:hidden;
+}
+@keyframes modalFade{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.modal-close{
+  position:absolute;
+  top:0.75rem;
+  right:0.75rem;
+  width:32px;
+  height:32px;
+  background:var(--crimson);
+  border:none;
+  color:#fff;
+  font-size:1.2rem;
+  cursor:pointer;
+  z-index:10;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Carousel inside modal */
+.modal-carousel{
+  position:relative;
+  width:100%;
+  height:220px;  /* Reduced from 300px */
+  overflow:hidden;
+}
+.modal-carousel-track{
+  display:flex;
+  height:100%;
+  transition:transform 0.4s ease;
+}
+.modal-carousel-slide{
+  flex-shrink:0;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+.slide-label{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  background:linear-gradient(to top,rgba(0,0,0,.8),transparent);
+  color:var(--gold);
+  padding:0.8rem 1rem 0.5rem;
+  font-size:0.75rem;
+  letter-spacing:1px;
+  text-align:center;
+}
+.modal-carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:32px;
+  height:32px;
+  background:rgba(0,0,0,.6);
+  border:1px solid var(--gold);
+  border-radius:50%;
+  color:var(--gold);
+  font-size:1.2rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:5;
+  transition:all .2s;
+}
+.modal-carousel-btn:hover{
+  background:var(--gold);
+  color:var(--black);
+}
+.modal-carousel-prev{left:8px;}
+.modal-carousel-next{right:8px;}
+.carousel-dots{
+  position:absolute;
+  bottom:8px;
+  left:0;
+  right:0;
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  z-index:5;
+}
+.carousel-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:rgba(255,255,255,.3);
+  transition:all .2s;
+  cursor:pointer;
+}
+.carousel-dot.active{
+  background:var(--gold);
+  width:16px;
+  border-radius:3px;
+}
+
+.modal-body{
+  padding:1.5rem;  /* Reduced from 2rem */
+}
+.modal-location{
+  font-size:.65rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:.5rem;
+}
+.modal-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1.6rem;  /* Reduced from 2rem */
+  margin-bottom:.8rem;
+  line-height:1.2;
+}
+.modal-desc{
+  font-size:.8rem;
+  color:rgba(245,240,232,.7);
+  line-height:1.6;
+  margin-bottom:1rem;
+}
+.modal-section{
+  margin:1rem 0;
+  padding:.8rem;
+  background:rgba(255,255,255,.03);
+  border-left:2px solid var(--gold);
+}
+.modal-section h4{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:1rem;
+  margin-bottom:.6rem;
+  color:var(--gold);
+}
+.modal-section ul{
+  list-style:none;
+}
+.modal-section li{
+  display:flex;
+  justify-content:space-between;
+  padding:.4rem 0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  font-size:.75rem;
+}
+.modal-section li:last-child{border-bottom:none;}
+.modal-section li span:first-child{color:var(--muted);}
+.modal-section li span:last-child{color:var(--offwhite);font-weight:500;}
+.modal-contact{
+  margin-top:1.5rem;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+  text-align:center;
+}
+.modal-contact p{
+  font-size:.7rem;
+  margin-bottom:.8rem;
+}
+.modal-contact .btn-contact{
+  display:inline-block;
+  padding:.7rem 1.5rem;
+  font-size:.65rem;
+}
+
+@media(max-width:768px){
+  .modal-content{max-width:95%;}
+  .modal-carousel{height:180px;}
+}
+
+/* ============================================================
+   CTA SECTION
+============================================================ */
+.cta-section{
+  padding:4rem 5%;
+  background:linear-gradient(135deg,#0a1a0a 0%,var(--black) 50%,#0a0a0a 100%);
+  text-align:center;
+}
+.cta-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.8rem,5vw,3rem);
+  margin-bottom:1rem;
+}
+.cta-title span{color:var(--gold);}
+.cta-desc{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  color:rgba(245,240,232,.65);
+  max-width:500px;
+  margin:0 auto 2rem;
+}
+.btn-gold{
+  background:var(--gold);color:var(--black);
+  padding:.9rem 2.4rem;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;
+  border:none;cursor:none;transition:all .3s;
+  display:inline-flex;align-items:center;gap:8px;
+  text-decoration:none;
+}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+footer{
+  background:var(--black);
+  border-top:1px solid var(--border);
+  padding:4rem 5% 2rem;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr 1fr;
+  gap:2rem;margin-bottom:3rem;
+}
+.footer-brand .logo-name{font-size:1.5rem;}
+.footer-tagline{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  color:var(--muted);font-size:.9rem;line-height:1.7;
+  margin:1rem 0 1.2rem;
+}
+.footer-contact-info{font-size:.75rem;color:rgba(245,240,232,.4);line-height:2;}
+.footer-col h4{font-size:.58rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+.footer-col ul a{font-size:.75rem;color:rgba(245,240,232,.5);text-decoration:none;transition:color .3s;}
+.footer-col ul a:hover{color:var(--gold);}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:1.5rem;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.footer-bottom p{font-size:.6rem;letter-spacing:1px;color:rgba(245,240,232,.25);}
+.footer-socials{display:flex;gap:1rem;}
+.footer-socials a{
+  width:30px;height:30px;border:1px solid rgba(245,240,232,.12);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;color:rgba(245,240,232,.4);text-decoration:none;
+  transition:all .3s;
+}
+.footer-socials a:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media(max-width:1024px){
+  .properties-main{flex-direction:column;}
+  .filter-sidebar{
+    width:100%;
+    position:relative;
+    top:0;
+  }
+  .properties-grid{grid-template-columns:repeat(auto-fill,minmax(320px,1fr));}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .properties-grid{grid-template-columns:1fr;}
+  .property-img{height:200px;}
+  .modal{padding:1rem;}
+  .modal-body{padding:1.5rem;}
+  .modal-title{font-size:1.5rem;}
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-col:nth-child(2),.footer-col:nth-child(3),.footer-col:nth-child(4){display:none;}
+}
+@media(max-width:480px){
+  .property-btns{flex-direction:column;}
+  .property-name{font-size:1.3rem;}
+  .modal-section li{flex-direction:column;gap:.3rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- WHATSAPP FLOAT -->
+<button class="wa-float" onclick="openWhatsAppModal()" aria-label="Chat on WhatsApp" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:400;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:waPulse 2.5s infinite;">
+  <svg viewBox="0 0 24 24" fill="white" width="24" height="24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</button>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/" onclick="toggleMenu()">Home</a>
+  <a href="/about" onclick="toggleMenu()">About</a>
+  <a href="/property" class="active" onclick="toggleMenu()">Properties</a>
+  <a href="/service" onclick="toggleMenu()">Services</a>
+  <a href="/#contact" onclick="toggleMenu()">Contact</a>
+  <button class="btn-whatsapp" onclick="openWhatsAppModal()">WhatsApp Us</button>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="/" class="logo" aria-label="Crownbee Global">
+    <div class="logo-icon"></div>
+    <div class="logo-words">
+      <span class="logo-name">Crownbee</span>
+      <span class="logo-tagline">Global Services Ltd</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/property" class="active">Properties</a></li>
+    <li><a href="/service">Services</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="bookConsultation()">Book Consultation</button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ========================================================
+     PAGE HERO
+======================================================== -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <p class="page-hero-eyebrow">Browse Our Collection</p>
+    <h1 class="page-hero-title">FIND YOUR <span>LUXURY</span> ESTATE</h1>
+    <p class="page-hero-desc">Discover premium plots and luxury homes in Abuja's most desirable locations.</p>
+  </div>
+</section>
+
+<!-- ========================================================
+     PROPERTIES MAIN
+======================================================== -->
+<div class="properties-main">
+  <!-- FILTER SIDEBAR -->
+  <aside class="filter-sidebar">
+    <div class="filter-header">FILTERS</div>
+    <div class="filter-group">
+      <label>LOCATION</label>
+      <select id="filterLocation">
+        <option value="all">All Locations</option>
+        <option value="karsana">Karsana</option>
+        <option value="apo">Apo</option>
+        <option value="sheretti">Sheretti</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>PRICE RANGE</label>
+      <select id="filterPrice">
+        <option value="all">Any Price</option>
+        <option value="under25">Under ₦25M</option>
+        <option value="25to50">₦25M – ₦50M</option>
+        <option value="50to100">₦50M – ₦100M</option>
+        <option value="over100">Over ₦100M</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>PROPERTY TYPE</label>
+      <select id="filterType">
+        <option value="all">Any Type</option>
+        <option value="land">Land / Plots</option>
+        <option value="duplex">Duplex / Home</option>
+      </select>
+    </div>
+    <button class="filter-reset" id="resetFilters">Reset Filters</button>
+  </aside>
+
+  <!-- PROPERTIES GRID -->
+  <div class="properties-grid" id="propertiesGrid">
+    <!-- Property cards will be populated by JavaScript -->
+  </div>
+</div>
+
+<!-- ========================================================
+     PROPERTY MODAL
+======================================================== -->
+<div class="modal" id="propertyModal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-img" id="modalImg"></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ========================================================
+     CTA SECTION
+======================================================== -->
+<section class="cta-section">
+  <h2 class="cta-title">READY TO <span>INVEST</span>?</h2>
+  <p class="cta-desc">Contact our team for a personalized consultation and site visit.</p>
+  <a href="javascript:void(0)" onclick="bookConsultation()" class="btn-gold">
+    Book a Consultation
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</section>
+
+<!-- ========================================================
+     FOOTER
+======================================================== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:.2rem;">
+        <div class="logo-icon" style="width:36px;height:36px;"></div>
+        <div class="logo-words">
+          <span class="logo-name" style="font-size:1.45rem;">Crownbee</span>
+          <span class="logo-tagline">Global Services Ltd</span>
+        </div>
+      </div>
+      <p class="footer-tagline">Where every investment is a legacy, and every client is a partner for life.</p>
+      <div class="footer-contact-info">
+        Abuja, Federal Capital Territory, Nigeria<br/>
+        info@crownbeeglobal.com<br/>
+        +234 909 999 7342
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Estates</h4>
+      <ul>
+        <li><a href="/properties">Gracefilled Resort &amp; Park</a></li>
+        <li><a href="/properties">Solar City, Apo</a></li>
+        <li><a href="/properties">Victory Prime Estate</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/#services">Luxury Land Sales</a></li>
+        <li><a href="/#services">Home Sales</a></li>
+        <li><a href="/#services">Investment Advisory</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="https://wa.me/2349099997342">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Crownbee Global Services Ltd. All rights reserved. Abuja, Nigeria.</p>
+    <div class="footer-socials">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="Facebook">FB</a>
+      <a href="https://wa.me/2349099997342" aria-label="WhatsApp">WA</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================================================
+     SCRIPTS
+======================================================== -->
+<script>
+// Property Data - Based on your WhatsApp messages
+// Property Data - Updated with multiple images per property
+const properties = [
+  {
+    id: 1,
+    name: "Gracefilled Resort & Park",
+    location: "Karsana, Abuja",
+    locationKey: "karsana",
+    type: "land",
+    priceMin: 20000000,
+    priceMax: 65000000,
+    tag: "Signature Development",
+    featured: true,
+    images: [
+      { url: "/static/pross4.jpeg", label: "200sqm Plot - ₦20M" },
+      { url: "/static/pross3.jpeg", label: "300sqm Plot - ₦30M" },
+      { url: "/static/pross2.jpeg", label: "500sqm Plot - ₦50M" },
+      { url: "/static/pross1.jpeg", label: "650sqm Plot - ₦65M" }
+    ],
+    description: "Own a property in one of Abuja's rapidly developing districts. Gracefilled Resort & Park offers the perfect blend of investment opportunity, serenity, and modern living within a fast-growing Abuja corridor.",
+    sizes: [
+      { sqm: 200, price: 20000000, priceFormatted: "₦20,000,000" },
+      { sqm: 300, price: 30000000, priceFormatted: "₦30,000,000" },
+      { sqm: 500, price: 50000000, priceFormatted: "₦50,000,000" },
+      { sqm: 650, price: 65000000, priceFormatted: "₦65,000,000" }
+    ],
+    homes: [
+      { type: "2 Bedroom", price: 60000000, priceFormatted: "₦60,000,000", image: "/static/pross5.jpeg" },
+      { type: "3 Bedroom", price: 70000000, priceFormatted: "₦70,000,000", image: "/static/pross6.jpeg" }
+    ],
+    features: ["Gated Community", "24/7 Security", "Landscaped Gardens", "Resort-Style Living"],
+    contact: "09099997342, 09010677777"
+  },
+  {
+    id: 2,
+    name: "Solar City",
+    location: "Apo, Abuja",
+    locationKey: "apo",
+    type: "duplex",
+    priceMin: 25000000,
+    priceMax: 35000000,
+    tag: "Eco-Luxury",
+    featured: true,
+    images: [
+      { url: "/static/pross3.jpeg", label: "4 Bedroom Full Detached Duplex" },
+      { url: "/static/pross1.jpeg", label: "Swimming Pool View" },
+      { url: "/static/pross6.jpeg", label: "Solar-Powered Roof" }
+    ],
+    description: "Solar City, Apo is one of the closest FCDA C of O estates in the FCT with affordable prices. Just 16 minutes drive from Guzape Main.",
+    sizes: [
+      { sqm: 350, price: 25000000, priceFormatted: "₦25,000,000", note: "4 Bedroom Full Detached Duplex with swimming pool" }
+    ],
+    features: ["Solar-Powered Roof System", "Electric Car Charging Port", "Swimming Pool", "24/7 Security", "Smart Home Ready"],
+    contact: "09099997342, 09010677777",
+    specialNote: "Full Duplex with solar-powered roof system and Electric Car Charging port."
+  },
+  {
+    id: 3,
+    name: "Victory Prime Estate",
+    location: "Sheretti, Abuja",
+    locationKey: "sheretti",
+    type: "land",
+    priceMin: 9750000,
+    priceMax: 19500000,
+    tag: "Value Luxury",
+    featured: false,
+    images: [
+      { url: "/static/pross5.jpeg", label: "200sqm Plot - ₦9.75M" },
+      { url: "/static/pross4.jpeg", label: "300sqm Plot - ₦11.7M" },
+      { url: "/static/pross2.jpeg", label: "400sqm Plot - ₦15.6M" },
+      { url: "/static/pross1.jpeg", label: "500sqm Plot - ₦19.5M" }
+    ],
+    description: "Welcome to Victory Prime Estate, Sheretti — where comfort meets smart investment. Whether you're planning to build your dream home or secure your future, this is your opportunity to invest in a fast-growing location.",
+    sizes: [
+      { sqm: 200, price: 9750000, priceFormatted: "₦9,750,000" },
+      { sqm: 300, price: 11700000, priceFormatted: "₦11,700,000" },
+      { sqm: 400, price: 15600000, priceFormatted: "₦15,600,000" },
+      { sqm: 500, price: 19500000, priceFormatted: "₦19,500,000" }
+    ],
+    features: ["Flexible Plot Sizes", "Perfect for Residential & Investment", "Fast-Growing Location", "Limited Plots Available"],
+    contact: "09099997342, 09010677777"
+  }
+];
+
+// Render property cards
+function renderProperties() {
+  const location = document.getElementById('filterLocation').value;
+  const priceRange = document.getElementById('filterPrice').value;
+  const type = document.getElementById('filterType').value;
+
+  let filtered = properties.filter(p => {
+    if (location !== 'all' && p.locationKey !== location) return false;
+    if (type !== 'all' && p.type !== type) return false;
+    if (priceRange !== 'all') {
+      const minPrice = p.priceMin;
+      if (priceRange === 'under25' && minPrice >= 25000000) return false;
+      if (priceRange === '25to50' && (minPrice < 25000000 || minPrice > 50000000)) return false;
+      if (priceRange === '50to100' && (minPrice < 50000000 || minPrice > 100000000)) return false;
+      if (priceRange === 'over100' && minPrice <= 100000000) return false;
+    }
+    return true;
+  });
+
+  const grid = document.getElementById('propertiesGrid');
+  document.querySelector('.results-count')?.remove();
+  const countDiv = document.createElement('div');
+  countDiv.className = 'results-count';
+  countDiv.innerHTML = `${filtered.length} Listing${filtered.length !== 1 ? 's' : ''}`;
+  grid.parentNode.insertBefore(countDiv, grid);
+
+  grid.innerHTML = filtered.map(p => `
+    <div class="property-card" data-id="${p.id}">
+      <div class="property-img" style="background-image:url('${p.images[0].url}')">
+        <span class="property-tag ${p.featured ? 'featured' : ''}">${p.tag}</span>
+      </div>
+      <div class="property-content">
+        <div class="property-location">📍 ${p.location}</div>
+        <h3 class="property-name">${p.name}</h3>
+        <p class="property-desc">${p.description.substring(0, 100)}...</p>
+        <div class="property-features">
+          ${p.features.slice(0, 3).map(f => `<span class="feature">✓ ${f}</span>`).join('')}
+        </div>
+        <div class="property-sizes">
+          ${p.sizes.slice(0, 2).map(s => `
+            <div class="size-row">
+              <span class="size-label">${s.sqm}sqm Plot:</span>
+              <span class="size-price">${s.priceFormatted}</span>
+            </div>
+          `).join('')}
+          ${p.sizes.length > 2 ? `<div class="size-row"><span class="size-label">+${p.sizes.length - 2} more sizes</span></div>` : ''}
+        </div>
+        <div class="property-price">From ${p.sizes[0].priceFormatted}</div>
+        <div class="property-btns">
+          <button class="btn-details" onclick="showDetails(${p.id})">View Details</button>
+          <button class="btn-contact" onclick="openPropertyWhatsAppModal('Gracefilled Resort & Park')">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Show modal with full property details (with carousel)
+function showDetails(id) {
+  const prop = properties.find(p => p.id === id);
+  if (!prop) return;
+
+  const modal = document.getElementById('propertyModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalBody = document.getElementById('modalBody');
+
+  // Build images array (include home images if they exist)
+  let allImages = prop.images ? [...prop.images] : [{ url: prop.image, label: prop.name }];
+  if (prop.homes) {
+    prop.homes.forEach(h => {
+      if (h.image) {
+        allImages.push({ url: h.image, label: `${h.type} - ${h.priceFormatted}` });
+      }
+    });
+  }
+
+  // Create carousel HTML
+  const carouselSlides = allImages.map((img, i) => `
+    <div class="modal-carousel-slide" style="background-image:url('${img.url}')">
+      <div class="slide-label">${img.label || ''}</div>
+    </div>
+  `).join('');
+
+  const carouselDots = allImages.map((_, i) => `
+    <span class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${id}, ${i})"></span>
+  `).join('');
+
+  const carouselHTML = `
+    <div class="modal-carousel" id="modalCarousel-${id}">
+      <div class="modal-carousel-track" id="carouselTrack-${id}">
+        ${carouselSlides}
+      </div>
+      ${allImages.length > 1 ? `
+        <button class="modal-carousel-btn modal-carousel-prev" onclick="prevSlide(${id})">‹</button>
+        <button class="modal-carousel-btn modal-carousel-next" onclick="nextSlide(${id})">›</button>
+        <div class="carousel-dots">
+          ${carouselDots}
+        </div>
+      ` : ''}
+    </div>
+  `;
+
+  // Replace modal-img div with carousel
+  modalImg.outerHTML = carouselHTML;
+
+  // Store current slide index for this property
+  window[`currentSlide-${id}`] = 0;
+  window[`totalSlides-${id}`] = allImages.length;
+
+  modalBody.innerHTML = `
+    <div class="modal-location">📍 ${prop.location}</div>
+    <h2 class="modal-title">${prop.name}</h2>
+    <div style="background:${prop.featured ? 'var(--gold)' : 'var(--crimson)'};display:inline-block;padding:4px 12px;font-size:.65rem;letter-spacing:2px;margin-bottom:1rem;">${prop.tag}</div>
+    <p class="modal-desc">${prop.description}</p>
+
+    <div class="modal-section">
+      <h4>📐 Available Plots</h4>
+      <ul>
+        ${prop.sizes.map(s => `
+          <li><span>${s.sqm}sqm Plot</span><span>${s.priceFormatted}</span></li>
+        `).join('')}
+      </ul>
+    </div>
+
+    ${prop.homes ? `
+    <div class="modal-section">
+      <h4>🏡 Available Homes</h4>
+      <ul>
+        ${prop.homes.map(h => `
+          <li><span>${h.type}</span><span>${h.priceFormatted}</span></li>
+        `).join('')}
+      </ul>
+    </div>
+    ` : ''}
+
+    <div class="modal-section">
+      <h4>✨ Key Features</h4>
+      <ul>
+        ${prop.features.map(f => `<li><span>✓</span><span>${f}</span></li>`).join('')}
+      </ul>
+    </div>
+
+    ${prop.specialNote ? `
+    <div class="modal-section" style="background:rgba(212,160,23,.1);">
+      <h4>💡 Special Note</h4>
+      <p style="font-size:.75rem;color:var(--offwhite);">${prop.specialNote}</p>
+    </div>
+    ` : ''}
+
+    <div class="modal-contact">
+      <p style="margin-bottom:1rem;font-size:.75rem;color:var(--muted);">📞 Call or WhatsApp: ${prop.contact}</p>
+      <a href="https://wa.me/2349099997342?text=Hello%20Crownbee%2C%20I'm%20interested%20in%20${encodeURIComponent(prop.name)}" class="btn-contact" style="display:inline-block;padding:.7rem 1.5rem;">Contact Agent Now</a>
+    </div>
+  `;
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+// Carousel navigation functions
+function updateCarousel(id, index) {
+  const track = document.getElementById(`carouselTrack-${id}`);
+  const dots = document.querySelectorAll(`#modalCarousel-${id} .carousel-dot`);
+  const total = window[`totalSlides-${id}`];
+
+  if (!track || !total) return;
+
+  // Wrap around
+  if (index < 0) index = total - 1;
+  if (index >= total) index = 0;
+
+  window[`currentSlide-${id}`] = index;
+  track.style.transform = `translateX(-${index * 100}%)`;
+
+  // Update dots
+  if (dots.length) {
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+    });
+  }
+}
+
+function nextSlide(id) {
+  const current = window[`currentSlide-${id}`] || 0;
+  updateCarousel(id, current + 1);
+}
+
+function prevSlide(id) {
+  const current = window[`currentSlide-${id}`] || 0;
+  updateCarousel(id, current - 1);
+}
+
+function goToSlide(id, index) {
+  updateCarousel(id, index);
+}
+
+// Close modal
+// Close modal
+document.getElementById('modalClose').onclick = () => {
+  document.getElementById('propertyModal').classList.remove('active');
+  document.body.style.overflow = '';
+  // Restore modal-img element for next use
+  const modalContent = document.querySelector('.modal-content');
+  const existingCarousel = modalContent.querySelector('.modal-carousel');
+  if (existingCarousel) {
+    const newImgDiv = document.createElement('div');
+    newImgDiv.className = 'modal-img';
+    newImgDiv.id = 'modalImg';
+    existingCarousel.replaceWith(newImgDiv);
+  }
+};
+
+document.getElementById('propertyModal').onclick = (e) => {
+  if (e.target === document.getElementById('propertyModal')) {
+    document.getElementById('propertyModal').classList.remove('active');
+    document.body.style.overflow = '';
+    // Restore modal-img element
+    const modalContent = document.querySelector('.modal-content');
+    const existingCarousel = modalContent.querySelector('.modal-carousel');
+    if (existingCarousel) {
+      const newImgDiv = document.createElement('div');
+      newImgDiv.className = 'modal-img';
+      newImgDiv.id = 'modalImg';
+      existingCarousel.replaceWith(newImgDiv);
+    }
+  }
+};
+
+
+// Event listeners
+document.getElementById('filterLocation').addEventListener('change', renderProperties);
+document.getElementById('filterPrice').addEventListener('change', renderProperties);
+document.getElementById('filterType').addEventListener('change', renderProperties);
+document.getElementById('resetFilters').addEventListener('click', () => {
+  document.getElementById('filterLocation').value = 'all';
+  document.getElementById('filterPrice').value = 'all';
+  document.getElementById('filterType').value = 'all';
+  renderProperties();
+});
+
+// Add this function to your script
+function bookConsultation() {
+  const message = "Hello Crownbee, I'd like to book a consultation to discuss property investment opportunities in Abuja. Please let me know available times.";
+  const phoneNumber = '2349099997342';
+  window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+// Custom cursor
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;if(cur){cur.style.left=mx+'px';cur.style.top=my+'px';}});
+function animRing(){if(ring){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';}requestAnimationFrame(animRing);}
+animRing();
+document.querySelectorAll('a,button,.property-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{if(cur)cur.classList.add('hover');if(ring)ring.classList.add('hover');});
+  el.addEventListener('mouseleave',()=>{if(cur)cur.classList.remove('hover');if(ring)ring.classList.remove('hover');});
+});
+
+// Nav scroll
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{if(nav)nav.classList.toggle('scrolled',window.scrollY>80);});
+
+// Mobile menu
+function toggleMenu(){
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('mobileMenu');
+  if(h)h.classList.toggle('open');
+  if(m)m.classList.toggle('open');
+  document.body.style.overflow = m && m.classList.contains('open') ? 'hidden' : '';
+}
+
+// WhatsApp pulse animation
+const waStyle = document.createElement('style');
+waStyle.textContent = `@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,.7);}}`;
+document.head.appendChild(waStyle);
+
+// Initial render
+renderProperties();
+</script>
+<!-- WhatsApp Modal -->
+<div id="whatsappModal" class="wa-modal">
+    <div class="wa-modal-content">
+        <div class="wa-modal-header">
+            <h3>👑 Crownbee Global</h3>
+            <button class="wa-modal-close" onclick="closeWhatsAppModal()">&times;</button>
+        </div>
+        <div class="wa-modal-body">
+            <p class="wa-greeting">Hello! How can we help you today?</p>
+
+            <div class="wa-options">
+                <div class="wa-option" data-type="info" data-message="Hello Crownbee! I would like to get more information about your properties in Abuja. Please send me details.">
+                    <span class="wa-option-icon">ℹ️</span>
+                    <div class="wa-option-text">
+                        <strong>Just want more info</strong>
+                        <small>General information about properties</small>
+                    </div>
+                </div>
+
+                <div class="wa-option" data-type="buy" data-message="Hello Crownbee! I am interested in buying a property. Please guide me through available options.">
+                    <span class="wa-option-icon">🏠</span>
+                    <div class="wa-option-text">
+                        <strong>Want to buy a house</strong>
+                        <small>Find your dream home</small>
+                    </div>
+                </div>
+
+                <div class="wa-option" data-type="land" data-message="Hello Crownbee! I am interested in purchasing land for investment. Please share available plots and pricing.">
+                    <span class="wa-option-icon">🏗️</span>
+                    <div class="wa-option-text">
+                        <strong>Buy land / plot</strong>
+                        <small>Investment opportunities</small>
+                    </div>
+                </div>
+
+                <div class="wa-option" data-type="offplan" data-message="Hello Crownbee! I am interested in off-plan and pre-construction opportunities. Please send me details of upcoming projects.">
+                    <span class="wa-option-icon">🔑</span>
+                    <div class="wa-option-text">
+                        <strong>Off-plan investment</strong>
+                        <small>Early bird opportunities</small>
+                    </div>
+                </div>
+
+                <div class="wa-option" data-type="diaspora" data-message="Hello Crownbee! I am a diaspora Nigerian interested in buying property remotely. Please guide me through your remote purchase process.">
+                    <span class="wa-option-icon">🌍</span>
+                    <div class="wa-option-text">
+                        <strong>Diaspora / Remote purchase</strong>
+                        <small>Invest from abroad</small>
+                    </div>
+                </div>
+
+                <div class="wa-option" data-type="existing" data-message="Hello Crownbee! I am an existing client and would like to discuss another investment opportunity or ask a question about my property.">
+                    <span class="wa-option-icon">⭐</span>
+                    <div class="wa-option-text">
+                        <strong>Existing client</strong>
+                        <small>Follow-up or additional investment</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wa-custom">
+                <p class="wa-custom-label">Or type your message below:</p>
+                <textarea id="waCustomMessage" placeholder="Type your message here..." rows="3"></textarea>
+                <button class="wa-send-btn" onclick="sendWhatsAppMessage()">
+                    💬 Send on WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Property-specific WhatsApp Modal (for properties page) -->
+<div id="propertyWhatsAppModal" class="wa-modal">
+    <div class="wa-modal-content">
+        <div class="wa-modal-header">
+            <h3>🏠 Inquire about <span id="waPropertyName"></span></h3>
+            <button class="wa-modal-close" onclick="closePropertyWhatsAppModal()">&times;</button>
+        </div>
+        <div class="wa-modal-body">
+            <p class="wa-greeting">What would you like to know about this property?</p>
+
+            <div class="wa-options">
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Can you send me more details including price, size, and location?">
+                    <span class="wa-option-icon">📄</span>
+                    <div class="wa-option-text">
+                        <strong>Send me full details</strong>
+                        <small>Price, size, location, features</small>
+                    </div>
+                </div>
+
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Is a site visit available? Please let me know when I can come see the property.">
+                    <span class="wa-option-icon">👀</span>
+                    <div class="wa-option-text">
+                        <strong>Schedule a site visit</strong>
+                        <small>Physical inspection</small>
+                    </div>
+                </div>
+
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Do you offer payment plans? Please share available installment options.">
+                    <span class="wa-option-icon">💰</span>
+                    <div class="wa-option-text">
+                        <strong>Payment plan inquiry</strong>
+                        <small>Installment options available</small>
+                    </div>
+                </div>
+
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Are there different plot/house sizes available? Please share all available options with prices.">
+                    <span class="wa-option-icon">📏</span>
+                    <div class="wa-option-text">
+                        <strong>Available sizes & prices</strong>
+                        <small>Different plot sizes or house types</small>
+                    </div>
+                </div>
+
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Can you send me videos or more photos of the property?">
+                    <span class="wa-option-icon">📹</span>
+                    <div class="wa-option-text">
+                        <strong>Request media</strong>
+                        <small>Videos or more photos</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wa-custom">
+                <p class="wa-custom-label">Or type your custom message:</p>
+                <textarea id="waPropertyCustomMessage" placeholder="Type your message here..." rows="3"></textarea>
+                <button class="wa-send-btn" onclick="sendPropertyWhatsAppMessage()">
+                    💬 Send on WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* WhatsApp Modal Styles */
+.wa-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+.wa-modal.active {
+    display: flex;
+}
+.wa-modal-content {
+    max-width: 500px;
+    width: 90%;
+    background: #111111;
+    border-radius: 20px;
+    border: 1px solid #D4A017;
+    overflow: hidden;
+    animation: modalSlideIn 0.3s ease;
+}
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.wa-modal-header {
+    background: linear-gradient(135deg, #D4A017, #C8102E);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wa-modal-header h3 {
+    color: #0a0a0a;
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+.wa-modal-close {
+    background: none;
+    border: none;
+    color: #0a0a0a;
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+}
+.wa-modal-body {
+    padding: 1.5rem;
+}
+.wa-greeting {
+    color: #D4A017;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.wa-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+.wa-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid rgba(212, 160, 23, 0.2);
+}
+.wa-option:hover {
+    background: rgba(212, 160, 23, 0.1);
+    border-color: #D4A017;
+    transform: translateX(5px);
+}
+.wa-option-icon {
+    font-size: 1.8rem;
+}
+.wa-option-text strong {
+    display: block;
+    color: #D4A017;
+    font-size: 0.9rem;
+}
+.wa-option-text small {
+    font-size: 0.7rem;
+    color: #888;
+}
+.wa-custom {
+    margin-top: 1rem;
+    border-top: 1px solid rgba(212, 160, 23, 0.2);
+    padding-top: 1rem;
+}
+.wa-custom-label {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+#waCustomMessage, #waPropertyCustomMessage {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 160, 23, 0.3);
+    color: white;
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    resize: vertical;
+}
+#waCustomMessage:focus, #waPropertyCustomMessage:focus {
+    outline: none;
+    border-color: #D4A017;
+}
+.wa-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.wa-modal.active {
+  display: flex;
+}
+
+.wa-modal-content {
+  background: #111;
+  width: 90%;
+  max-width: 420px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.wa-send-btn {
+    width: 100%;
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+.wa-send-btn:hover {
+    background: #1ebe5a;
+    transform: translateY(-2px);
+}
+</style>
+
+<script>
+// WhatsApp Modal Functions
+let currentPropertyName = '';
+
+function openWhatsAppModal() {
+    document.getElementById('whatsappModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeWhatsAppModal() {
+    document.getElementById('whatsappModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function openPropertyWhatsAppModal(propertyName) {
+    currentPropertyName = propertyName;
+    document.getElementById('waPropertyName').textContent = propertyName;
+    document.getElementById('propertyWhatsAppModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePropertyWhatsAppModal() {
+    document.getElementById('propertyWhatsAppModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function sendWhatsAppMessage() {
+    let message = document.getElementById('waCustomMessage').value.trim();
+
+    if (!message) {
+        // Get selected option message
+        const selected = document.querySelector('.wa-option.selected');
+        if (selected) {
+            message = selected.getAttribute('data-message');
+        }
+    }
+
+    if (!message) {
+        alert('Please select an option or type a message');
+        return;
+    }
+
+    const phoneNumber = '2349099997342'; // Your WhatsApp number
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    closeWhatsAppModal();
+}
+
+function sendPropertyWhatsAppMessage() {
+    let message = document.getElementById('waPropertyCustomMessage').value.trim();
+
+    if (!message) {
+        const selected = document.querySelector('#propertyWhatsAppModal .wa-option.selected');
+        if (selected) {
+            let template = selected.getAttribute('data-property-message');
+            message = template.replace('{PROPERTY}', currentPropertyName);
+        }
+    }
+
+    if (!message) {
+        alert('Please select an option or type a message');
+        return;
+    }
+
+    const phoneNumber = '2349099997342';
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    closePropertyWhatsAppModal();
+}
+
+function openWhatsAppModal() {
+  document.getElementById('whatsappModal').classList.add('active');
+}
+
+function closeWhatsAppModal() {
+  document.getElementById('whatsappModal').classList.remove('active');
+}
+
+// Add click handlers to WA options
+document.querySelectorAll('.wa-option').forEach(option => {
+    option.addEventListener('click', function() {
+        document.querySelectorAll('.wa-option').forEach(opt => opt.classList.remove('selected'));
+        this.classList.add('selected');
+    });
+});
+
+
+document.querySelectorAll('.wa-option').forEach(option => {
+  option.addEventListener('click', () => {
+    const message = option.dataset.message;
+    const url = `https://wa.me/2348000000000?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  });
+});
+
+// Close modals when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('whatsappModal');
+    const propertyModal = document.getElementById('propertyWhatsAppModal');
+    if (event.target === modal) {
+        closeWhatsAppModal();
+    }
+    if (event.target === propertyModal) {
+        closePropertyWhatsAppModal();
+    }
+}
+</script>
+</body>
+</html>
