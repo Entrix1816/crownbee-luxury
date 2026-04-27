@@ -47,7 +47,7 @@ body{background:var(--black);color:var(--offwhite);font-family:'DM Sans',sans-se
 ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
 
 /* ============================================================
-   NAV (Same as homepage)
+   NAV
 ============================================================ */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:500;
@@ -395,7 +395,6 @@ nav.scrolled{
   font-weight:600;
   cursor:pointer;
   transition:all .3s;
-  text-decoration:none;
   text-align:center;
   display:inline-block;
 }
@@ -405,7 +404,7 @@ nav.scrolled{
 }
 
 /* ============================================================
-   PROPERTY MODAL (Full Details)
+   PROPERTY MODAL
 ============================================================ */
 .modal{
   display:none;
@@ -425,7 +424,7 @@ nav.scrolled{
   justify-content:center;
 }
 .modal-content{
-  max-width:550px;  /* Reduced from 800px */
+  max-width:550px;
   width:100%;
   background:var(--charcoal2);
   border:1px solid var(--gold);
@@ -457,11 +456,10 @@ nav.scrolled{
   justify-content:center;
 }
 
-/* Carousel inside modal */
 .modal-carousel{
   position:relative;
   width:100%;
-  height:220px;  /* Reduced from 300px */
+  height:220px;
   overflow:hidden;
 }
 .modal-carousel-track{
@@ -538,7 +536,7 @@ nav.scrolled{
 }
 
 .modal-body{
-  padding:1.5rem;  /* Reduced from 2rem */
+  padding:1.5rem;
 }
 .modal-location{
   font-size:.65rem;
@@ -549,7 +547,7 @@ nav.scrolled{
 }
 .modal-title{
   font-family:'Bebas Neue',sans-serif;
-  font-size:1.6rem;  /* Reduced from 2rem */
+  font-size:1.6rem;
   margin-bottom:.8rem;
   line-height:1.2;
 }
@@ -598,11 +596,6 @@ nav.scrolled{
   display:inline-block;
   padding:.7rem 1.5rem;
   font-size:.65rem;
-}
-
-@media(max-width:768px){
-  .modal-content{max-width:95%;}
-  .modal-carousel{height:180px;}
 }
 
 /* ============================================================
@@ -674,16 +667,132 @@ footer{
 }
 .footer-socials a:hover{border-color:var(--gold);color:var(--gold);}
 
+/* WhatsApp Modal Styles */
+.wa-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+.wa-modal.active {
+    display: flex;
+}
+.wa-modal-content {
+    max-width: 500px;
+    width: 90%;
+    background: #111111;
+    border-radius: 20px;
+    border: 1px solid #D4A017;
+    overflow: hidden;
+    animation: modalSlideIn 0.3s ease;
+}
+@keyframes modalSlideIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.wa-modal-header {
+    background: linear-gradient(135deg, #D4A017, #C8102E);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wa-modal-header h3 {
+    color: #0a0a0a;
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+.wa-modal-close {
+    background: none;
+    border: none;
+    color: #0a0a0a;
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+}
+.wa-modal-body {
+    padding: 1.5rem;
+}
+.wa-greeting {
+    color: #D4A017;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.wa-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+.wa-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid rgba(212, 160, 23, 0.2);
+}
+.wa-option:hover {
+    background: rgba(212, 160, 23, 0.1);
+    border-color: #D4A017;
+    transform: translateX(5px);
+}
+.wa-option-icon { font-size: 1.8rem; }
+.wa-option-text strong { display: block; color: #D4A017; font-size: 0.9rem; }
+.wa-option-text small { font-size: 0.7rem; color: #888; }
+.wa-custom {
+    margin-top: 1rem;
+    border-top: 1px solid rgba(212, 160, 23, 0.2);
+    padding-top: 1rem;
+}
+.wa-custom-label { font-size: 0.75rem; color: #888; margin-bottom: 0.5rem; }
+#waCustomMessage, #waPropertyCustomMessage {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 160, 23, 0.3);
+    color: white;
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    resize: vertical;
+}
+.wa-send-btn {
+    width: 100%;
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+.wa-send-btn:hover {
+    background: #1ebe5a;
+    transform: translateY(-2px);
+}
+
 /* ============================================================
    RESPONSIVE
 ============================================================ */
 @media(max-width:1024px){
   .properties-main{flex-direction:column;}
-  .filter-sidebar{
-    width:100%;
-    position:relative;
-    top:0;
-  }
+  .filter-sidebar{width:100%;position:relative;top:0;}
   .properties-grid{grid-template-columns:repeat(auto-fill,minmax(320px,1fr));}
   .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}
 }
@@ -723,7 +832,7 @@ footer{
   <a href="/" onclick="toggleMenu()">Home</a>
   <a href="/about" onclick="toggleMenu()">About</a>
   <a href="/property" class="active" onclick="toggleMenu()">Properties</a>
-  <a href="/service" onclick="toggleMenu()">Services</a>
+  <a href="/#services" onclick="toggleMenu()">Services</a>
   <a href="/#contact" onclick="toggleMenu()">Contact</a>
   <button class="btn-whatsapp" onclick="openWhatsAppModal()">WhatsApp Us</button>
 </div>
@@ -741,7 +850,7 @@ footer{
     <li><a href="/">Home</a></li>
     <li><a href="/about">About</a></li>
     <li><a href="/property" class="active">Properties</a></li>
-    <li><a href="/service">Services</a></li>
+    <li><a href="/#services">Services</a></li>
     <li><a href="/#contact">Contact</a></li>
   </ul>
   <button class="nav-cta" onclick="bookConsultation()">Book Consultation</button>
@@ -776,6 +885,7 @@ footer{
         <option value="karsana">Karsana</option>
         <option value="apo">Apo</option>
         <option value="sheretti">Sheretti</option>
+        <option value="asokoro">Asokoro</option>
       </select>
     </div>
     <div class="filter-group">
@@ -854,6 +964,7 @@ footer{
         <li><a href="/properties">Gracefilled Resort &amp; Park</a></li>
         <li><a href="/properties">Solar City, Apo</a></li>
         <li><a href="/properties">Victory Prime Estate</a></li>
+        <li><a href="/properties">Audacity Prime Estate</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -884,11 +995,91 @@ footer{
 </footer>
 
 <!-- ========================================================
+     WHATSAPP MODALS
+======================================================== -->
+<div id="whatsappModal" class="wa-modal">
+    <div class="wa-modal-content">
+        <div class="wa-modal-header">
+            <h3>👑 Crownbee Global</h3>
+            <button class="wa-modal-close" onclick="closeWhatsAppModal()">&times;</button>
+        </div>
+        <div class="wa-modal-body">
+            <p class="wa-greeting">Hello! How can we help you today?</p>
+            <div class="wa-options">
+                <div class="wa-option" data-message="Hello Crownbee! I would like to get more information about your properties in Abuja. Please send me details.">
+                    <span class="wa-option-icon">ℹ️</span>
+                    <div class="wa-option-text"><strong>Just want more info</strong><small>General information about properties</small></div>
+                </div>
+                <div class="wa-option" data-message="Hello Crownbee! I am interested in buying a property. Please guide me through available options.">
+                    <span class="wa-option-icon">🏠</span>
+                    <div class="wa-option-text"><strong>Want to buy a house</strong><small>Find your dream home</small></div>
+                </div>
+                <div class="wa-option" data-message="Hello Crownbee! I am interested in purchasing land for investment. Please share available plots and pricing.">
+                    <span class="wa-option-icon">🏗️</span>
+                    <div class="wa-option-text"><strong>Buy land / plot</strong><small>Investment opportunities</small></div>
+                </div>
+                <div class="wa-option" data-message="Hello Crownbee! I am interested in off-plan and pre-construction opportunities. Please send me details of upcoming projects.">
+                    <span class="wa-option-icon">🔑</span>
+                    <div class="wa-option-text"><strong>Off-plan investment</strong><small>Early bird opportunities</small></div>
+                </div>
+                <div class="wa-option" data-message="Hello Crownbee! I am an existing client and would like to discuss another investment opportunity or ask a question about my property.">
+                    <span class="wa-option-icon">⭐</span>
+                    <div class="wa-option-text"><strong>Existing client</strong><small>Follow-up or additional investment</small></div>
+                </div>
+            </div>
+            <div class="wa-custom">
+                <p class="wa-custom-label">Or type your message below:</p>
+                <textarea id="waCustomMessage" placeholder="Type your message here..." rows="3"></textarea>
+                <button class="wa-send-btn" onclick="sendWhatsAppMessage()">💬 Send on WhatsApp</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="propertyWhatsAppModal" class="wa-modal">
+    <div class="wa-modal-content">
+        <div class="wa-modal-header">
+            <h3>🏠 Inquire about <span id="waPropertyName"></span></h3>
+            <button class="wa-modal-close" onclick="closePropertyWhatsAppModal()">&times;</button>
+        </div>
+        <div class="wa-modal-body">
+            <p class="wa-greeting">What would you like to know about this property?</p>
+            <div class="wa-options">
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Can you send me more details including price, size, and location?">
+                    <span class="wa-option-icon">📄</span>
+                    <div class="wa-option-text"><strong>Send me full details</strong><small>Price, size, location, features</small></div>
+                </div>
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Is a site visit available? Please let me know when I can come see the property.">
+                    <span class="wa-option-icon">👀</span>
+                    <div class="wa-option-text"><strong>Schedule a site visit</strong><small>Physical inspection</small></div>
+                </div>
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Do you offer payment plans? Please share available installment options.">
+                    <span class="wa-option-icon">💰</span>
+                    <div class="wa-option-text"><strong>Payment plan inquiry</strong><small>Installment options available</small></div>
+                </div>
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Are there different plot/house sizes available? Please share all available options with prices.">
+                    <span class="wa-option-icon">📏</span>
+                    <div class="wa-option-text"><strong>Available sizes & prices</strong><small>Different plot sizes or house types</small></div>
+                </div>
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Can you send me videos or more photos of the property?">
+                    <span class="wa-option-icon">📹</span>
+                    <div class="wa-option-text"><strong>Request media</strong><small>Videos or more photos</small></div>
+                </div>
+            </div>
+            <div class="wa-custom">
+                <p class="wa-custom-label">Or type your custom message:</p>
+                <textarea id="waPropertyCustomMessage" placeholder="Type your message here..." rows="3"></textarea>
+                <button class="wa-send-btn" onclick="sendPropertyWhatsAppMessage()">💬 Send on WhatsApp</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================================
      SCRIPTS
 ======================================================== -->
 <script>
-// Property Data - Based on your WhatsApp messages
-// Property Data - Updated with multiple images per property
+// Property Data - Updated with correct pricing
 const properties = [
   {
     id: 1,
@@ -897,7 +1088,7 @@ const properties = [
     locationKey: "karsana",
     type: "land",
     priceMin: 20000000,
-    priceMax: 65000000,
+    priceMax: 70000000,
     tag: "Signature Development",
     featured: true,
     images: [
@@ -926,8 +1117,8 @@ const properties = [
     location: "Apo, Abuja",
     locationKey: "apo",
     type: "duplex",
-    priceMin: 25000000,
-    priceMax: 35000000,
+    priceMin: 4500000,
+    priceMax: 27000000,
     tag: "Eco-Luxury",
     featured: true,
     images: [
@@ -937,11 +1128,16 @@ const properties = [
     ],
     description: "Solar City, Apo is one of the closest FCDA C of O estates in the FCT with affordable prices. Just 16 minutes drive from Guzape Main.",
     sizes: [
-      { sqm: 350, price: 25000000, priceFormatted: "₦25,000,000", note: "4 Bedroom Full Detached Duplex with swimming pool" }
+      { sqm: 170, price: 4500000, priceFormatted: "₦4,500,000" },
+      { sqm: 250, price: 6700000, priceFormatted: "₦6,700,000" },
+      { sqm: 350, price: 9500000, priceFormatted: "₦9,500,000" },
+      { sqm: 450, price: 12000000, priceFormatted: "₦12,000,000" },
+      { sqm: 600, price: null, priceFormatted: "Contact for price" },
+      { sqm: 1000, price: 27000000, priceFormatted: "₦27,000,000" }
     ],
     features: ["Solar-Powered Roof System", "Electric Car Charging Port", "Swimming Pool", "24/7 Security", "Smart Home Ready"],
     contact: "09099997342, 09010677777",
-    specialNote: "Full Duplex with solar-powered roof system and Electric Car Charging port."
+    specialNote: "Full Duplex with solar-powered roof system and Electric Car Charging port. Various plot sizes available from 170sqm to 1000sqm."
   },
   {
     id: 3,
@@ -968,6 +1164,34 @@ const properties = [
     ],
     features: ["Flexible Plot Sizes", "Perfect for Residential & Investment", "Fast-Growing Location", "Limited Plots Available"],
     contact: "09099997342, 09010677777"
+  },
+  {
+    id: 4,
+    name: "Audacity Prime Estate",
+    location: "Asokoro, Abuja",
+    locationKey: "asokoro",
+    type: "duplex",
+    priceMin: 90000000,
+    priceMax: 195000000,
+    tag: "Premium Luxury",
+    featured: true,
+    images: [
+      { url: "/static/pross7.png", label: "300sqm Plot - ₦90M" },
+      { url: "/static/pross4.jpeg", label: "500sqm Plot - ₦150M" }
+    ],
+    description: "Audacity Prime Estate offers premium luxury living in the heart of Asokoro, Abuja's most prestigious district. Experience unparalleled elegance and world-class amenities.",
+    sizes: [
+      { sqm: 300, price: 90000000, priceFormatted: "₦90,000,000" },
+      { sqm: 400, price: 120000000, priceFormatted: "₦120,000,000" },
+      { sqm: 500, price: 150000000, priceFormatted: "₦150,000,000" },
+      { sqm: 650, price: 195000000, priceFormatted: "₦195,000,000" }
+    ],
+    homes: [
+      { type: "3 Bedroom", price: 120000000, priceFormatted: "₦120,000,000", image: "/static/pross5.jpeg" }
+    ],
+    features: ["Premium Location", "24/7 Security", "World-Class Amenities", "Diplomatic District", "High ROI Potential"],
+    contact: "09099997342, 09010677777",
+    specialNote: "Located in Asokoro, Abuja's most exclusive neighborhood. Premium plots and luxury homes with guaranteed high return on investment."
   }
 ];
 
@@ -1021,7 +1245,7 @@ function renderProperties() {
         <div class="property-price">From ${p.sizes[0].priceFormatted}</div>
         <div class="property-btns">
           <button class="btn-details" onclick="showDetails(${p.id})">View Details</button>
-          <button class="btn-contact" onclick="openPropertyWhatsAppModal('Gracefilled Resort & Park')">Enquire Now</button>
+          <button class="btn-contact" onclick="openPropertyWhatsAppModal('${p.name.replace(/'/g, "\\'")}')">Enquire Now</button>
         </div>
       </div>
     </div>
@@ -1138,14 +1362,12 @@ function updateCarousel(id, index) {
 
   if (!track || !total) return;
 
-  // Wrap around
   if (index < 0) index = total - 1;
   if (index >= total) index = 0;
 
   window[`currentSlide-${id}`] = index;
   track.style.transform = `translateX(-${index * 100}%)`;
 
-  // Update dots
   if (dots.length) {
     dots.forEach((dot, i) => {
       dot.classList.toggle('active', i === index);
@@ -1168,11 +1390,9 @@ function goToSlide(id, index) {
 }
 
 // Close modal
-// Close modal
 document.getElementById('modalClose').onclick = () => {
   document.getElementById('propertyModal').classList.remove('active');
   document.body.style.overflow = '';
-  // Restore modal-img element for next use
   const modalContent = document.querySelector('.modal-content');
   const existingCarousel = modalContent.querySelector('.modal-carousel');
   if (existingCarousel) {
@@ -1187,7 +1407,6 @@ document.getElementById('propertyModal').onclick = (e) => {
   if (e.target === document.getElementById('propertyModal')) {
     document.getElementById('propertyModal').classList.remove('active');
     document.body.style.overflow = '';
-    // Restore modal-img element
     const modalContent = document.querySelector('.modal-content');
     const existingCarousel = modalContent.querySelector('.modal-carousel');
     if (existingCarousel) {
@@ -1198,7 +1417,6 @@ document.getElementById('propertyModal').onclick = (e) => {
     }
   }
 };
-
 
 // Event listeners
 document.getElementById('filterLocation').addEventListener('change', renderProperties);
@@ -1211,7 +1429,6 @@ document.getElementById('resetFilters').addEventListener('click', () => {
   renderProperties();
 });
 
-// Add this function to your script
 function bookConsultation() {
   const message = "Hello Crownbee, I'd like to book a consultation to discuss property investment opportunities in Abuja. Please let me know available times.";
   const phoneNumber = '2349099997342';
@@ -1248,315 +1465,6 @@ const waStyle = document.createElement('style');
 waStyle.textContent = `@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,.7);}}`;
 document.head.appendChild(waStyle);
 
-// Initial render
-renderProperties();
-</script>
-<!-- WhatsApp Modal -->
-<div id="whatsappModal" class="wa-modal">
-    <div class="wa-modal-content">
-        <div class="wa-modal-header">
-            <h3>👑 Crownbee Global</h3>
-            <button class="wa-modal-close" onclick="closeWhatsAppModal()">&times;</button>
-        </div>
-        <div class="wa-modal-body">
-            <p class="wa-greeting">Hello! How can we help you today?</p>
-
-            <div class="wa-options">
-                <div class="wa-option" data-type="info" data-message="Hello Crownbee! I would like to get more information about your properties in Abuja. Please send me details.">
-                    <span class="wa-option-icon">ℹ️</span>
-                    <div class="wa-option-text">
-                        <strong>Just want more info</strong>
-                        <small>General information about properties</small>
-                    </div>
-                </div>
-
-                <div class="wa-option" data-type="buy" data-message="Hello Crownbee! I am interested in buying a property. Please guide me through available options.">
-                    <span class="wa-option-icon">🏠</span>
-                    <div class="wa-option-text">
-                        <strong>Want to buy a house</strong>
-                        <small>Find your dream home</small>
-                    </div>
-                </div>
-
-                <div class="wa-option" data-type="land" data-message="Hello Crownbee! I am interested in purchasing land for investment. Please share available plots and pricing.">
-                    <span class="wa-option-icon">🏗️</span>
-                    <div class="wa-option-text">
-                        <strong>Buy land / plot</strong>
-                        <small>Investment opportunities</small>
-                    </div>
-                </div>
-
-                <div class="wa-option" data-type="offplan" data-message="Hello Crownbee! I am interested in off-plan and pre-construction opportunities. Please send me details of upcoming projects.">
-                    <span class="wa-option-icon">🔑</span>
-                    <div class="wa-option-text">
-                        <strong>Off-plan investment</strong>
-                        <small>Early bird opportunities</small>
-                    </div>
-                </div>
-
-                <div class="wa-option" data-type="diaspora" data-message="Hello Crownbee! I am a diaspora Nigerian interested in buying property remotely. Please guide me through your remote purchase process.">
-                    <span class="wa-option-icon">🌍</span>
-                    <div class="wa-option-text">
-                        <strong>Diaspora / Remote purchase</strong>
-                        <small>Invest from abroad</small>
-                    </div>
-                </div>
-
-                <div class="wa-option" data-type="existing" data-message="Hello Crownbee! I am an existing client and would like to discuss another investment opportunity or ask a question about my property.">
-                    <span class="wa-option-icon">⭐</span>
-                    <div class="wa-option-text">
-                        <strong>Existing client</strong>
-                        <small>Follow-up or additional investment</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="wa-custom">
-                <p class="wa-custom-label">Or type your message below:</p>
-                <textarea id="waCustomMessage" placeholder="Type your message here..." rows="3"></textarea>
-                <button class="wa-send-btn" onclick="sendWhatsAppMessage()">
-                    💬 Send on WhatsApp
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Property-specific WhatsApp Modal (for properties page) -->
-<div id="propertyWhatsAppModal" class="wa-modal">
-    <div class="wa-modal-content">
-        <div class="wa-modal-header">
-            <h3>🏠 Inquire about <span id="waPropertyName"></span></h3>
-            <button class="wa-modal-close" onclick="closePropertyWhatsAppModal()">&times;</button>
-        </div>
-        <div class="wa-modal-body">
-            <p class="wa-greeting">What would you like to know about this property?</p>
-
-            <div class="wa-options">
-                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Can you send me more details including price, size, and location?">
-                    <span class="wa-option-icon">📄</span>
-                    <div class="wa-option-text">
-                        <strong>Send me full details</strong>
-                        <small>Price, size, location, features</small>
-                    </div>
-                </div>
-
-                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Is a site visit available? Please let me know when I can come see the property.">
-                    <span class="wa-option-icon">👀</span>
-                    <div class="wa-option-text">
-                        <strong>Schedule a site visit</strong>
-                        <small>Physical inspection</small>
-                    </div>
-                </div>
-
-                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Do you offer payment plans? Please share available installment options.">
-                    <span class="wa-option-icon">💰</span>
-                    <div class="wa-option-text">
-                        <strong>Payment plan inquiry</strong>
-                        <small>Installment options available</small>
-                    </div>
-                </div>
-
-                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Are there different plot/house sizes available? Please share all available options with prices.">
-                    <span class="wa-option-icon">📏</span>
-                    <div class="wa-option-text">
-                        <strong>Available sizes & prices</strong>
-                        <small>Different plot sizes or house types</small>
-                    </div>
-                </div>
-
-                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Can you send me videos or more photos of the property?">
-                    <span class="wa-option-icon">📹</span>
-                    <div class="wa-option-text">
-                        <strong>Request media</strong>
-                        <small>Videos or more photos</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="wa-custom">
-                <p class="wa-custom-label">Or type your custom message:</p>
-                <textarea id="waPropertyCustomMessage" placeholder="Type your message here..." rows="3"></textarea>
-                <button class="wa-send-btn" onclick="sendPropertyWhatsAppMessage()">
-                    💬 Send on WhatsApp
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-/* WhatsApp Modal Styles */
-.wa-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 10000;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(5px);
-}
-.wa-modal.active {
-    display: flex;
-}
-.wa-modal-content {
-    max-width: 500px;
-    width: 90%;
-    background: #111111;
-    border-radius: 20px;
-    border: 1px solid #D4A017;
-    overflow: hidden;
-    animation: modalSlideIn 0.3s ease;
-}
-@keyframes modalSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.wa-modal-header {
-    background: linear-gradient(135deg, #D4A017, #C8102E);
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.wa-modal-header h3 {
-    color: #0a0a0a;
-    margin: 0;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-}
-.wa-modal-close {
-    background: none;
-    border: none;
-    color: #0a0a0a;
-    font-size: 1.8rem;
-    cursor: pointer;
-    line-height: 1;
-}
-.wa-modal-body {
-    padding: 1.5rem;
-}
-.wa-greeting {
-    color: #D4A017;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-.wa-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-}
-.wa-option {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s;
-    border: 1px solid rgba(212, 160, 23, 0.2);
-}
-.wa-option:hover {
-    background: rgba(212, 160, 23, 0.1);
-    border-color: #D4A017;
-    transform: translateX(5px);
-}
-.wa-option-icon {
-    font-size: 1.8rem;
-}
-.wa-option-text strong {
-    display: block;
-    color: #D4A017;
-    font-size: 0.9rem;
-}
-.wa-option-text small {
-    font-size: 0.7rem;
-    color: #888;
-}
-.wa-custom {
-    margin-top: 1rem;
-    border-top: 1px solid rgba(212, 160, 23, 0.2);
-    padding-top: 1rem;
-}
-.wa-custom-label {
-    font-size: 0.75rem;
-    color: #888;
-    margin-bottom: 0.5rem;
-}
-#waCustomMessage, #waPropertyCustomMessage {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(212, 160, 23, 0.3);
-    color: white;
-    padding: 0.8rem;
-    border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
-    resize: vertical;
-}
-#waCustomMessage:focus, #waPropertyCustomMessage:focus {
-    outline: none;
-    border-color: #D4A017;
-}
-.wa-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.wa-modal.active {
-  display: flex;
-}
-
-.wa-modal-content {
-  background: #111;
-  width: 90%;
-  max-width: 420px;
-  max-height: 80vh;
-  overflow-y: auto;
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-.wa-send-btn {
-    width: 100%;
-    background: #25D366;
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    border-radius: 40px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: all 0.3s;
-}
-.wa-send-btn:hover {
-    background: #1ebe5a;
-    transform: translateY(-2px);
-}
-</style>
-
-<script>
 // WhatsApp Modal Functions
 let currentPropertyName = '';
 
@@ -1584,21 +1492,17 @@ function closePropertyWhatsAppModal() {
 
 function sendWhatsAppMessage() {
     let message = document.getElementById('waCustomMessage').value.trim();
-
     if (!message) {
-        // Get selected option message
         const selected = document.querySelector('.wa-option.selected');
         if (selected) {
             message = selected.getAttribute('data-message');
         }
     }
-
     if (!message) {
         alert('Please select an option or type a message');
         return;
     }
-
-    const phoneNumber = '2349099997342'; // Your WhatsApp number
+    const phoneNumber = '2349099997342';
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
     closeWhatsAppModal();
@@ -1606,7 +1510,6 @@ function sendWhatsAppMessage() {
 
 function sendPropertyWhatsAppMessage() {
     let message = document.getElementById('waPropertyCustomMessage').value.trim();
-
     if (!message) {
         const selected = document.querySelector('#propertyWhatsAppModal .wa-option.selected');
         if (selected) {
@@ -1614,24 +1517,14 @@ function sendPropertyWhatsAppMessage() {
             message = template.replace('{PROPERTY}', currentPropertyName);
         }
     }
-
     if (!message) {
         alert('Please select an option or type a message');
         return;
     }
-
     const phoneNumber = '2349099997342';
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
     closePropertyWhatsAppModal();
-}
-
-function openWhatsAppModal() {
-  document.getElementById('whatsappModal').classList.add('active');
-}
-
-function closeWhatsAppModal() {
-  document.getElementById('whatsappModal').classList.remove('active');
 }
 
 // Add click handlers to WA options
@@ -1640,15 +1533,6 @@ document.querySelectorAll('.wa-option').forEach(option => {
         document.querySelectorAll('.wa-option').forEach(opt => opt.classList.remove('selected'));
         this.classList.add('selected');
     });
-});
-
-
-document.querySelectorAll('.wa-option').forEach(option => {
-  option.addEventListener('click', () => {
-    const message = option.dataset.message;
-    const url = `https://wa.me/2348000000000?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
-  });
 });
 
 // Close modals when clicking outside
@@ -1662,6 +1546,9 @@ window.onclick = function(event) {
         closePropertyWhatsAppModal();
     }
 }
+
+// Initial render
+renderProperties();
 </script>
 </body>
 </html>
