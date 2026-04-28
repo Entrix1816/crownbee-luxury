@@ -471,7 +471,8 @@ nav.scrolled{
   flex-shrink:0;
   width:100%;
   height:100%;
-  background-size:cover;
+  background-repeat: no-repeat;
+  background-size:contain;
   background-position:center;
   position:relative;
 }
@@ -681,9 +682,7 @@ footer{
     justify-content: center;
     backdrop-filter: blur(5px);
 }
-.wa-modal.active {
-    display: flex;
-}
+.wa-modal.active { display: flex; }
 .wa-modal-content {
     max-width: 500px;
     width: 90%;
@@ -704,88 +703,34 @@ footer{
     justify-content: space-between;
     align-items: center;
 }
-.wa-modal-header h3 {
-    color: #0a0a0a;
-    margin: 0;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-}
-.wa-modal-close {
-    background: none;
-    border: none;
-    color: #0a0a0a;
-    font-size: 1.8rem;
-    cursor: pointer;
-    line-height: 1;
-}
-.wa-modal-body {
-    padding: 1.5rem;
-}
-.wa-greeting {
-    color: #D4A017;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-.wa-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-}
+.wa-modal-header h3 { color: #0a0a0a; margin: 0; font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 1px; }
+.wa-modal-close { background: none; border: none; color: #0a0a0a; font-size: 1.8rem; cursor: pointer; line-height: 1; }
+.wa-modal-body { padding: 1.5rem; }
+.wa-greeting { color: #D4A017; font-size: 1rem; margin-bottom: 1rem; text-align: center; }
+.wa-options { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
 .wa-option {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s;
+    display: flex; align-items: center; gap: 1rem; padding: 1rem;
+    background: rgba(255, 255, 255, 0.05); border-radius: 12px;
+    cursor: pointer; transition: all 0.3s;
     border: 1px solid rgba(212, 160, 23, 0.2);
 }
-.wa-option:hover {
-    background: rgba(212, 160, 23, 0.1);
-    border-color: #D4A017;
-    transform: translateX(5px);
-}
+.wa-option:hover { background: rgba(212, 160, 23, 0.1); border-color: #D4A017; transform: translateX(5px); }
 .wa-option-icon { font-size: 1.8rem; }
 .wa-option-text strong { display: block; color: #D4A017; font-size: 0.9rem; }
 .wa-option-text small { font-size: 0.7rem; color: #888; }
-.wa-custom {
-    margin-top: 1rem;
-    border-top: 1px solid rgba(212, 160, 23, 0.2);
-    padding-top: 1rem;
-}
+.wa-custom { margin-top: 1rem; border-top: 1px solid rgba(212, 160, 23, 0.2); padding-top: 1rem; }
 .wa-custom-label { font-size: 0.75rem; color: #888; margin-bottom: 0.5rem; }
 #waCustomMessage, #waPropertyCustomMessage {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(212, 160, 23, 0.3);
-    color: white;
-    padding: 0.8rem;
-    border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
-    resize: vertical;
+    width: 100%; background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 160, 23, 0.3); color: white;
+    padding: 0.8rem; border-radius: 10px; font-family: 'DM Sans', sans-serif; resize: vertical;
 }
 .wa-send-btn {
-    width: 100%;
-    background: #25D366;
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    border-radius: 40px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: all 0.3s;
+    width: 100%; background: #25D366; color: white; border: none;
+    padding: 0.8rem; border-radius: 40px; font-size: 0.9rem; font-weight: 600;
+    cursor: pointer; margin-top: 1rem; transition: all 0.3s;
 }
-.wa-send-btn:hover {
-    background: #1ebe5a;
-    transform: translateY(-2px);
-}
+.wa-send-btn:hover { background: #1ebe5a; transform: translateY(-2px); }
 
 /* ============================================================
    RESPONSIVE
@@ -867,7 +812,7 @@ footer{
   <div class="page-hero-content">
     <p class="page-hero-eyebrow">Browse Our Collection</p>
     <h1 class="page-hero-title">FIND YOUR <span>LUXURY</span> ESTATE</h1>
-    <p class="page-hero-desc">Discover premium plots and luxury homes in Abuja's most desirable locations.</p>
+    <p class="page-hero-desc">Discover premium plots and luxury homes across Abuja and beyond.</p>
   </div>
 </section>
 
@@ -884,8 +829,10 @@ footer{
         <option value="all">All Locations</option>
         <option value="karsana">Karsana</option>
         <option value="apo">Apo</option>
-        <option value="sheretti">Sheretti</option>
+        <option value="sheretti">Sheretti / Kabusa</option>
         <option value="asokoro">Asokoro</option>
+        <option value="lugbe">Lugbe</option>
+        <option value="ibadan">Bodija, Ibadan</option>
       </select>
     </div>
     <div class="filter-group">
@@ -896,6 +843,7 @@ footer{
         <option value="25to50">₦25M – ₦50M</option>
         <option value="50to100">₦50M – ₦100M</option>
         <option value="over100">Over ₦100M</option>
+        <option value="ibadan">Ibadan Pricing</option>
       </select>
     </div>
     <div class="filter-group">
@@ -904,15 +852,14 @@ footer{
         <option value="all">Any Type</option>
         <option value="land">Land / Plots</option>
         <option value="duplex">Duplex / Home</option>
+        <option value="commercial">Commercial</option>
       </select>
     </div>
     <button class="filter-reset" id="resetFilters">Reset Filters</button>
   </aside>
 
   <!-- PROPERTIES GRID -->
-  <div class="properties-grid" id="propertiesGrid">
-    <!-- Property cards will be populated by JavaScript -->
-  </div>
+  <div class="properties-grid" id="propertiesGrid"></div>
 </div>
 
 <!-- ========================================================
@@ -961,10 +908,12 @@ footer{
     <div class="footer-col">
       <h4>Estates</h4>
       <ul>
-        <li><a href="/properties">Gracefilled Resort &amp; Park</a></li>
-        <li><a href="/properties">Solar City, Apo</a></li>
-        <li><a href="/properties">Victory Prime Estate</a></li>
-        <li><a href="/properties">Audacity Prime Estate</a></li>
+        <li><a href="/property">Gracefilled Resort &amp; Park</a></li>
+        <li><a href="/property">Araoluwa Estate Solar City</a></li>
+        <li><a href="/property">Victory Prime Estate</a></li>
+        <li><a href="/property">Audacity Prime Estate</a></li>
+        <li><a href="/property">Crownbee Prime Estate</a></li>
+        <li><a href="/property">Amaa Gee Luxe Estate</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1006,7 +955,7 @@ footer{
         <div class="wa-modal-body">
             <p class="wa-greeting">Hello! How can we help you today?</p>
             <div class="wa-options">
-                <div class="wa-option" data-message="Hello Crownbee! I would like to get more information about your properties in Abuja. Please send me details.">
+                <div class="wa-option" data-message="Hello Crownbee! I would like to get more information about your properties. Please send me details.">
                     <span class="wa-option-icon">ℹ️</span>
                     <div class="wa-option-text"><strong>Just want more info</strong><small>General information about properties</small></div>
                 </div>
@@ -1022,7 +971,7 @@ footer{
                     <span class="wa-option-icon">🔑</span>
                     <div class="wa-option-text"><strong>Off-plan investment</strong><small>Early bird opportunities</small></div>
                 </div>
-                <div class="wa-option" data-message="Hello Crownbee! I am an existing client and would like to discuss another investment opportunity or ask a question about my property.">
+                <div class="wa-option" data-message="Hello Crownbee! I am an existing client and would like to discuss another investment opportunity.">
                     <span class="wa-option-icon">⭐</span>
                     <div class="wa-option-text"><strong>Existing client</strong><small>Follow-up or additional investment</small></div>
                 </div>
@@ -1079,7 +1028,19 @@ footer{
      SCRIPTS
 ======================================================== -->
 <script>
-// Property Data - Updated with correct pricing
+// Helper function to generate image arrays from static folder
+function generateImages(prefix, count, labels = []) {
+  const images = [];
+  for (let i = 1; i <= count; i++) {
+    images.push({
+      url: `/static/${prefix}${i}.jpeg`,
+      label: labels[i-1] || `${prefix.replace(/[0-9]/g, '')} Image ${i}`
+    });
+  }
+  return images;
+}
+
+// Property Data with correct pricing and images
 const properties = [
   {
     id: 1,
@@ -1091,12 +1052,11 @@ const properties = [
     priceMax: 70000000,
     tag: "Signature Development",
     featured: true,
-    images: [
-      { url: "/static/pross4.jpeg", label: "200sqm Plot - ₦20M" },
-      { url: "/static/pross3.jpeg", label: "300sqm Plot - ₦30M" },
-      { url: "/static/pross2.jpeg", label: "500sqm Plot - ₦50M" },
-      { url: "/static/pross1.jpeg", label: "650sqm Plot - ₦65M" }
-    ],
+    images: generateImages('karsana', 7, [
+      '200sqm Plot - ₦20M', '300sqm Plot - ₦30M', '500sqm Plot - ₦50M',
+      '650sqm Plot - ₦65M', '2 Bedroom - ₦60M', '3 Bedroom - ₦70M',
+      'Estate Overview'
+    ]),
     description: "Own a property in one of Abuja's rapidly developing districts. Gracefilled Resort & Park offers the perfect blend of investment opportunity, serenity, and modern living within a fast-growing Abuja corridor.",
     sizes: [
       { sqm: 200, price: 20000000, priceFormatted: "₦20,000,000" },
@@ -1105,15 +1065,15 @@ const properties = [
       { sqm: 650, price: 65000000, priceFormatted: "₦65,000,000" }
     ],
     homes: [
-      { type: "2 Bedroom", price: 60000000, priceFormatted: "₦60,000,000", image: "/static/pross5.jpeg" },
-      { type: "3 Bedroom", price: 70000000, priceFormatted: "₦70,000,000", image: "/static/pross6.jpeg" }
+      { type: "2 Bedroom", price: 60000000, priceFormatted: "₦60,000,000" },
+      { type: "3 Bedroom", price: 70000000, priceFormatted: "₦70,000,000" }
     ],
     features: ["Gated Community", "24/7 Security", "Landscaped Gardens", "Resort-Style Living"],
     contact: "09099997342, 09010677777"
   },
   {
     id: 2,
-    name: "Solar City",
+    name: "Araoluwa Estate Solar City",
     location: "Apo, Abuja",
     locationKey: "apo",
     type: "duplex",
@@ -1121,48 +1081,49 @@ const properties = [
     priceMax: 27000000,
     tag: "Eco-Luxury",
     featured: true,
-    images: [
-      { url: "/static/pross3.jpeg", label: "4 Bedroom Full Detached Duplex" },
-      { url: "/static/pross1.jpeg", label: "Swimming Pool View" },
-      { url: "/static/pross6.jpeg", label: "Solar-Powered Roof" }
-    ],
-    description: "Solar City, Apo is one of the closest FCDA C of O estates in the FCT with affordable prices. Just 16 minutes drive from Guzape Main.",
+    images: generateImages('solar', 21, [
+      '170sqm - ₦4.5M', '250sqm - ₦6.7M', '350sqm - ₦9.5M',
+      '450sqm - ₦12M', '4 Bedroom Duplex', 'Swimming Pool',
+      'Solar Roof System', 'Interior View', 'Estate Gate', 'Aerial View',
+      'Street View', 'Garden Area', 'EV Charging', 'Kids Playground',
+      'Security Post', 'Road Network', 'Drainage System', 'Water Treatment',
+      'Green Area', 'Night View', 'Community Center'
+    ]),
+    description: "Araoluwa Estate Solar City, Apo is one of the closest FCDA C of O estates in the FCT with affordable prices. Just 16 minutes drive from Guzape Main. Features solar-powered systems and electric car charging ports.",
     sizes: [
       { sqm: 170, price: 4500000, priceFormatted: "₦4,500,000" },
       { sqm: 250, price: 6700000, priceFormatted: "₦6,700,000" },
       { sqm: 350, price: 9500000, priceFormatted: "₦9,500,000" },
       { sqm: 450, price: 12000000, priceFormatted: "₦12,000,000" },
-      { sqm: 600, price: null, priceFormatted: "Contact for price" },
       { sqm: 1000, price: 27000000, priceFormatted: "₦27,000,000" }
     ],
-    features: ["Solar-Powered Roof System", "Electric Car Charging Port", "Swimming Pool", "24/7 Security", "Smart Home Ready"],
+    features: ["Solar-Powered Roof", "EV Charging Port", "Swimming Pool", "24/7 Security", "Smart Home Ready"],
     contact: "09099997342, 09010677777",
-    specialNote: "Full Duplex with solar-powered roof system and Electric Car Charging port. Various plot sizes available from 170sqm to 1000sqm."
+    specialNote: "Full Duplex with solar-powered roof system and Electric Car Charging port. Various plot sizes from 170sqm to 1000sqm."
   },
   {
     id: 3,
     name: "Victory Prime Estate",
-    location: "Sheretti, Abuja",
+    location: "Sheretti, Kabusa, Abuja",
     locationKey: "sheretti",
     type: "land",
     priceMin: 9750000,
     priceMax: 19500000,
     tag: "Value Luxury",
     featured: false,
-    images: [
-      { url: "/static/pross5.jpeg", label: "200sqm Plot - ₦9.75M" },
-      { url: "/static/pross4.jpeg", label: "300sqm Plot - ₦11.7M" },
-      { url: "/static/pross2.jpeg", label: "400sqm Plot - ₦15.6M" },
-      { url: "/static/pross1.jpeg", label: "500sqm Plot - ₦19.5M" }
-    ],
-    description: "Welcome to Victory Prime Estate, Sheretti — where comfort meets smart investment. Whether you're planning to build your dream home or secure your future, this is your opportunity to invest in a fast-growing location.",
+    images: generateImages('victory', 8, [
+      '200sqm - ₦9.75M', '300sqm - ₦11.7M', '400sqm - ₦15.6M',
+      '500sqm - ₦19.5M', 'Estate Entrance', 'Road Network',
+      'Plot Layout', 'Aerial View'
+    ]),
+    description: "Welcome to Victory Prime Estate, Sheretti/Kabusa — where comfort meets smart investment. Whether you're planning to build your dream home or secure your future, this is your opportunity to invest in a fast-growing location.",
     sizes: [
       { sqm: 200, price: 9750000, priceFormatted: "₦9,750,000" },
       { sqm: 300, price: 11700000, priceFormatted: "₦11,700,000" },
       { sqm: 400, price: 15600000, priceFormatted: "₦15,600,000" },
       { sqm: 500, price: 19500000, priceFormatted: "₦19,500,000" }
     ],
-    features: ["Flexible Plot Sizes", "Perfect for Residential & Investment", "Fast-Growing Location", "Limited Plots Available"],
+    features: ["Flexible Plot Sizes", "Residential & Investment", "Fast-Growing Location", "Limited Plots"],
     contact: "09099997342, 09010677777"
   },
   {
@@ -1175,11 +1136,11 @@ const properties = [
     priceMax: 195000000,
     tag: "Premium Luxury",
     featured: true,
-    images: [
-      { url: "/static/pross7.png", label: "300sqm Plot - ₦90M" },
-      { url: "/static/pross4.jpeg", label: "500sqm Plot - ₦150M" }
-    ],
-    description: "Audacity Prime Estate offers premium luxury living in the heart of Asokoro, Abuja's most prestigious district. Experience unparalleled elegance and world-class amenities.",
+    images: generateImages('audacity', 6, [
+      '300sqm - ₦90M', '400sqm - ₦120M', '500sqm - ₦150M',
+      '650sqm - ₦195M', '3 Bedroom - ₦120M', 'Estate Overview'
+    ]),
+    description: "Audacity Prime Estate offers premium luxury living in the heart of Asokoro, Abuja's most prestigious district. Experience unparalleled elegance and world-class amenities in the diplomatic zone.",
     sizes: [
       { sqm: 300, price: 90000000, priceFormatted: "₦90,000,000" },
       { sqm: 400, price: 120000000, priceFormatted: "₦120,000,000" },
@@ -1187,19 +1148,76 @@ const properties = [
       { sqm: 650, price: 195000000, priceFormatted: "₦195,000,000" }
     ],
     homes: [
-      { type: "3 Bedroom", price: 120000000, priceFormatted: "₦120,000,000", image: "/static/pross5.jpeg" }
+      { type: "3 Bedroom", price: 120000000, priceFormatted: "₦120,000,000" }
     ],
-    features: ["Premium Location", "24/7 Security", "World-Class Amenities", "Diplomatic District", "High ROI Potential"],
+    features: ["Premium Location", "24/7 Security", "World-Class Amenities", "Diplomatic District", "High ROI"],
     contact: "09099997342, 09010677777",
     specialNote: "Located in Asokoro, Abuja's most exclusive neighborhood. Premium plots and luxury homes with guaranteed high return on investment."
+  },
+  {
+    id: 5,
+    name: "Crownbee Prime Estate",
+    location: "Lugbe, Abuja",
+    locationKey: "lugbe",
+    type: "land",
+    priceMin: 5000000,
+    priceMax: 15000000,
+    tag: "Affordable Luxury",
+    featured: false,
+    images: generateImages('crownbee', 2, [
+      'Plot View 1', 'Plot View 2'
+    ]),
+    description: "Crownbee Prime Estate in Lugbe offers affordable luxury plots in one of Abuja's fastest-developing satellite towns. Perfect for first-time investors and families looking to build their dream home.",
+    sizes: [
+      { sqm: 300, price: 5000000, priceFormatted: "₦5,000,000" },
+      { sqm: 500, price: 8500000, priceFormatted: "₦8,500,000" },
+      { sqm: 600, price: 10500000, priceFormatted: "₦10,500,000" }
+    ],
+    features: ["Affordable Entry", "Fast Development Area", "Good Road Network", "Close to Airport"],
+    contact: "09099997342, 09010677777"
+  },
+  {
+    id: 6,
+    name: "Amaa Gee Luxe Estate",
+    location: "Bodija, Ibadan",
+    locationKey: "ibadan",
+    type: "commercial",
+    priceMin: 8000000,
+    priceMax: 25000000,
+    tag: "Premium Commercial",
+    featured: true,
+    images: generateImages('gee', 6, [
+      'Commercial Plot 1', 'Commercial Plot 2', 'Shop Layout',
+      'Estate Entrance', 'Road View', 'Aerial Overview'
+    ]),
+    description: "Amaa Gee Luxe Estate in the heart of Bodija, Ibadan — premium commercial plots perfect for shops, offices, and business investments. Located in Ibadan's most prestigious commercial district.",
+    sizes: [
+      { sqm: 200, price: 8000000, priceFormatted: "₦8,000,000" },
+      { sqm: 300, price: 12000000, priceFormatted: "₦12,000,000" },
+      { sqm: 500, price: 20000000, priceFormatted: "₦20,000,000" }
+    ],
+    features: ["Prime Commercial Location", "High Foot Traffic", "Business District", "Investment Grade"],
+    contact: "09099997342, 09010677777",
+    specialNote: "Premium commercial plots in Bodija, Ibadan's most sought-after business district. Ideal for shops, offices, and commercial investments."
   }
 ];
 
-// Render property cards
+// Global variables
+let autoSlideInterval = null;
+let currentActivePropertyId = null;
+let cardAutoSlideIntervals = {}; // Store intervals for each property card
+
+// Render property cards with auto-swiping images
 function renderProperties() {
   const location = document.getElementById('filterLocation').value;
   const priceRange = document.getElementById('filterPrice').value;
   const type = document.getElementById('filterType').value;
+
+  // Clear all existing card intervals
+  for (let key in cardAutoSlideIntervals) {
+    clearInterval(cardAutoSlideIntervals[key]);
+  }
+  cardAutoSlideIntervals = {};
 
   let filtered = properties.filter(p => {
     if (location !== 'all' && p.locationKey !== location) return false;
@@ -1210,6 +1228,7 @@ function renderProperties() {
       if (priceRange === '25to50' && (minPrice < 25000000 || minPrice > 50000000)) return false;
       if (priceRange === '50to100' && (minPrice < 50000000 || minPrice > 100000000)) return false;
       if (priceRange === 'over100' && minPrice <= 100000000) return false;
+      if (priceRange === 'ibadan' && p.locationKey !== 'ibadan') return false;
     }
     return true;
   });
@@ -1222,9 +1241,10 @@ function renderProperties() {
   grid.parentNode.insertBefore(countDiv, grid);
 
   grid.innerHTML = filtered.map(p => `
-    <div class="property-card" data-id="${p.id}">
+    <div class="property-card" data-id="${p.id}" data-image-index="0">
       <div class="property-img" style="background-image:url('${p.images[0].url}')">
         <span class="property-tag ${p.featured ? 'featured' : ''}">${p.tag}</span>
+        ${p.images.length > 1 ? `<div style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.6);color:var(--gold);font-size:10px;padding:2px 6px;border-radius:12px;">${p.images.length} photos</div>` : ''}
       </div>
       <div class="property-content">
         <div class="property-location">📍 ${p.location}</div>
@@ -1250,28 +1270,102 @@ function renderProperties() {
       </div>
     </div>
   `).join('');
+
+  // Start auto-slide for each property card that has multiple images
+  filtered.forEach(p => {
+    if (p.images.length > 1) {
+      startCardAutoSlide(p.id, p.images.length);
+    }
+  });
 }
 
-// Show modal with full property details (with carousel)
+// Start auto-slide for a property card
+function startCardAutoSlide(propertyId, totalImages) {
+  // Clear existing interval for this card if any
+  if (cardAutoSlideIntervals[propertyId]) {
+    clearInterval(cardAutoSlideIntervals[propertyId]);
+  }
+
+  // Get the card element
+  const card = document.querySelector(`.property-card[data-id="${propertyId}"]`);
+  if (!card) return;
+
+  let currentIndex = 0;
+  const property = properties.find(p => p.id === propertyId);
+  if (!property) return;
+
+  // Set interval to change image every 3 seconds
+  cardAutoSlideIntervals[propertyId] = setInterval(() => {
+    // Re-check if card still exists (in case of re-render)
+    const currentCard = document.querySelector(`.property-card[data-id="${propertyId}"]`);
+    if (!currentCard) {
+      clearInterval(cardAutoSlideIntervals[propertyId]);
+      delete cardAutoSlideIntervals[propertyId];
+      return;
+    }
+
+    // Move to next image
+    currentIndex = (currentIndex + 1) % totalImages;
+    const imgDiv = currentCard.querySelector('.property-img');
+    if (imgDiv) {
+      imgDiv.style.backgroundImage = `url('${property.images[currentIndex].url}')`;
+      // Add a subtle fade transition
+      imgDiv.style.transition = 'background-image 0.5s ease-in-out';
+    }
+
+    // Update the data attribute
+    currentCard.setAttribute('data-image-index', currentIndex);
+  }, 3000); // Change every 3 seconds
+
+  // Add hover pause functionality
+  card.addEventListener('mouseenter', () => {
+    if (cardAutoSlideIntervals[propertyId]) {
+      clearInterval(cardAutoSlideIntervals[propertyId]);
+      cardAutoSlideIntervals[propertyId] = null;
+    }
+  });
+
+  card.addEventListener('mouseleave', () => {
+    if (!cardAutoSlideIntervals[propertyId]) {
+      // Restart the interval
+      let currentIdx = parseInt(card.getAttribute('data-image-index') || 0);
+      startCardAutoSlide(propertyId, totalImages);
+      // Set the current index to continue from where it left off
+      setTimeout(() => {
+        const newCard = document.querySelector(`.property-card[data-id="${propertyId}"]`);
+        if (newCard) {
+          newCard.setAttribute('data-image-index', currentIdx);
+        }
+      }, 100);
+    }
+  });
+}
+
+// Stop auto-slide for a property card
+function stopCardAutoSlide(propertyId) {
+  if (cardAutoSlideIntervals[propertyId]) {
+    clearInterval(cardAutoSlideIntervals[propertyId]);
+    cardAutoSlideIntervals[propertyId] = null;
+  }
+}
+
+// Show modal with full property details
 function showDetails(id) {
   const prop = properties.find(p => p.id === id);
   if (!prop) return;
+
+  // Clear any existing auto-slide
+  stopAutoSlide();
+
+  // Set current active property
+  currentActivePropertyId = id;
 
   const modal = document.getElementById('propertyModal');
   const modalImg = document.getElementById('modalImg');
   const modalBody = document.getElementById('modalBody');
 
-  // Build images array (include home images if they exist)
   let allImages = prop.images ? [...prop.images] : [{ url: prop.image, label: prop.name }];
-  if (prop.homes) {
-    prop.homes.forEach(h => {
-      if (h.image) {
-        allImages.push({ url: h.image, label: `${h.type} - ${h.priceFormatted}` });
-      }
-    });
-  }
 
-  // Create carousel HTML
   const carouselSlides = allImages.map((img, i) => `
     <div class="modal-carousel-slide" style="background-image:url('${img.url}')">
       <div class="slide-label">${img.label || ''}</div>
@@ -1290,17 +1384,13 @@ function showDetails(id) {
       ${allImages.length > 1 ? `
         <button class="modal-carousel-btn modal-carousel-prev" onclick="prevSlide(${id})">‹</button>
         <button class="modal-carousel-btn modal-carousel-next" onclick="nextSlide(${id})">›</button>
-        <div class="carousel-dots">
-          ${carouselDots}
-        </div>
+        <div class="carousel-dots">${carouselDots}</div>
       ` : ''}
     </div>
   `;
 
-  // Replace modal-img div with carousel
   modalImg.outerHTML = carouselHTML;
 
-  // Store current slide index for this property
   window[`currentSlide-${id}`] = 0;
   window[`totalSlides-${id}`] = allImages.length;
 
@@ -1352,22 +1442,67 @@ function showDetails(id) {
 
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
+
+  // Start auto-slide for modal
+  if (allImages.length > 1) {
+    startAutoSlide();
+
+    // Add hover pause
+    setTimeout(function() {
+      const carouselContainer = document.getElementById(`modalCarousel-${id}`);
+      if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', function() {
+          stopAutoSlide();
+        });
+        carouselContainer.addEventListener('mouseleave', function() {
+          if (window[`totalSlides-${id}`] > 1 && currentActivePropertyId === id) {
+            startAutoSlide();
+          }
+        });
+      }
+    }, 100);
+  }
 }
 
-// Carousel navigation functions
+// Auto-slide functions for modal
+function startAutoSlide() {
+  if (autoSlideInterval) {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = null;
+  }
+
+  const id = currentActivePropertyId;
+  if (!id) return;
+
+  const total = window[`totalSlides-${id}`];
+  if (total && total > 1) {
+    autoSlideInterval = setInterval(function() {
+      if (currentActivePropertyId === id) {
+        const current = window[`currentSlide-${id}`] || 0;
+        const nextIndex = (current + 1) % total;
+        updateCarousel(id, nextIndex);
+      }
+    }, 4000);
+  }
+}
+
+function stopAutoSlide() {
+  if (autoSlideInterval) {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = null;
+  }
+}
+
+// Carousel navigation for modal
 function updateCarousel(id, index) {
   const track = document.getElementById(`carouselTrack-${id}`);
   const dots = document.querySelectorAll(`#modalCarousel-${id} .carousel-dot`);
   const total = window[`totalSlides-${id}`];
-
   if (!track || !total) return;
-
   if (index < 0) index = total - 1;
   if (index >= total) index = 0;
-
   window[`currentSlide-${id}`] = index;
   track.style.transform = `translateX(-${index * 100}%)`;
-
   if (dots.length) {
     dots.forEach((dot, i) => {
       dot.classList.toggle('active', i === index);
@@ -1378,21 +1513,29 @@ function updateCarousel(id, index) {
 function nextSlide(id) {
   const current = window[`currentSlide-${id}`] || 0;
   updateCarousel(id, current + 1);
+  stopAutoSlide();
+  startAutoSlide();
 }
 
 function prevSlide(id) {
   const current = window[`currentSlide-${id}`] || 0;
   updateCarousel(id, current - 1);
+  stopAutoSlide();
+  startAutoSlide();
 }
 
 function goToSlide(id, index) {
   updateCarousel(id, index);
+  stopAutoSlide();
+  startAutoSlide();
 }
 
 // Close modal
-document.getElementById('modalClose').onclick = () => {
+document.getElementById('modalClose').onclick = function() {
   document.getElementById('propertyModal').classList.remove('active');
   document.body.style.overflow = '';
+  stopAutoSlide();
+  currentActivePropertyId = null;
   const modalContent = document.querySelector('.modal-content');
   const existingCarousel = modalContent.querySelector('.modal-carousel');
   if (existingCarousel) {
@@ -1403,10 +1546,12 @@ document.getElementById('modalClose').onclick = () => {
   }
 };
 
-document.getElementById('propertyModal').onclick = (e) => {
+document.getElementById('propertyModal').onclick = function(e) {
   if (e.target === document.getElementById('propertyModal')) {
     document.getElementById('propertyModal').classList.remove('active');
     document.body.style.overflow = '';
+    stopAutoSlide();
+    currentActivePropertyId = null;
     const modalContent = document.querySelector('.modal-content');
     const existingCarousel = modalContent.querySelector('.modal-carousel');
     if (existingCarousel) {
@@ -1418,11 +1563,11 @@ document.getElementById('propertyModal').onclick = (e) => {
   }
 };
 
-// Event listeners
+// Event listeners for filters
 document.getElementById('filterLocation').addEventListener('change', renderProperties);
 document.getElementById('filterPrice').addEventListener('change', renderProperties);
 document.getElementById('filterType').addEventListener('change', renderProperties);
-document.getElementById('resetFilters').addEventListener('click', () => {
+document.getElementById('resetFilters').addEventListener('click', function() {
   document.getElementById('filterLocation').value = 'all';
   document.getElementById('filterPrice').value = 'all';
   document.getElementById('filterType').value = 'all';
@@ -1430,39 +1575,61 @@ document.getElementById('resetFilters').addEventListener('click', () => {
 });
 
 function bookConsultation() {
-  const message = "Hello Crownbee, I'd like to book a consultation to discuss property investment opportunities in Abuja. Please let me know available times.";
-  const phoneNumber = '2349099997342';
-  window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+  const message = "Hello Crownbee, I'd like to book a consultation to discuss property investment opportunities. Please let me know available times.";
+  window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(message)}`, '_blank');
 }
 
 // Custom cursor
 const cur = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
 let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;if(cur){cur.style.left=mx+'px';cur.style.top=my+'px';}});
-function animRing(){if(ring){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';}requestAnimationFrame(animRing);}
+document.addEventListener('mousemove', function(e) {
+  mx=e.clientX;
+  my=e.clientY;
+  if(cur){
+    cur.style.left=mx+'px';
+    cur.style.top=my+'px';
+  }
+});
+function animRing() {
+  if(ring){
+    rx+=(mx-rx)*.12;
+    ry+=(my-ry)*.12;
+    ring.style.left=rx+'px';
+    ring.style.top=ry+'px';
+  }
+  requestAnimationFrame(animRing);
+}
 animRing();
-document.querySelectorAll('a,button,.property-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{if(cur)cur.classList.add('hover');if(ring)ring.classList.add('hover');});
-  el.addEventListener('mouseleave',()=>{if(cur)cur.classList.remove('hover');if(ring)ring.classList.remove('hover');});
+document.querySelectorAll('a,button,.property-card').forEach(function(el) {
+  el.addEventListener('mouseenter', function() {
+    if(cur) cur.classList.add('hover');
+    if(ring) ring.classList.add('hover');
+  });
+  el.addEventListener('mouseleave', function() {
+    if(cur) cur.classList.remove('hover');
+    if(ring) ring.classList.remove('hover');
+  });
 });
 
 // Nav scroll
 const nav = document.getElementById('mainNav');
-window.addEventListener('scroll',()=>{if(nav)nav.classList.toggle('scrolled',window.scrollY>80);});
+window.addEventListener('scroll', function() {
+  if(nav) nav.classList.toggle('scrolled', window.scrollY > 80);
+});
 
 // Mobile menu
-function toggleMenu(){
+function toggleMenu() {
   const h = document.getElementById('hamburger');
   const m = document.getElementById('mobileMenu');
-  if(h)h.classList.toggle('open');
-  if(m)m.classList.toggle('open');
+  if(h) h.classList.toggle('open');
+  if(m) m.classList.toggle('open');
   document.body.style.overflow = m && m.classList.contains('open') ? 'hidden' : '';
 }
 
-// WhatsApp pulse animation
+// WhatsApp pulse animation style
 const waStyle = document.createElement('style');
-waStyle.textContent = `@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,.7);}}`;
+waStyle.textContent = '@keyframes waPulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4);}50%{box-shadow:0 4px 40px rgba(37,211,102,.7);}}';
 document.head.appendChild(waStyle);
 
 // WhatsApp Modal Functions
@@ -1472,79 +1639,53 @@ function openWhatsAppModal() {
     document.getElementById('whatsappModal').classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-
 function closeWhatsAppModal() {
     document.getElementById('whatsappModal').classList.remove('active');
     document.body.style.overflow = '';
 }
-
 function openPropertyWhatsAppModal(propertyName) {
     currentPropertyName = propertyName;
     document.getElementById('waPropertyName').textContent = propertyName;
     document.getElementById('propertyWhatsAppModal').classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-
 function closePropertyWhatsAppModal() {
     document.getElementById('propertyWhatsAppModal').classList.remove('active');
     document.body.style.overflow = '';
 }
-
 function sendWhatsAppMessage() {
     let message = document.getElementById('waCustomMessage').value.trim();
     if (!message) {
         const selected = document.querySelector('.wa-option.selected');
-        if (selected) {
-            message = selected.getAttribute('data-message');
-        }
+        if (selected) { message = selected.getAttribute('data-message'); }
     }
-    if (!message) {
-        alert('Please select an option or type a message');
-        return;
-    }
-    const phoneNumber = '2349099997342';
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    if (!message) { alert('Please select an option or type a message'); return; }
+    window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(message)}`, '_blank');
     closeWhatsAppModal();
 }
-
 function sendPropertyWhatsAppMessage() {
     let message = document.getElementById('waPropertyCustomMessage').value.trim();
     if (!message) {
         const selected = document.querySelector('#propertyWhatsAppModal .wa-option.selected');
-        if (selected) {
-            let template = selected.getAttribute('data-property-message');
-            message = template.replace('{PROPERTY}', currentPropertyName);
-        }
+        if (selected) { message = selected.getAttribute('data-property-message').replace('{PROPERTY}', currentPropertyName); }
     }
-    if (!message) {
-        alert('Please select an option or type a message');
-        return;
-    }
-    const phoneNumber = '2349099997342';
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    if (!message) { alert('Please select an option or type a message'); return; }
+    window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(message)}`, '_blank');
     closePropertyWhatsAppModal();
 }
 
-// Add click handlers to WA options
-document.querySelectorAll('.wa-option').forEach(option => {
+document.querySelectorAll('.wa-option').forEach(function(option) {
     option.addEventListener('click', function() {
-        document.querySelectorAll('.wa-option').forEach(opt => opt.classList.remove('selected'));
+        document.querySelectorAll('.wa-option').forEach(function(opt) {
+          opt.classList.remove('selected');
+        });
         this.classList.add('selected');
     });
 });
 
-// Close modals when clicking outside
 window.onclick = function(event) {
-    const modal = document.getElementById('whatsappModal');
-    const propertyModal = document.getElementById('propertyWhatsAppModal');
-    if (event.target === modal) {
-        closeWhatsAppModal();
-    }
-    if (event.target === propertyModal) {
-        closePropertyWhatsAppModal();
-    }
+    if (event.target === document.getElementById('whatsappModal')) { closeWhatsAppModal(); }
+    if (event.target === document.getElementById('propertyWhatsAppModal')) { closePropertyWhatsAppModal(); }
 }
 
 // Initial render
