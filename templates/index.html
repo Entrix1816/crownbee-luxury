@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
-  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Crownbee Global Services Ltd – Luxury Real Estate, Abuja</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/jpeg" href="/static/logo.jpeg">
+  <link rel="shortcut icon" type="image/jpeg" href="/static/logo.jpeg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
   <style>
     /* ============================================================
        RESET & ROOT
@@ -704,7 +709,7 @@
     .wa-float svg{width:24px;height:24px;}
 
     /* ============================================================
-       CONTACT SECTION
+       CONTACT SECTION - UPDATED WITH TWO OPTIONS
     ============================================================ */
     .contact-section{
       padding:5rem 5%;
@@ -744,21 +749,66 @@
     .cf-field textarea{resize:vertical;min-height:100px;}
     .cf-field select{appearance:none;cursor:none;}
     .cf-field select option{background:var(--charcoal);}
-    .btn-submit{
-      width:100%;margin-top:.5rem;
-      background:var(--gold);color:var(--black);
-      padding:1rem;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;font-weight:500;
-      border:none;cursor:none;
-      transition:all .3s;
+
+    /* Two button layout */
+    .form-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
     }
-    .btn-submit:hover{background:var(--gold-light);}
+    .btn-submit-email {
+      flex: 1;
+      background: var(--gold);
+      color: var(--black);
+      padding: 1rem;
+      font-size: .75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all .3s;
+    }
+    .btn-submit-email:hover {
+      background: var(--gold-light);
+    }
+    .btn-submit-wa {
+      flex: 1;
+      background: #25D366;
+      color: white;
+      padding: 1rem;
+      font-size: .75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all .3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-submit-wa:hover {
+      background: #1ebe5a;
+      transform: translateY(-2px);
+    }
     .form-success{
       display:none;
       text-align:center;padding:2rem;
       border:1px solid rgba(37,211,102,.3);
       background:rgba(37,211,102,.05);
+      border-radius: 8px;
     }
     .form-success p{color:#25D366;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;}
+    .form-error{
+      display:none;
+      text-align:center;padding:2rem;
+      border:1px solid rgba(200,16,46,.3);
+      background:rgba(200,16,46,.05);
+      border-radius: 8px;
+    }
+    .form-error p{color:var(--crimson);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;}
 
     /* ============================================================
        FOOTER
@@ -961,6 +1011,7 @@
       .ceo-img-wrap{position: relative; max-width:320px;margin:0 auto;}
       .contact-section{grid-template-columns:1fr;gap:2.5rem;}
       .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}
+      .form-buttons{flex-direction:column;}
     }
     @media(max-width:768px){
       .nav-links,.nav-cta{display:none;}
@@ -986,6 +1037,7 @@
       nav{padding:1rem 5%;}
       .video-wrapper video{max-height:45vh;}
       .hero-scroll{display:none;}
+      .form-buttons{flex-direction:column;}
     }
     @media(max-width:480px){
       .section-title{font-size:1.8rem;}
@@ -1024,7 +1076,7 @@
 <!-- NAV -->
 <nav id="mainNav">
   <a href="#" class="logo" aria-label="Crownbee Global">
-    <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Crownbee Global" style="height: 50px; width: auto;">
+    <img src="/static/logo.jpeg" alt="Crownbee Global" style="height: 50px; width: auto;">
     <div class="logo-words">
       <span class="logo-name">Crownbee</span>
       <span class="logo-tagline">Global Services Ltd</span>
@@ -1094,7 +1146,7 @@
     <div class="stat-divider"></div>
     <div class="stat-label">Satisfied Clients</div>
   </div>
-  <div class="stat-item" data-target="3" data-suffix="+">
+  <div class="stat-item" data-target="6" data-suffix="+">
     <div class="stat-num"><span class="count-num">0</span>+</div>
     <div class="stat-divider"></div>
     <div class="stat-label">Exclusive Estates</div>
@@ -1137,7 +1189,7 @@
       <button class="play-btn" id="playBtn">▶</button>
     </div>
     <video id="mainVideo" muted playsinline poster="/static/karsana1.jpeg">
-      <source src="{{ url_for('static', filename='videos/gracefilled.mp4') }}" type="video/mp4">
+      <source src="/static/videos/gracefilled.mp4" type="video/mp4">
     </video>
   </div>
 </section>
@@ -1384,7 +1436,10 @@
 </section>
 
 <!-- ========================================================
-     CONTACT
+     CONTACT SECTION - WITH TWO OPTIONS (EMAIL OR WHATSAPP)
+======================================================== -->
+<!-- ========================================================
+     CONTACT SECTION - WITH MAILTO & WHATSAPP
 ======================================================== -->
 <section class="contact-section" id="contact">
   <div class="contact-info">
@@ -1417,8 +1472,7 @@
   </div>
 
   <div class="contact-form-wrap reveal reveal-delay-1">
-    <form id="contactForm" novalidate>
-      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <form id="contactForm" onsubmit="return false;">
       <div class="cf-grid">
         <div class="cf-field">
           <label for="fname">First Name</label>
@@ -1434,7 +1488,7 @@
         </div>
         <div class="cf-field">
           <label for="phone">Phone / WhatsApp</label>
-          <input type="tel" id="phone" name="phone" placeholder="+234 800 000 0000"/>
+          <input type="tel" id="phone" name="phone" placeholder="+234 909 999 7342"/>
         </div>
         <div class="cf-field full">
           <label for="interest">I'm Interested In</label>
@@ -1443,6 +1497,9 @@
             <option>Gracefilled Resort &amp; Park – Land Plot</option>
             <option>Solar City – Home Purchase</option>
             <option>Victory Prime Estate – Land Plot</option>
+            <option>Crownbee Prime Estate – Land Plot</option>
+            <option>Audacity Prime Estate – Home/Land</option>
+            <option>Amaa Gee Luxe Court – Commercial Plot</option>
             <option>Off-Plan Investment Opportunity</option>
             <option>Investment Advisory Session</option>
             <option>Other</option>
@@ -1461,13 +1518,22 @@
         </div>
         <div class="cf-field full">
           <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell us what you're looking for — budget, timeline, any questions…"></textarea>
+          <textarea id="message" name="message" placeholder="Tell us what you're looking for — budget, timeline, any questions…" required></textarea>
         </div>
       </div>
-      <button type="submit" class="btn-submit">Send Enquiry</button>
+
+      <!-- TWO BUTTONS: Email (mailto) OR WhatsApp -->
+      <div class="form-buttons">
+        <button type="button" class="btn-submit-email" onclick="sendViaMailTo()">📧 Send via Email</button>
+        <button type="button" class="btn-submit-wa" onclick="sendViaWhatsApp()">💬 Send via WhatsApp</button>
+      </div>
     </form>
+
     <div class="form-success" id="formSuccess">
-      <p>✓ &nbsp; Enquiry received! We'll be in touch within the hour.</p>
+      <p>✓ &nbsp; Opening your email client...</p>
+    </div>
+    <div class="form-error" id="formError">
+      <p>⚠️ &nbsp; Please fill in all required fields.</p>
     </div>
   </div>
 </section>
@@ -1498,7 +1564,9 @@
         <li><a href="/properties">Gracefilled Resort &amp; Park</a></li>
         <li><a href="/properties">Solar City, Apo</a></li>
         <li><a href="/properties">Victory Prime Estate</a></li>
-        <li><a href="/properties">New Listings</a></li>
+        <li><a href="/properties">Crownbee Prime Estate</a></li>
+        <li><a href="/properties">Audacity Prime Estate</a></li>
+        <li><a href="/properties">Amaa Gee Luxe Court</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1525,7 +1593,7 @@
     <p>© 2026 Crownbee Global Services Ltd. All rights reserved. Abuja, Nigeria.</p>
     <div class="footer-socials">
       <a href="https://www.instagram.com/crownbeepropertiesabuja/" aria-label="Instagram">IG</a>
-      <a href="https://www.facebook.com/crownbeeabujaproperties/?ref=NONE_xav_ig_profile_page_web#" aria-label="Facebook">FB</a>
+      <a href="https://www.facebook.com/crownbeeabujaproperties/" aria-label="Facebook">FB</a>
       <a href="https://wa.me/2349099997342" aria-label="WhatsApp">WA</a>
     </div>
   </div>
@@ -1613,7 +1681,7 @@
 </div>
 
 <!-- ========================================================
-     SCRIPTS
+     SCRIPTS - UPDATED WITH EMAIL & WHATSAPP FUNCTIONS
 ======================================================== -->
 <script>
 /* ----- Custom Cursor ----- */
@@ -1654,7 +1722,7 @@ if(slides.length){
   }, 6000);
 }
 
-/* ----- Image Carousel WITH ARROWS ----- */
+/* ----- Image Carousel ----- */
 const track = document.getElementById('carouselTrack');
 const carouselImages = document.querySelectorAll('.carousel-slide-img');
 let currentIndex = 0;
@@ -1708,8 +1776,7 @@ if(track && carouselImages.length) {
 /* ----- Book Consultation Function ----- */
 function bookConsultation() {
   const message = "Hello Crownbee, I'd like to book a free consultation to discuss real estate investment opportunities in Abuja. Please let me know available times.";
-  const phoneNumber = '2349099997342';
-  window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+  window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(message)}`, '_blank');
 }
 
 /* ----- Scroll reveal ----- */
@@ -1774,73 +1841,126 @@ document.addEventListener('DOMContentLoaded', function() {
   video.addEventListener('ended', () => { overlay.style.display = 'flex'; });
 });
 
-/* ----- Contact Form ----- */
-const contactForm = document.getElementById('contactForm');
-if(contactForm){
-  contactForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const fname = document.getElementById('fname').value.trim();
-    const lname = document.getElementById('lname').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const interest = document.getElementById('interest').value;
-    const budget = document.getElementById('budget').value;
-    const message = document.getElementById('message').value.trim();
+/* ============================================================
+   CONTACT FORM FUNCTIONS - EMAIL & WHATSAPP
+============================================================ */
 
-    if (!fname || !email || !message) {
-      alert('Please fill in your name, email, and message.');
-      return;
-    }
 
-    const submitBtn = this.querySelector('.btn-submit');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+// Helper function to get form data
+function getFormData() {
+  return {
+    fname: document.getElementById('fname').value.trim(),
+    lname: document.getElementById('lname').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    phone: document.getElementById('phone').value.trim(),
+    interest: document.getElementById('interest').value,
+    budget: document.getElementById('budget').value,
+    message: document.getElementById('message').value.trim()
+  };
+}
 
-    try {
-      const csrfToken = document.querySelector('input[name="csrf_token"]').value;
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-CSRFToken': csrfToken
-        },
-        body: JSON.stringify({
-          name: `${fname} ${lname}`.trim(),
-          email: email,
-          phone: phone,
-          service: interest || 'General Inquiry',
-          message: `Budget: ${budget || 'Not specified'}\n\n${message}`
-        })
-      });
+// Helper function to validate form
+function validateForm(data) {
+  if (!data.fname || !data.email || !data.message) {
+    showError('Please fill in your name, email, and message.');
+    return false;
+  }
+  return true;
+}
 
-      const data = await response.json();
+// Helper function to show success
+function showSuccess(message) {
+  const form = document.getElementById('contactForm');
+  const successDiv = document.getElementById('formSuccess');
+  const errorDiv = document.getElementById('formError');
 
-      if (data.success) {
-        this.reset();
-        this.style.display = 'none';
-        const successDiv = document.getElementById('formSuccess');
-        if (successDiv) {
-          successDiv.style.display = 'block';
-        }
-        setTimeout(() => {
-          successDiv.style.display = 'none';
-          this.style.display = 'block';
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        }, 5000);
-      } else {
-        alert(data.message || 'Something went wrong. Please try again.');
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Network error. Please check your connection and try again.');
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-    }
-  });
+  errorDiv.style.display = 'none';
+  form.style.display = 'none';
+  successDiv.querySelector('p').textContent = message || '✓ Opening your email client...';
+  successDiv.style.display = 'block';
+
+  setTimeout(() => {
+    successDiv.style.display = 'none';
+    form.style.display = 'block';
+    form.reset();
+  }, 3000);
+}
+
+// Helper function to show error
+function showError(message) {
+  const errorDiv = document.getElementById('formError');
+  errorDiv.querySelector('p').textContent = `⚠️ ${message}`;
+  errorDiv.style.display = 'block';
+
+  setTimeout(() => {
+    errorDiv.style.display = 'none';
+  }, 4000);
+}
+
+// Send via MAILTO - Opens user's default email client
+function sendViaMailTo() {
+  const data = getFormData();
+
+  if (!validateForm(data)) return;
+
+  // Email address to send to
+  const toEmail = 'crownbeeluxury@gmail.com';
+
+  // Email subject
+  const subject = `New Enquiry from ${data.fname} ${data.lname} - Crownbee Global`;
+
+  // Build email body
+  let body = '';
+  body += `Name: ${data.fname} ${data.lname}\n`;
+  body += `Email: ${data.email}\n`;
+  if (data.phone) body += `Phone: ${data.phone}\n`;
+  if (data.interest) body += `Interested in: ${data.interest}\n`;
+  if (data.budget) body += `Budget: ${data.budget}\n`;
+  body += `\nMessage:\n${data.message}\n\n`;
+  body += `---\nSent from Crownbee Global website contact form`;
+
+  // Encode for URL
+  const encodedSubject = encodeURIComponent(subject);
+  const encodedBody = encodeURIComponent(body);
+
+  // Create mailto link
+  const mailtoLink = `mailto:${toEmail}?subject=${encodedSubject}&body=${encodedBody}`;
+
+  // Show success message
+  showSuccess('✓ Opening your email client...');
+
+  // Open email client after short delay
+  setTimeout(() => {
+    window.location.href = mailtoLink;
+  }, 500);
+}
+
+// Send via WhatsApp - Opens WhatsApp with pre-filled message
+function sendViaWhatsApp() {
+  const data = getFormData();
+
+  if (!validateForm(data)) return;
+
+  // Build WhatsApp message
+  let whatsappMessage = `🏢 *NEW ENQUIRY - Crownbee Global* 🏢\n\n`;
+  whatsappMessage += `*Name:* ${data.fname} ${data.lname}\n`;
+  whatsappMessage += `*Email:* ${data.email}\n`;
+  if (data.phone) whatsappMessage += `*Phone:* ${data.phone}\n`;
+  if (data.interest) whatsappMessage += `*Interested in:* ${data.interest}\n`;
+  if (data.budget) whatsappMessage += `*Budget:* ${data.budget}\n`;
+  whatsappMessage += `\n*Message:*\n${data.message}\n\n`;
+  whatsappMessage += `_Sent from Crownbee Global website_`;
+
+  const phoneNumber = '2349099997342';
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+
+  // Show success message
+  showSuccess('✓ Redirecting to WhatsApp...');
+
+  // Open WhatsApp after short delay
+  setTimeout(() => {
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+  }, 500);
 }
 
 /* ----- WhatsApp Modal Functions ----- */
@@ -1893,9 +2013,7 @@ function sendWhatsAppMessage() {
     alert('Please select an option or type a message');
     return;
   }
-  const phoneNumber = '2349099997342';
-  const encodedMessage = encodeURIComponent(message);
-  window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+  window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(message)}`, '_blank');
   closeWhatsAppModal();
 }
 
@@ -1912,9 +2030,7 @@ function sendPropertyWhatsAppMessage() {
     alert('Please select an option or type a message');
     return;
   }
-  const phoneNumber = '2349099997342';
-  const encodedMessage = encodeURIComponent(message);
-  window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+  window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(message)}`, '_blank');
   closePropertyWhatsAppModal();
 }
 
@@ -1979,7 +2095,6 @@ function showPrevFlyer() {
 
 flyerCards.forEach((card, index) => {
   card.addEventListener('click', function(e) {
-    // Prevent opening lightbox if the link was clicked
     if (e.target.classList.contains('flyer-link')) return;
     openLightbox(index);
   });
@@ -1989,7 +2104,6 @@ if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
 if (lightboxNext) lightboxNext.addEventListener('click', showNextFlyer);
 if (lightboxPrev) lightboxPrev.addEventListener('click', showPrevFlyer);
 
-// Keyboard navigation for lightbox
 document.addEventListener('keydown', function(e) {
   if (!lightbox.classList.contains('active')) return;
   if (e.key === 'Escape') {
@@ -2001,6 +2115,5 @@ document.addEventListener('keydown', function(e) {
   }
 });
 </script>
-
 </body>
 </html>
