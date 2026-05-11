@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Crownbee Global Services Ltd – Luxury Real Estate | Nigeria">
+<meta property="og:description" content="Premium plots and luxury homes across Abuja, Ibadan, and Osun State. C of O titles guaranteed. Book a site visit today.">
+<meta property="og:image" content="https://crownbeeglobal.com/static/logo.jpeg">
+<meta property="og:url" content="https://crownbeeglobal.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Crownbee Global Services Ltd">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crownbee Global Services Ltd – Luxury Real Estate | Nigeria">
+<meta name="twitter:description" content="Premium plots and luxury homes across Abuja, Ibadan, and Osun State. C of O titles guaranteed.">
+<meta name="twitter:image" content="https://crownbeeglobal.com/static/logo.jpeg">
+
+
+<title>Ama Gee Luxe Court | New Bodija, Ibadan | Crownbee Global</title>
+<meta name="description" content="Premium 4-bedroom duplexes in New Bodija, Ibadan. Finished from ₦120M, Semi-Finished from ₦100M. C of O title, flexible payment plans."/>
+<meta name="keywords" content="Ama Gee Luxe Court, Bodija Ibadan, luxury duplex Ibadan, Crownbee Global, Ibadan real estate"/>
+<link rel="canonical" href="https://crownbeeglobal.com/amagee"/>
+
+<link rel="icon" type="image/jpeg" href="/static/logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --gold:#D4A017;--gold-light:#E8B830;--crimson:#C8102E;
+  --black:#080808;--charcoal:#111111;--charcoal2:#181818;
+  --offwhite:#F5F0E8;--muted:#888;--border:rgba(212,160,23,0.2);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--offwhite);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--black);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  padding:1rem 5%;display:flex;align-items:center;justify-content:space-between;
+  background:rgba(8,8,8,0.97);border-bottom:1px solid var(--border);
+}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-words{display:flex;flex-direction:column;}
+.logo-name{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:4px;color:var(--gold);line-height:1;}
+.logo-tagline{font-size:.52rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
+.nav-back{color:var(--gold);text-decoration:none;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:8px;}
+.nav-back:hover{color:var(--offwhite);}
+
+.hero{
+  height:55vh;min-height:400px;position:relative;display:flex;align-items:flex-end;
+  background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.3) 100%),url('/static/amma1.jpeg') center/cover no-repeat;
+  padding:0 5% 4rem;
+}
+.hero-content{max-width:800px;}
+.hero-eyebrow{font-size:.65rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:10px;}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold);}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,6vw,5rem);line-height:.95;letter-spacing:2px;margin-bottom:.8rem;}
+.hero-price{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold);margin-bottom:.5rem;}
+.hero-desc{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(245,240,232,.8);font-size:1.1rem;max-width:500px;}
+
+.section{padding:4rem 5%;}
+.section-label{font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;display:flex;align-items:center;gap:10px;}
+.section-label::before{content:'';width:24px;height:1px;background:var(--gold);}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);margin-bottom:2rem;}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-bottom:2rem;}
+.price-card{background:linear-gradient(135deg,var(--charcoal2),#1a1a0a);padding:2rem;border:1px solid var(--gold);border-radius:10px;text-align:center;transition:all .3s;}
+.price-card:hover{transform:translateY(-3px);}
+.price-card .sqm{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--gold);}
+.price-card .price{font-size:1.5rem;margin:.5rem 0;}
+.price-card .type{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:.5rem;}
+
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.5rem;}
+.feature-card{background:var(--charcoal2);padding:1.5rem;border:1px solid var(--border);border-radius:10px;display:flex;align-items:flex-start;gap:1rem;}
+.feature-icon{font-size:2rem;flex-shrink:0;}
+.feature-card h4{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;margin-bottom:.3rem;}
+.feature-card p{font-size:.8rem;color:var(--muted);line-height:1.5;}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;}
+.gallery-img{width:100%;height:250px;object-fit:cover;border-radius:10px;border:1px solid var(--border);transition:all .3s;}
+.gallery-img:hover{border-color:var(--gold);transform:scale(1.02);}
+
+.map-section{background:var(--charcoal2);}
+.map-section iframe{border-radius:12px;border:1px solid var(--gold);}
+
+.cta-section{text-align:center;background:linear-gradient(135deg,#0a1a0a 0%,var(--black) 50%,#0a0a0a 100%);}
+.cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem;}
+.cta-title span{color:var(--gold);}
+.cta-desc{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(245,240,232,.65);max-width:500px;margin:0 auto 2rem;}
+.btn-gold{
+  background:var(--gold);color:var(--black);padding:1rem 2.5rem;
+  font-size:.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;
+  border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  transition:all .3s;
+}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);}
+
+footer{
+  background:var(--black);border-top:1px solid var(--border);
+  padding:3rem 5% 1.5rem;text-align:center;
+}
+footer p{font-size:.65rem;color:rgba(245,240,232,.25);letter-spacing:1px;}
+footer a{color:var(--gold);text-decoration:none;}
+
+@media(max-width:768px){
+  .hero{height:45vh;min-height:350px;padding:0 5% 3rem;}
+  .gallery-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  .hero-title{font-size:2.2rem;}
+}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="/" class="logo" aria-label="Crownbee Global">
+    <img src="/static/logo.jpeg" alt="Crownbee Global" style="height: 45px; width: auto;">
+    <div class="logo-words">
+      <span class="logo-name">Crownbee</span>
+      <span class="logo-tagline">Global Services Ltd</span>
+    </div>
+  </a>
+  <a href="/property" class="nav-back">← Back to Estates</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">New Bodija, Ibadan</p>
+    <h1 class="hero-title">AMA GEE LUXE COURT</h1>
+    <p class="hero-price">Semi-Finished from ₦100M | Finished from ₦120M</p>
+    <p class="hero-desc">Premium 4-bedroom duplexes in Ibadan's most sought-after district. Flexible payment options available.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--charcoal);">
+  <p class="section-label">Investment Options</p>
+  <h2 class="section-title">AVAILABLE DUPLEXES</h2>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="sqm">4 Bedroom</div>
+      <div class="price">₦100,000,000</div>
+      <div class="type">Semi-Finished</div>
+      <p style="color:var(--muted);margin-top:.8rem;font-size:.8rem;">Ready for your finishing touches</p>
+    </div>
+    <div class="price-card">
+      <div class="sqm">4 Bedroom</div>
+      <div class="price">₦120,000,000</div>
+      <div class="type">Fully Finished</div>
+      <p style="color:var(--muted);margin-top:.8rem;font-size:.8rem;">Move-in ready luxury duplex</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--black);">
+  <p class="section-label">About This Estate</p>
+  <h2 class="section-title">Why Invest in Ama Gee Luxe Court, New Bodija Ibadan?</h2>
+  <p style="font-size:1rem;line-height:1.8;color:rgba(245,240,232,.75);max-width:800px;margin-bottom:1.5rem;">
+    Ama Gee Luxe Court is located in the heart of <strong style="color:var(--gold);">New Bodija, Ibadan's most prestigious district</strong>.
+    This premium development offers 4-bedroom luxury duplexes with flexible finishing options.
+  </p>
+  <p style="font-size:1rem;line-height:1.8;color:rgba(245,240,232,.75);max-width:800px;">
+    Choose between semi-finished units (₦100M) ready for your personal touch, or fully finished duplexes (₦120M)
+    that are move-in ready. Every unit comes with a clean C of O title and access to Ibadan's finest amenities.
+  </p>
+</section>
+
+<section class="section map-section">
+  <p class="section-label">Location</p>
+  <h2 class="section-title">FIND US IN NEW BODIJA, IBADAN</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.5!2d3.9!3d7.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398d!2sBodija%20Ibadan!5e0!3m2!1sen!2sng!4v1700000000000" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <p style="font-size:.8rem;color:var(--muted);margin-top:1rem;text-align:center;">📍 New Bodija, Ibadan — Ibadan's most prestigious district</p>
+</section>
+
+<section class="section" style="background:var(--black);">
+  <p class="section-label">Amenities</p>
+  <h2 class="section-title">Ama Gee Luxe Court Features — 4-Bedroom Duplexes in Ibadan</h2>
+  <div class="features-grid">
+    <div class="feature-card"><div class="feature-icon">🏛️</div><div><h4>Premium Location</h4><p>New Bodija is Ibadan's most sought-after residential and commercial district.</p></div></div>
+    <div class="feature-card"><div class="feature-icon">🏠</div><div><h4>4-Bedroom Duplexes</h4><p>Spacious luxury homes designed for families and high-end investors.</p></div></div>
+    <div class="feature-card"><div class="feature-icon">🔧</div><div><h4>Flexible Finishing</h4><p>Choose semi-finished to customize or fully finished for immediate move-in.</p></div></div>
+    <div class="feature-card"><div class="feature-icon">💰</div><div><h4>Flexible Payment</h4><p>Structured payment plans designed to fit your investment strategy.</p></div></div>
+    <div class="feature-card"><div class="feature-icon">📜</div><div><h4>C of O Title</h4><p>Clean, government-approved Certificate of Occupancy.</p></div></div>
+    <div class="feature-card"><div class="feature-icon">📍</div><div><h4>Ibadan's Best</h4><p>Close to shopping malls, restaurants, banks, and major road networks.</p></div></div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--charcoal);">
+  <p class="section-label">Visual Tour</p>
+  <h2 class="section-title">Ama Gee Luxe Court Photo Gallery</h2>
+  <div class="gallery-grid">
+    <img src="/static/amma1.jpeg" alt="Ama Gee Luxe Court - Main" class="gallery-img" loading="lazy">
+    <img src="/static/amma2.jpeg" alt="Ama Gee Luxe Court - Entrance" class="gallery-img" loading="lazy">
+    <img src="/static/amma3.jpeg" alt="Ama Gee Luxe Court - Interior" class="gallery-img" loading="lazy">
+    <img src="/static/amma4.jpeg" alt="Ama Gee Luxe Court - Street" class="gallery-img" loading="lazy">
+    <img src="/static/amma5.jpeg" alt="Ama Gee Luxe Court - Aerial" class="gallery-img" loading="lazy">
+    <img src="/static/amma6.jpeg" alt="Ama Gee Luxe Court - Overview" class="gallery-img" loading="lazy">
+  </div>
+</section>
+
+<section class="section cta-section">
+  <h2 class="cta-title">READY FOR <span>IBADAN</span> LUXURY?</h2>
+  <p class="cta-desc">Book a site visit or get full details via WhatsApp. Flexible payment plans available.</p>
+  <a href="https://wa.me/2349099997342?text=Hello%20Crownbee!%20I'm%20interested%20in%20Ama%20Gee%20Luxe%20Court%2C%20New%20Bodija%2C%20Ibadan.%20Please%20send%20me%20full%20details." class="btn-gold">
+    📞 Inquire Now via WhatsApp
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 Crownbee Global Services Ltd. All rights reserved. | 2nd Floor, Westwood Plaza, beside Keystone Bank, Asokoro, Abuja</p>
+  <p style="margin-top:.5rem;"><a href="tel:+2349099997342">0909 999 7342</a> · <a href="tel:+2349010677777">0901 067 7777</a> · <a href="mailto:crownbeeluxury@gmail.com">crownbeeluxury@gmail.com</a></p>
+</footer>
+
+</body>
+</html>

@@ -3,6 +3,24 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+
+<meta name="description" content="About Crownbee Global Services Ltd — Nigeria's luxury real estate company. From a modest ice block business to premium estates in Abuja, Ibadan, Lagos, and Osun. Co-founded by Amb Dr Mrs Olubunmi Mary Gbadewole. Operating across West Africa, East Africa, and the USA. C of O titles, off-plan investments, land sales, and construction services since 2018.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Crownbee Global Services Ltd – Luxury Real Estate | Nigeria">
+<meta property="og:description" content="Premium plots and luxury homes across Abuja, Ibadan, and Osun State. C of O titles guaranteed. Book a site visit today.">
+<meta property="og:image" content="https://crownbeeglobal.com/static/logo.jpeg">
+<meta property="og:url" content="https://crownbeeglobal.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Crownbee Global Services Ltd">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crownbee Global Services Ltd – Luxury Real Estate | Nigeria">
+<meta name="twitter:description" content="Premium plots and luxury homes across Abuja, Ibadan, and Osun State. C of O titles guaranteed.">
+<meta name="twitter:image" content="https://crownbeeglobal.com/static/logo.jpeg">
+
+
 <title>About Us | Crownbee Global Services Ltd – Luxury Real Estate</title>
 
 <!-- FAVICON -->
@@ -69,20 +87,6 @@ nav.scrolled{
   border-bottom:1px solid var(--border);
 }
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.logo-icon{
-  width:40px;height:40px;
-  background:var(--gold);
-  clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);
-  display:flex;align-items:center;justify-content:center;
-  position:relative;flex-shrink:0;
-}
-.logo-icon::after{
-  content:'CB';
-  font-family:'Bebas Neue',sans-serif;
-  font-size:.95rem;
-  color:var(--black);
-  letter-spacing:1px;
-}
 .logo-words{display:flex;flex-direction:column;}
 .logo-name{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:4px;color:var(--gold);line-height:1;}
 .logo-tagline{font-size:.52rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:2px;}
@@ -283,16 +287,31 @@ nav.scrolled{
   margin-bottom:3rem;
 }
 .story-content{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:4rem;
-  align-items:center;
+  max-width:850px;
+  margin:0 auto;
+  text-align:center;
 }
 .story-text p{
   font-size:.95rem;
   line-height:1.8;
   color:rgba(245,240,232,.75);
   margin-bottom:1.2rem;
+}
+.story-highlight{
+  background:rgba(212,160,23,.08);
+  border-left:3px solid var(--gold);
+  padding:1.2rem 1.5rem;
+  margin:1.5rem auto;
+  border-radius:0 8px 8px 0;
+  text-align:left;
+  max-width:650px;
+}
+.story-highlight p{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:1.05rem;
+  color:var(--gold);
+  margin-bottom:0;
 }
 .stats-grid{
   display:grid;
@@ -419,9 +438,16 @@ nav.scrolled{
   border-left:3px solid var(--crimson);
   transition:all .3s;
 }
+.timeline-item:nth-child(even) .timeline-content{
+  border-left:none;
+  border-right:3px solid var(--crimson);
+}
 .timeline-content:hover{
   transform:translateX(5px);
   border-left-color:var(--gold);
+}
+.timeline-item:nth-child(even) .timeline-content:hover{
+  border-right-color:var(--gold);
 }
 .timeline-content h4{
   font-family:'Bebas Neue',sans-serif;
@@ -439,6 +465,7 @@ nav.scrolled{
   .timeline-item{width:100%;padding-left:50px !important;text-align:left !important;left:0 !important;}
   .timeline-item:nth-child(odd) .timeline-year{left:-10px;right:auto;}
   .timeline-item:nth-child(even) .timeline-year{left:-10px;}
+  .timeline-item:nth-child(even) .timeline-content{border-left:3px solid var(--crimson);border-right:none;}
 }
 
 /* ============================================================
@@ -481,6 +508,47 @@ nav.scrolled{
   font-size:.8rem;
   color:rgba(245,240,232,.6);
   line-height:1.6;
+}
+
+/* ============================================================
+   GLOBAL REACH SECTION
+============================================================ */
+.reach-section{
+  padding:5rem 5%;
+  background:var(--black);
+  text-align:center;
+}
+.reach-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:2rem;
+  margin-top:3rem;
+}
+.reach-card{
+  padding:2rem;
+  background:var(--charcoal2);
+  border-radius:12px;
+  border:1px solid var(--border);
+  transition:all .3s;
+}
+.reach-card:hover{
+  border-color:var(--gold);
+  transform:translateY(-3px);
+}
+.reach-region{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:2rem;
+  color:var(--gold);
+  display:block;
+  line-height:1;
+}
+.reach-detail{
+  font-size:.65rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:.5rem;
+  display:block;
 }
 
 /* ============================================================
@@ -591,9 +659,7 @@ footer{
     justify-content: center;
     backdrop-filter: blur(5px);
 }
-.wa-modal.active {
-    display: flex;
-}
+.wa-modal.active { display: flex; }
 .wa-modal-content {
     max-width: 500px;
     width: 90%;
@@ -629,86 +695,31 @@ footer{
     cursor: pointer;
     line-height: 1;
 }
-.wa-modal-body {
-    padding: 1.5rem;
-}
-.wa-greeting {
-    color: #D4A017;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-.wa-options {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-}
+.wa-modal-body { padding: 1.5rem; }
+.wa-greeting { color: #D4A017; font-size: 1rem; margin-bottom: 1rem; text-align: center; }
+.wa-options { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
 .wa-option {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s;
-    border: 1px solid rgba(212, 160, 23, 0.2);
+    display: flex; align-items: center; gap: 1rem; padding: 1rem;
+    background: rgba(255, 255, 255, 0.05); border-radius: 12px;
+    cursor: pointer; transition: all 0.3s; border: 1px solid rgba(212, 160, 23, 0.2);
 }
-.wa-option:hover {
-    background: rgba(212, 160, 23, 0.1);
-    border-color: #D4A017;
-    transform: translateX(5px);
-}
-.wa-option-icon {
-    font-size: 1.8rem;
-}
-.wa-option-text strong {
-    display: block;
-    color: #D4A017;
-    font-size: 0.9rem;
-}
-.wa-option-text small {
-    font-size: 0.7rem;
-    color: #888;
-}
-.wa-custom {
-    margin-top: 1rem;
-    border-top: 1px solid rgba(212, 160, 23, 0.2);
-    padding-top: 1rem;
-}
-.wa-custom-label {
-    font-size: 0.75rem;
-    color: #888;
-    margin-bottom: 0.5rem;
-}
+.wa-option:hover { background: rgba(212, 160, 23, 0.1); border-color: #D4A017; transform: translateX(5px); }
+.wa-option-icon { font-size: 1.8rem; }
+.wa-option-text strong { display: block; color: #D4A017; font-size: 0.9rem; }
+.wa-option-text small { font-size: 0.7rem; color: #888; }
+.wa-custom { margin-top: 1rem; border-top: 1px solid rgba(212, 160, 23, 0.2); padding-top: 1rem; }
+.wa-custom-label { font-size: 0.75rem; color: #888; margin-bottom: 0.5rem; }
 #waCustomMessage, #waPropertyCustomMessage {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(212, 160, 23, 0.3);
-    color: white;
-    padding: 0.8rem;
-    border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
-    resize: vertical;
+    width: 100%; background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 160, 23, 0.3); color: white;
+    padding: 0.8rem; border-radius: 10px; font-family: 'DM Sans', sans-serif; resize: vertical;
 }
 .wa-send-btn {
-    width: 100%;
-    background: #25D366;
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    border-radius: 40px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: all 0.3s;
+    width: 100%; background: #25D366; color: white; border: none;
+    padding: 0.8rem; border-radius: 40px; font-size: 0.9rem;
+    font-weight: 600; cursor: pointer; margin-top: 1rem; transition: all 0.3s;
 }
-.wa-send-btn:hover {
-    background: #1ebe5a;
-    transform: translateY(-2px);
-}
+.wa-send-btn:hover { background: #1ebe5a; transform: translateY(-2px); }
 
 /* ============================================================
    RESPONSIVE
@@ -773,7 +784,7 @@ footer{
     <li><a href="/#services">Services</a></li>
     <li><a href="/#contact">Contact</a></li>
   </ul>
-  <button class="nav-cta" onclick="document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})">Book Consultation</button>
+  <button class="nav-cta" onclick="openWhatsAppModal()">Book Consultation</button>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -786,8 +797,8 @@ footer{
   <div class="page-hero-bg"></div>
   <div class="page-hero-content">
     <p class="page-hero-eyebrow">About Crownbee Global</p>
-    <h1 class="page-hero-title">BUILT ON <span>TRUST</span>,<br>DRIVEN BY <span>EXCELLENCE</span></h1>
-    <p class="page-hero-desc">Since 2018, we've been redefining luxury real estate nationwide, creating lasting value for our clients and communities.</p>
+    <h1 class="page-hero-title">FROM <span>₦1,000</span> ICE BLOCK<br>TO <span>LUXURY</span> ESTATES</h1>
+    <p class="page-hero-desc">The remarkable story of how a small ice block business grew into one of Nigeria's most trusted luxury real estate brands.</p>
   </div>
 </section>
 
@@ -798,98 +809,137 @@ footer{
   <div class="mv-card reveal">
     <div class="mv-icon">🎯</div>
     <h3>Our Mission</h3>
-    <p>To democratize access to premium real estate investments while maintaining uncompromising standards of luxury, transparency, and long-term value creation for every client.</p>
+    <p>To democratize access to premium real estate investments while maintaining uncompromising standards of luxury, transparency, and long-term value creation for every client across West Africa, East Africa, and the United States.</p>
   </div>
   <div class="mv-card reveal reveal-delay-1">
     <div class="mv-icon">👁️</div>
     <h3>Our Vision</h3>
-    <p>To become Nigeria's most trusted luxury real estate brand, where every investment is a legacy, and every client is a partner for life.</p>
+    <p>To become Africa's most trusted luxury real estate brand, where every investment is a legacy, and every client is a partner for life — from Nigeria to the world.</p>
   </div>
 </section>
 
 <!-- ========================================================
-     OUR STORY - Using victory1.jpeg
+     OUR STORY - THE ₦1,000 ICE BLOCK ORIGIN
 ======================================================== -->
 <section class="story-section">
   <p class="section-label reveal">Our Journey</p>
   <h2 class="section-title reveal">THE CROWNBEE STORY</h2>
-  <p class="section-sub reveal reveal-delay-1">From humble beginnings to Nigeria's premier luxury real estate investment firm.</p>
+  <p class="section-sub reveal reveal-delay-1">From a ₦1,000 ice block business to a multi-city luxury real estate empire.</p>
 
   <div class="story-content">
     <div class="story-text">
-      <p>Crownbee Global Services Ltd was founded in 2018 with a singular vision: to bridge the gap between affluent buyers and high-appreciation real estate assets in Nigeria's capital city. Unlike traditional real estate agencies that simply facilitate transactions, Crownbee positioned itself as a wealth partner, helping clients build generational wealth through strategic land and home acquisitions.</p>
-      <p>What started as a boutique firm has rapidly grown into a trusted name in Nigeria's competitive property market. Our portfolio now includes exclusive estates across Abuja, Ibadan and several states across Nigeria, over 100 satisfied clients, and a reputation for transparency and excellence that sets us apart.</p>
-      <p>Today, Crownbee continues to expand, with prime developments in Lugbe, Asokoro, Sheretti, Karsana, Apo, and Bodija Ibadan, a growing team of property experts, and an unwavering commitment to our clients' financial futures.</p>
+      <p>Every great empire begins with a single step. For Crownbee Global Services Ltd, that step was a <strong style="color:var(--gold);">₦1,000 ice block business</strong> — a humble venture founded by <strong style="color:var(--gold);">Amb Dr Mrs Olubunmi Mary Gbadewole</strong> and her husband, driven by grit, faith, and an unwavering belief that small beginnings could lead to extraordinary destinations.</p>
+
+      <p>What started as a modest trade selling ice blocks gradually grew into a thriving enterprise. Through discipline, reinvestment, and a sharp eye for opportunity, the couple transitioned from ice blocks into real estate — a move that would forever change their lives and the lives of hundreds of families across Nigeria.</p>
+
+      <div class="story-highlight">
+        <p>"The ice block taught us patience. It taught us that every block, no matter how small, contributes to building something monumental. We applied that same principle to real estate — one plot, one client, one legacy at a time."</p>
+      </div>
+
+      <p>The brand was officially registered in <strong style="color:var(--gold);">2018</strong> as Crownbee Global Services Ltd. By <strong style="color:var(--gold);">2021</strong>, they had developed their first major project: the <strong style="color:var(--gold);">Crownbee Luxury Apartment</strong> in Lugbe, Abuja. This was followed by <strong style="color:var(--gold);">Crownbee Prime Estate Abuja in 2022</strong>, and the prestigious <strong style="color:var(--gold);">Amaa Gee Luxe Court in Bodija, Ibadan</strong> across 2023  2024.</p>
+
+      <p>Today, Crownbee Global stands as a testament to what is possible when vision meets perseverance. With a portfolio spanning <strong style="color:var(--gold);">West Africa, East Africa, and the United States</strong>, the company continues to expand its footprint, guided by the same principles that transformed ₦1,000 into a luxury real estate dynasty.</p>
 
       <div class="stats-grid">
         <div class="stat-big">
-          <div class="number">100+</div>
-          <span class="label">Happy Clients</span>
+          <div class="number">a modest sum</div>
+          <span class="label">Starting Capital</span>
         </div>
         <div class="stat-big">
-          <div class="number">6+</div>
-          <span class="label">Exclusive Estates</span>
+          <div class="number">2018</div>
+          <span class="label">Officially Registered</span>
         </div>
         <div class="stat-big">
-          <div class="number">50%</div>
-          <span class="label">Avg. Appreciation</span>
+          <div class="number">7+</div>
+          <span class="label">Flagship Estates</span>
         </div>
         <div class="stat-big">
-          <div class="number">24/7</div>
-          <span class="label">Client Support</span>
+          <div class="number">3</div>
+          <span class="label">Continents</span>
         </div>
       </div>
-    </div>
-    <div class="story-image reveal">
-      <img src="/static/victory1.jpeg" alt="Victory Prime Estate - Crownbee Signature Property">
-      <div class="image-frame"></div>
     </div>
   </div>
 </section>
 
 <!-- ========================================================
-     TIMELINE - IMPROVED VERTICAL TIMELINE
+     TIMELINE - THE REAL JOURNEY
 ======================================================== -->
-<div class="timeline">
-  <div class="timeline-item reveal">
-    <div class="timeline-year">2018</div>
-    <div class="timeline-content">
-      <h4>Foundation</h4>
-      <p>Crownbee Global Services Ltd was established with a vision to democratize premium real estate investment in Nigeria.</p>
+<section class="timeline-section">
+  <p class="section-label reveal" style="text-align:center;justify-content:center;">Milestones</p>
+  <h2 class="section-title reveal" style="text-align:center;">OUR GROWTH TIMELINE</h2>
+
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-year">ICE</div>
+      <div class="timeline-content">
+        <h4>The Ice Block Beginning</h4>
+        <p>Started with just ₦1,000 selling ice blocks. A husband-and-wife team learning the fundamentals of business — patience, reinvestment, and customer trust.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal reveal-delay-1">
+      <div class="timeline-year">2018</div>
+      <div class="timeline-content">
+        <h4>Crownbee Global Services Ltd Registered</h4>
+        <p>The brand was officially incorporated in Nigeria, marking the formal transition from small business to structured real estate company.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal reveal-delay-2">
+      <div class="timeline-year">2021</div>
+      <div class="timeline-content">
+        <h4>First Major Development</h4>
+        <p>Crownbee Luxury Apartment, Lugbe Abuja — the company's debut residential project that established its reputation for quality and luxury.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-year">2022</div>
+      <div class="timeline-content">
+        <h4>Crownbee Prime Estate Abuja</h4>
+        <p>The flagship namesake estate launched in Lugbe, featuring semi-detached and full-detached luxury homes with guaranteed C of O titles.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal reveal-delay-1">
+      <div class="timeline-year">2023-2024</div>
+      <div class="timeline-content">
+        <h4>Amaa Gee Luxe Court, Ibadan</h4>
+        <p>Expansion into Southwest Nigeria with premium 4-bedroom duplexes in the prestigious New Bodija district — available finished and semi-finished.</p>
+      </div>
+    </div>
+    <div class="timeline-item reveal reveal-delay-2">
+      <div class="timeline-year">Today</div>
+      <div class="timeline-content">
+        <h4>West Africa · East Africa · USA</h4>
+        <p>Now operating across three continents with multiple flagship estates, over 100 satisfied clients, and a growing portfolio of luxury developments.</p>
+      </div>
     </div>
   </div>
-  <div class="timeline-item reveal reveal-delay-1">
-    <div class="timeline-year">2019-2021</div>
-    <div class="timeline-content">
-      <h4>Strategic Growth & Portfolio Development</h4>
-      <p>Built strong industry partnerships, secured prime land positions, and developed the foundation for flagship estates.</p>
-    </div>
-  </div>
-  <div class="timeline-item reveal reveal-delay-2">
-    <div class="timeline-year">2022</div>
-    <div class="timeline-content">
-      <h4>First Major Estates Launch</h4>
-      <p>Gracefilled Resort & Park (Karsana) and Araoluwa Solar City (Apo) opened to investors, setting new standards for luxury living in Nigeria.</p>
-    </div>
-  </div>
-  <div class="timeline-item reveal">
-    <div class="timeline-year">2023-2024</div>
-    <div class="timeline-content">
-      <h4>Rapid Expansion</h4>
-      <p>Victory Prime Estate (Sheretti/Kabusa), Crownbee Prime Estate (Lugbe), Audacity Prime Estate (Asokoro), and Amaa Gee Luxe Court (Bodija, Ibadan) joined the portfolio.</p>
-    </div>
-  </div>
-  <div class="timeline-item reveal reveal-delay-1">
-    <div class="timeline-year">2025-Present</div>
-    <div class="timeline-content">
-      <h4>100+ Happy Clients & Growing</h4>
-      <p>Surpassed 100 satisfied investors nationwide. Crownbee is now recognized as a trusted name in Nigeria's luxury real estate sector.</p>
-    </div>
-  </div>
-</div>
+</section>
 
 <!-- ========================================================
-     OUR VALUES - ENHANCED GRID
+     GLOBAL REACH
+======================================================== -->
+<section class="reach-section">
+  <p class="section-label reveal" style="justify-content:center;">Our Reach</p>
+  <h2 class="section-title reveal">OPERATING ACROSS THREE CONTINENTS</h2>
+
+  <div class="reach-grid">
+    <div class="reach-card reveal">
+      <span class="reach-region">WEST AFRICA</span>
+      <span class="reach-detail">Nigeria · Regional Hub</span>
+    </div>
+    <div class="reach-card reveal reveal-delay-1">
+      <span class="reach-region">EAST AFRICA</span>
+      <span class="reach-detail">Expanding Presence</span>
+    </div>
+    <div class="reach-card reveal reveal-delay-2">
+      <span class="reach-region">UNITED STATES</span>
+      <span class="reach-detail">International Operations</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     OUR VALUES
 ======================================================== -->
 <section class="values-section">
   <p class="section-label reveal">What We Stand For</p>
@@ -904,18 +954,37 @@ footer{
     <div class="value-card reveal reveal-delay-1">
       <div class="value-icon">💎</div>
       <h4>Luxury Without Compromise</h4>
-      <p>Properties are designed, located, and finished to premium standards, because you deserve nothing less.</p>
+      <p>Properties are designed, located, and finished to premium standards — because you deserve nothing less.</p>
     </div>
     <div class="value-card reveal reveal-delay-2">
       <div class="value-icon">📈</div>
       <h4>Investment First</h4>
-      <p>We don't just sell properties, we sell future value. Every estate is chosen for its appreciation potential.</p>
+      <p>We don't just sell properties — we sell future value. Every estate is chosen for its appreciation potential.</p>
     </div>
     <div class="value-card reveal">
       <div class="value-icon">🤝</div>
       <h4>Client Partnership</h4>
-      <p>Clients are not just buyers, they are long-term partners. Many return for second and third purchases.</p>
+      <p>Clients are not just buyers — they are long-term partners. Many return for second and third purchases.</p>
     </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     LEADERSHIP
+======================================================== -->
+<section class="ceo-section" style="padding:5rem 5%;background:var(--charcoal);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+  <div class="ceo-img-wrap reveal" style="position:relative;">
+    <div style="width:100%;aspect-ratio:3/4;height:429px;background:url('/static/ceo (2).jpeg') center/contain no-repeat;border-radius:8px;filter:grayscale(10%);"></div>
+    <div style="position:absolute;top:-10px;left:-10px;right:18px;bottom:18px;border:1px solid rgba(212,160,23,.28);z-index:-1;"></div>
+  </div>
+  <div class="reveal reveal-delay-1">
+    <p class="section-label">Leadership</p>
+    <h2 class="section-title">CO-FOUNDED WITH<br>PURPOSE &amp; PASSION</h2>
+    <blockquote style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:rgba(245,240,232,.72);line-height:1.8;border-left:2px solid var(--gold);padding-left:1.5rem;margin:1.5rem 0;">
+      "Crownbee was co-founded by myself and my husband. What started as a small ice block business in Nigeria has — by God's grace — grown into a luxury real estate company operating across West Africa, East Africa, and the United States. Our story is proof that with faith, hard work, and integrity, there are no limits to what you can build."
+    </blockquote>
+    <p style="font-size:.85rem;font-weight:500;">Amb Dr Mrs Olubunmi Mary Gbadewole</p>
+    <p style="font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:4px;">Co-Founder, CEO &amp; MD, Crownbee Global Services Ltd</p>
   </div>
 </section>
 
@@ -924,7 +993,7 @@ footer{
 ======================================================== -->
 <section class="cta-section">
   <h2 class="cta-title reveal">READY TO BUILD YOUR <span>LEGACY</span>?</h2>
-  <p class="cta-desc reveal reveal-delay-1">Join over 100 families who have trusted Crownbee for their real estate investments in Nigeria.</p>
+  <p class="cta-desc reveal reveal-delay-1">Join over 100 families who have trusted Crownbee for their real estate investments across Nigeria and beyond.</p>
   <a href="/#contact" class="btn-gold reveal reveal-delay-2">
     Book a Consultation
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -938,7 +1007,7 @@ footer{
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="logo" style="margin-bottom:.2rem;">
-        <div class="logo-icon" style="width:36px;height:36px;"></div>
+        <img src="/static/logo.jpeg" alt="Crownbee Global" style="height: 36px; width: auto;">
         <div class="logo-words">
           <span class="logo-name" style="font-size:1.45rem;">Crownbee</span>
           <span class="logo-tagline">Global Services Ltd</span>
@@ -946,49 +1015,110 @@ footer{
       </div>
       <p class="footer-tagline">Where every investment is a legacy, and every client is a partner for life.</p>
       <div class="footer-contact-info">
-        Westwood plaza beside keystone bank Asokoro, Abuja, Nigeria<br/>
+        <strong>Headquarters:</strong> 2nd Floor, Westwood Plaza, beside Keystone Bank, Asokoro, Abuja, Nigeria<br/>
+        <strong>Serving:</strong> Abuja, Ibadan, Osun, Lagos . Nationwide<br/>
         crownbeeluxury@gmail.com<br/>
-        +234 909 999 7342
+        0909 999 7342 · 0901 067 7777
       </div>
     </div>
     <div class="footer-col">
       <h4>Estates</h4>
       <ul>
-        <li><a href="/property">Gracefilled Resort &amp; Park - Karsana</a></li>
-        <li><a href="/property">Araoluwa Estate Solar City - Apo</a></li>
-        <li><a href="/property">Victory Prime Estate - Sheretti/Kabusa</a></li>
-        <li><a href="/property">Crownbee Prime Estate - Lugbe (Behind River Park)</a></li>
-        <li><a href="/property">Audacity Prime Estate - Asokoro</a></li>
-        <li><a href="/property">Amaa Gee Luxe Court - Bodija, Ibadan</a></li>
+        <li><a href="/property">Gracefilled Resort &amp; Park</a></li>
+        <li><a href="/property">Araoluwa Solar City</a></li>
+        <li><a href="/property">Victory Prime Estate</a></li>
+        <li><a href="/property">Crownbee Prime Estate</a></li>
+        <li><a href="/property">Audacity Prime Estate</a></li>
+        <li><a href="/property">Amaa Gee Luxe Court</a></li>
+        <li><a href="/property">Ayomide Estate</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="/#services">Luxury Land Sales</a></li>
-        <li><a href="/#services">Home Sales</a></li>
-        <li><a href="/#services">Investment Advisory</a></li>
+        <li><a href="/#services">Real Estate</a></li>
+        <li><a href="/#services">Apartment Service</a></li>
+        <li><a href="/#services">Investment</a></li>
         <li><a href="/#services">Off-Plan Deals</a></li>
+        <li><a href="/#services">Luxury Land Sales</a></li>
+        <li><a href="/#services">Construction</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
         <li><a href="/about">About Us</a></li>
+        <li><a href="/about">Leadership</a></li>
+        <li><a href="/#faq">FAQ</a></li>
         <li><a href="/#contact">Contact</a></li>
-        <li><a href="https://wa.me/2349099997342">WhatsApp</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Crownbee Global Services Ltd. All rights reserved. Nigeria.</p>
+    <p>© 2026 Crownbee Global Services Ltd. All rights reserved. Abuja, Nigeria.</p>
     <div class="footer-socials">
-      <a href="#" aria-label="Instagram">IG</a>
-      <a href="#" aria-label="Facebook">FB</a>
-      <a href="https://wa.me/2349099997342" aria-label="WhatsApp">WA</a>
+      <a href="https://www.facebook.com/crownbeeabujaproperties/" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+      <a href="https://www.instagram.com/crownbeepropertiesabuja/" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+      <a href="https://www.youtube.com/@crownbeeproperties" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
+      <a href="https://wa.me/2349099997342" aria-label="WhatsApp" target="_blank" rel="noopener">WA</a>
     </div>
   </div>
 </footer>
+
+<!-- ========================================================
+     WHATSAPP MODALS
+======================================================== -->
+<div id="whatsappModal" class="wa-modal">
+    <div class="wa-modal-content">
+        <div class="wa-modal-header">
+            <h3>👑 Crownbee Global</h3>
+            <button class="wa-modal-close" onclick="closeWhatsAppModal()">&times;</button>
+        </div>
+        <div class="wa-modal-body">
+            <p class="wa-greeting">Hello! How can we help you today?</p>
+            <div class="wa-options">
+                <div class="wa-option" data-message="Hello Crownbee! I would like to get more information about your properties across Nigeria. Please send me details.">
+                    <span class="wa-option-icon">ℹ️</span>
+                    <div class="wa-option-text"><strong>Just want more info</strong><small>General information about properties</small></div>
+                </div>
+                <div class="wa-option" data-message="Hello Crownbee! I am interested in buying a property. Please guide me through available options.">
+                    <span class="wa-option-icon">🏠</span>
+                    <div class="wa-option-text"><strong>Want to buy a house</strong><small>Find your dream home</small></div>
+                </div>
+                <div class="wa-option" data-message="Hello Crownbee! I am interested in purchasing land for investment. Please share available plots and pricing.">
+                    <span class="wa-option-icon">🏗️</span>
+                    <div class="wa-option-text"><strong>Buy land / plot</strong><small>Investment opportunities</small></div>
+                </div>
+                <div class="wa-option" data-message="Hello Crownbee! I am interested in off-plan and pre-construction opportunities. Please send me details of upcoming projects.">
+                    <span class="wa-option-icon">🔑</span>
+                    <div class="wa-option-text"><strong>Off-plan investment</strong><small>Early bird opportunities</small></div>
+                </div>
+                <div class="wa-option" data-message="Hello Crownbee! I am an existing client and would like to discuss another investment opportunity or ask a question about my property.">
+                    <span class="wa-option-icon">⭐</span>
+                    <div class="wa-option-text"><strong>Existing client</strong><small>Follow-up or additional investment</small></div>
+                </div>
+            </div>
+            <div class="wa-custom"><p class="wa-custom-label">Or type your message below:</p><textarea id="waCustomMessage" placeholder="Type your message here..." rows="3"></textarea><button class="wa-send-btn" onclick="sendWhatsAppMessage()">💬 Send on WhatsApp</button></div>
+        </div>
+    </div>
+</div>
+
+<div id="propertyWhatsAppModal" class="wa-modal">
+    <div class="wa-modal-content">
+        <div class="wa-modal-header"><h3>🏠 Inquire about <span id="waPropertyName"></span></h3><button class="wa-modal-close" onclick="closePropertyWhatsAppModal()">&times;</button></div>
+        <div class="wa-modal-body">
+            <p class="wa-greeting">What would you like to know about this property?</p>
+            <div class="wa-options">
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Can you send me more details including price, size, and location?"><span class="wa-option-icon">📄</span><div class="wa-option-text"><strong>Send me full details</strong><small>Price, size, location, features</small></div></div>
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Is a site visit available? Please let me know when I can come see the property."><span class="wa-option-icon">👀</span><div class="wa-option-text"><strong>Schedule a site visit</strong><small>Physical inspection</small></div></div>
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Do you offer payment plans? Please share available installment options."><span class="wa-option-icon">💰</span><div class="wa-option-text"><strong>Payment plan inquiry</strong><small>Installment options available</small></div></div>
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Are there different plot/house sizes available? Please share all available options with prices."><span class="wa-option-icon">📏</span><div class="wa-option-text"><strong>Available sizes & prices</strong><small>Different plot sizes or house types</small></div></div>
+                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Can you send me videos or more photos of the property?"><span class="wa-option-icon">📹</span><div class="wa-option-text"><strong>Request media</strong><small>Videos or more photos</small></div></div>
+            </div>
+            <div class="wa-custom"><p class="wa-custom-label">Or type your custom message:</p><textarea id="waPropertyCustomMessage" placeholder="Type your message here..." rows="3"></textarea><button class="wa-send-btn" onclick="sendPropertyWhatsAppMessage()">💬 Send on WhatsApp</button></div>
+        </div>
+    </div>
+</div>
 
 <!-- ========================================================
      SCRIPTS
@@ -1001,7 +1131,7 @@ let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;if(cur){cur.style.left=mx+'px';cur.style.top=my+'px';}});
 function animRing(){if(ring){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';}requestAnimationFrame(animRing);}
 animRing();
-document.querySelectorAll('a,button,.mv-card,.value-card').forEach(el=>{
+document.querySelectorAll('a,button,.mv-card,.value-card,.reach-card,.timeline-item').forEach(el=>{
   el.addEventListener('mouseenter',()=>{if(cur)cur.classList.add('hover');if(ring)ring.classList.add('hover');});
   el.addEventListener('mouseleave',()=>{if(cur)cur.classList.remove('hover');if(ring)ring.classList.remove('hover');});
 });
@@ -1038,42 +1168,30 @@ function openWhatsAppModal() {
     document.getElementById('whatsappModal').classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-
 function closeWhatsAppModal() {
     document.getElementById('whatsappModal').classList.remove('active');
     document.body.style.overflow = '';
 }
-
 function openPropertyWhatsAppModal(propertyName) {
     currentPropertyName = propertyName;
     document.getElementById('waPropertyName').textContent = propertyName;
     document.getElementById('propertyWhatsAppModal').classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-
 function closePropertyWhatsAppModal() {
     document.getElementById('propertyWhatsAppModal').classList.remove('active');
     document.body.style.overflow = '';
 }
-
 function sendWhatsAppMessage() {
     let message = document.getElementById('waCustomMessage').value.trim();
     if (!message) {
-        const selected = document.querySelector('.wa-option.selected');
-        if (selected) {
-            message = selected.getAttribute('data-message');
-        }
+        const selected = document.querySelector('#whatsappModal .wa-option.selected');
+        if (selected) message = selected.getAttribute('data-message');
     }
-    if (!message) {
-        alert('Please select an option or type a message');
-        return;
-    }
-    const phoneNumber = '2349099997342';
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    if (!message) { alert('Please select an option or type a message'); return; }
+    window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(message)}`, '_blank');
     closeWhatsAppModal();
 }
-
 function sendPropertyWhatsAppMessage() {
     let message = document.getElementById('waPropertyCustomMessage').value.trim();
     if (!message) {
@@ -1083,86 +1201,21 @@ function sendPropertyWhatsAppMessage() {
             message = template.replace('{PROPERTY}', currentPropertyName);
         }
     }
-    if (!message) {
-        alert('Please select an option or type a message');
-        return;
-    }
-    const phoneNumber = '2349099997342';
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    if (!message) { alert('Please select an option or type a message'); return; }
+    window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(message)}`, '_blank');
     closePropertyWhatsAppModal();
 }
-
 document.querySelectorAll('.wa-option').forEach(option => {
     option.addEventListener('click', function() {
-        document.querySelectorAll('.wa-option').forEach(opt => opt.classList.remove('selected'));
+        const parent = this.closest('.wa-modal');
+        if (parent) parent.querySelectorAll('.wa-option').forEach(opt => opt.classList.remove('selected'));
         this.classList.add('selected');
     });
 });
-
 window.onclick = function(event) {
-    const modal = document.getElementById('whatsappModal');
-    const propertyModal = document.getElementById('propertyWhatsAppModal');
-    if (event.target === modal) {
-        closeWhatsAppModal();
-    }
-    if (event.target === propertyModal) {
-        closePropertyWhatsAppModal();
-    }
+    if (event.target === document.getElementById('whatsappModal')) closeWhatsAppModal();
+    if (event.target === document.getElementById('propertyWhatsAppModal')) closePropertyWhatsAppModal();
 }
 </script>
-
-<!-- WhatsApp Modal -->
-<div id="whatsappModal" class="wa-modal">
-    <div class="wa-modal-content">
-        <div class="wa-modal-header">
-            <h3>👑 Crownbee Global</h3>
-            <button class="wa-modal-close" onclick="closeWhatsAppModal()">&times;</button>
-        </div>
-        <div class="wa-modal-body">
-            <p class="wa-greeting">Hello! How can we help you today?</p>
-            <div class="wa-options">
-                <div class="wa-option" data-type="info" data-message="Hello Crownbee! I would like to get more information about your properties in Nigeria. Please send me details.">
-                    <span class="wa-option-icon">ℹ️</span>
-                    <div class="wa-option-text"><strong>Just want more info</strong><small>General information about properties</small></div>
-                </div>
-                <div class="wa-option" data-type="buy" data-message="Hello Crownbee! I am interested in buying a property. Please guide me through available options.">
-                    <span class="wa-option-icon">🏠</span>
-                    <div class="wa-option-text"><strong>Want to buy a house</strong><small>Find your dream home</small></div>
-                </div>
-                <div class="wa-option" data-type="land" data-message="Hello Crownbee! I am interested in purchasing land for investment. Please share available plots and pricing.">
-                    <span class="wa-option-icon">🏗️</span>
-                    <div class="wa-option-text"><strong>Buy land / plot</strong><small>Investment opportunities</small></div>
-                </div>
-                <div class="wa-option" data-type="offplan" data-message="Hello Crownbee! I am interested in off-plan and pre-construction opportunities. Please send me details of upcoming projects.">
-                    <span class="wa-option-icon">🔑</span>
-                    <div class="wa-option-text"><strong>Off-plan investment</strong><small>Early bird opportunities</small></div>
-                </div>
-                <div class="wa-option" data-type="existing" data-message="Hello Crownbee! I am an existing client and would like to discuss another investment opportunity or ask a question about my property.">
-                    <span class="wa-option-icon">⭐</span>
-                    <div class="wa-option-text"><strong>Existing client</strong><small>Follow-up or additional investment</small></div>
-                </div>
-            </div>
-            <div class="wa-custom"><p class="wa-custom-label">Or type your message below:</p><textarea id="waCustomMessage" placeholder="Type your message here..." rows="3"></textarea><button class="wa-send-btn" onclick="sendWhatsAppMessage()">💬 Send on WhatsApp</button></div>
-        </div>
-    </div>
-</div>
-
-<div id="propertyWhatsAppModal" class="wa-modal">
-    <div class="wa-modal-content">
-        <div class="wa-modal-header"><h3>🏠 Inquire about <span id="waPropertyName"></span></h3><button class="wa-modal-close" onclick="closePropertyWhatsAppModal()">&times;</button></div>
-        <div class="wa-modal-body">
-            <p class="wa-greeting">What would you like to know about this property?</p>
-            <div class="wa-options">
-                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Can you send me more details including price, size, and location?"><span class="wa-option-icon">📄</span><div class="wa-option-text"><strong>Send me full details</strong><small>Price, size, location, features</small></div></div>
-                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Is a site visit available? Please let me know when I can come see the property."><span class="wa-option-icon">👀</span><div class="wa-option-text"><strong>Schedule a site visit</strong><small>Physical inspection</small></div></div>
-                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Do you offer payment plans? Please share available installment options."><span class="wa-option-icon">💰</span><div class="wa-option-text"><strong>Payment plan inquiry</strong><small>Installment options available</small></div></div>
-                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Are there different plot/house sizes available? Please share all available options with prices."><span class="wa-option-icon">📏</span><div class="wa-option-text"><strong>Available sizes & prices</strong><small>Different plot sizes or house types</small></div></div>
-                <div class="wa-option" data-property-message="I'm interested in {PROPERTY}. Can you send me videos or more photos of the property?"><span class="wa-option-icon">📹</span><div class="wa-option-text"><strong>Request media</strong><small>Videos or more photos</small></div></div>
-            </div>
-            <div class="wa-custom"><p class="wa-custom-label">Or type your custom message:</p><textarea id="waPropertyCustomMessage" placeholder="Type your message here..." rows="3"></textarea><button class="wa-send-btn" onclick="sendPropertyWhatsAppMessage()">💬 Send on WhatsApp</button></div>
-        </div>
-    </div>
-</div>
 </body>
 </html>

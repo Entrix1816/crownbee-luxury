@@ -3,6 +3,21 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="description" content="Crownbee Global Services Ltd — Nigeria's premier luxury real estate company. Buy premium plots, luxury homes, and off-plan investments in Abuja, Lagos, Ibadan, and Osun State. C of O titles guaranteed. Site visits, flexible payment plans, land sales, apartment services, and construction. Call 0909 999 7342.">
+
+    <!-- Open Graph -->
+  <meta property="og:title" content="Crownbee Global Services Ltd – Luxury Real Estate | Nigeria">
+  <meta property="og:description" content="Premium plots and luxury homes across Abuja, Ibadan, and Osun State. C of O titles guaranteed. Book a site visit today.">
+  <meta property="og:image" content="https://crownbeeglobal.com/static/logo.jpeg">
+  <meta property="og:url" content="https://crownbeeglobal.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Crownbee Global Services Ltd">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crownbee Global Services Ltd – Luxury Real Estate | Nigeria">
+  <meta name="twitter:description" content="Premium plots and luxury homes across Abuja, Ibadan, and Osun State. C of O titles guaranteed.">
+  <meta name="twitter:image" content="https://crownbeeglobal.com/static/logo.jpeg">
   <title>Crownbee Global Services Ltd – Luxury Real Estate | Nigeria</title>
 
   <!-- FAVICON -->
@@ -32,53 +47,6 @@
     }
     html{scroll-behavior:smooth;}
     body{background:var(--black);color:var(--offwhite);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none;}
-
-    /* ============================================================
-       VIDEO SECTION
-    ============================================================ */
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 1000px;
-      max-height: 500px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-    #mainVideo {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-    @media (max-width: 768px) {
-      .video-wrapper { max-height: 350px; }
-    }
-    @media (max-width: 480px) {
-      .video-wrapper { max-height: 250px; }
-    }
-    #mainVideo[poster] {
-      object-fit: contain;
-      object-position: center;
-    }
-    .video-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,0.4);
-      z-index: 10;
-      backdrop-filter: blur(4px);
-      cursor: pointer;
-    }
-    .play-btn {
-      width: 80px; height: 80px; border-radius: 50%;
-      background: rgba(255,255,255,0.9); color: #000;
-      font-size: 2rem; border: none; cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    .play-btn:hover { transform: scale(1.1); }
 
     /* ============================================================
        CUSTOM CURSOR
@@ -115,20 +83,6 @@
       border-bottom:1px solid var(--border);
     }
     .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-    .logo-icon{
-      width:40px;height:40px;
-      background:var(--gold);
-      clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);
-      display:flex;align-items:center;justify-content:center;
-      position:relative;flex-shrink:0;
-    }
-    .logo-icon::after{
-      content:'CB';
-      font-family:'Bebas Neue',sans-serif;
-      font-size:.95rem;
-      color:var(--black);
-      letter-spacing:1px;
-    }
     .logo-words{display:flex;flex-direction:column;}
     .logo-name{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:4px;color:var(--gold);line-height:1;}
     .logo-tagline{font-size:.52rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:2px;}
@@ -278,147 +232,36 @@
     @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
     /* ============================================================
-       VIDEO SECTION
+       INTERACTIVE ESTATES SHOWCASE
     ============================================================ */
-    .video-section{padding:5rem 5%;background:var(--charcoal);}
+    .estates-section{padding:6rem 5%;background:linear-gradient(145deg, #0a0a0a 0%, #14100a 100%);}
+    .section-head-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1rem;}
     .section-label{font-size:.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;display:flex;align-items:center;gap:10px;}
     .section-label::before{content:'';width:24px;height:1px;background:var(--gold);}
     .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4.5vw,3.5rem);line-height:1.05;margin-bottom:1rem;}
     .section-sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(245,240,232,.65);font-size:clamp(1rem,2vw,1.15rem);line-height:1.7;max-width:560px;margin-bottom:2rem;}
-
-    /* ============================================================
-       ESTATES SECTION
-    ============================================================ */
-    .estates-section{padding:6rem 5%;background:linear-gradient(145deg, #0a0a0a 0%, #14100a 100%);}
-    .section-head-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1rem;}
-    .view-all{
-      font-size:.7rem;letter-spacing:2px;text-transform:uppercase;
-      color:var(--gold);text-decoration:none;
-      border-bottom:1px solid rgba(212,160,23,.4);padding-bottom:3px;
-      transition:border-color .3s;
+    .estate-tabs{display:flex;gap:1rem;margin-bottom:2.5rem;flex-wrap:wrap;}
+    .estate-tab{
+      background:transparent;border:1px solid rgba(212,160,23,0.3);color:var(--muted);
+      padding:0.8rem 1.6rem;border-radius:40px;cursor:pointer;
+      font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;
+      transition:all 0.3s;font-family:'DM Sans',sans-serif;
     }
-    .view-all:hover{border-color:var(--gold);}
-    .estates-grid{
-      display:grid;
-      grid-template-columns:1.55fr 1fr 1fr;
-      gap:2px;
-      background:var(--border);
+    .estate-tab.active,.estate-tab:hover{background:var(--gold);color:var(--black);border-color:var(--gold);}
+    .estate-detail{
+      display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;
+      background:var(--charcoal2);padding:2.5rem;border-radius:12px;
+      border:1px solid var(--border);min-height:500px;
     }
-    .estate-card{position:relative;overflow:hidden;cursor:none;}
-    .estate-card.big{grid-row:span 2;}
-    .e-img{
-      width:100%;height:260px;
-      background-size:cover;background-position:center;
-      transition:transform .7s ease;
-      display:block;
-    }
-    .estate-card.big .e-img{height:100%;min-height:530px;}
-    .estate-card:hover .e-img{transform:scale(1.05);}
-    .e-overlay{
-      position:absolute;inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,.88) 0%,transparent 55%);
-      padding:1.5rem;
-      display:flex;flex-direction:column;justify-content:flex-end;
-    }
-    .e-tag{
-      background:var(--crimson);color:#fff;
-      font-size:.58rem;letter-spacing:2px;text-transform:uppercase;
-      padding:4px 10px;width:fit-content;margin-bottom:.6rem;
-    }
-    .e-name{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:clamp(1.2rem,2vw,1.55rem);letter-spacing:1px;line-height:1.1;margin-bottom:.3rem;
-    }
-    .estate-card.big .e-name{font-size:clamp(1.6rem,3vw,2.4rem);}
-    .e-loc{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:rgba(245,240,232,.55);}
-    .e-price{margin-top:.7rem;font-size:.72rem;color:var(--gold);}
-
-    /* ============================================================
-       IMAGE CAROUSEL
-    ============================================================ */
-    .carousel-section{
-      padding:5rem 5%;
-      background:var(--black);
-    }
-    .carousel-title{
-      text-align:center;
-      margin-bottom:3rem;
-    }
-    .carousel-title h2{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:clamp(2rem,4vw,3rem);
-      letter-spacing:2px;
-      color:var(--gold);
-    }
-    .carousel-title p{
-      font-family:'Cormorant Garamond',serif;
-      font-style:italic;
-      color:var(--muted);
-      margin-top:.5rem;
-    }
-    .carousel-wrapper{
-      position:relative;
-      width:100%;
-      max-width:1300px;
-      margin:0 auto;
-    }
-    .carousel-container{
-      position:relative;
-      width:100%;
-      overflow:hidden;
-      border-radius:12px;
-      box-shadow:0 20px 40px rgba(0,0,0,0.4);
-    }
-    .carousel-track{
-      display:flex;
-      transition:transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .carousel-slide-img{
-      flex-shrink:0;
-      width:100%;
-      height:auto;
-      object-fit:contain;
-      max-height:60vh;
-      min-height:300px;
-    }
-    @media (min-width:768px){
-      .carousel-slide-img{min-height:450px;max-height:70vh;}
-    }
-    @media (min-width:1200px){
-      .carousel-slide-img{min-height:550px;max-height:75vh;}
-    }
-    .carousel-btn{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      width:48px;
-      height:48px;
-      background:rgba(0,0,0,0.6);
-      backdrop-filter:blur(4px);
-      border:1px solid rgba(212,160,23,0.5);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      z-index:10;
-      transition:all .3s;
-      color:var(--gold);
-      font-size:1.8rem;
-      font-weight:bold;
-    }
-    .carousel-btn:hover{
-      background:var(--gold);
-      color:var(--black);
-      border-color:var(--gold);
-    }
-    .carousel-btn-prev{left:20px;}
-    .carousel-btn-next{right:20px;}
-    @media (max-width:768px){
-      .carousel-btn{width:36px;height:36px;font-size:1.2rem;}
-      .carousel-btn-prev{left:10px;}
-      .carousel-btn-next{right:10px;}
-    }
+    .detail-main-img{width:100%;height:400px;object-fit:cover;border-radius:8px;}
+    .detail-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.5rem;}
+    .detail-thumb{width:100%;height:100px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent;transition:all 0.3s;}
+    .detail-thumb:hover{border-color:var(--gold);}
+    .detail-info{display:flex;flex-direction:column;justify-content:center;}
+    .estate-specs{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0;}
+    .spec-item strong{display:block;color:var(--gold);font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
+    .spec-item span{font-size:1.1rem;}
+    .estate-actions{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;}
 
     /* ============================================================
        SERVICES
@@ -426,16 +269,16 @@
     .services-section{padding:5rem 5%;background:var(--charcoal);}
     .services-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:2px;
       margin-top:3rem;
       background:var(--border);
     }
     .service-card{
       background:var(--charcoal2);
-      padding:2rem 1.8rem;
+      padding:2.5rem 2rem;
       position:relative;overflow:hidden;
-      transition:background .3s;
+      transition:all .3s;
     }
     .service-card::before{
       content:'';position:absolute;top:0;left:0;right:0;height:2px;
@@ -443,35 +286,32 @@
       transform:scaleX(0);transform-origin:left;
       transition:transform .4s;
     }
-    .service-card:hover{background:#1c1c1c;}
+    .service-card:hover{background:#1c1c1c;transform:translateY(-2px);}
     .service-card:hover::before{transform:scaleX(1);}
     .service-icon{
-      width:48px;height:48px;
-      border:1px solid var(--border);
+      width:56px;height:56px;border-radius:50%;
+      background:rgba(212,160,23,.1);border:1px solid var(--border);
       display:flex;align-items:center;justify-content:center;
-      margin-bottom:1.5rem;
-      font-size:1.3rem;
-    }
-    .service-num{
-      font-family:'Bebas Neue',sans-serif;
-      font-size:3rem;
-      color:rgba(212,160,23,.08);
-      position:absolute;top:1rem;right:1.5rem;
-      line-height:1;
-      pointer-events:none;
+      margin-bottom:1.5rem;font-size:1.5rem;
     }
     .service-name{
       font-family:'Bebas Neue',sans-serif;
-      font-size:1.4rem;letter-spacing:1px;margin-bottom:.8rem;
+      font-size:1.5rem;letter-spacing:1px;margin-bottom:.8rem;
     }
-    .service-desc{font-size:.8rem;color:rgba(245,240,232,.6);line-height:1.7;}
-    .service-link{
-      display:inline-flex;align-items:center;gap:6px;
-      margin-top:1.2rem;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;
-      color:var(--gold);text-decoration:none;
-      transition:gap .3s;
+    .service-desc{font-size:.85rem;color:rgba(245,240,232,.6);line-height:1.7;}
+
+    /* ============================================================
+       NATIONWIDE REACH
+    ============================================================ */
+    .reach-section{padding:5rem 5%;background:var(--black);text-align:center;}
+    .reach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem;}
+    .reach-card{
+      padding:2rem;background:var(--charcoal2);border-radius:12px;
+      border:1px solid var(--border);transition:all .3s;
     }
-    .service-link:hover{gap:12px;}
+    .reach-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+    .reach-city{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--gold);display:block;line-height:1;}
+    .reach-label{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:.5rem;display:block;}
 
     /* ============================================================
        CEO SECTION
@@ -479,14 +319,14 @@
     .ceo-section{
       padding:5rem 5%;
       display:grid;grid-template-columns:1fr 1fr;gap:4rem;
-      align-items:center;background:var(--black);
+      align-items:center;background:var(--charcoal);
     }
     .ceo-img-wrap{position:relative;}
     .ceo-photo{
       width:100%;aspect-ratio:3/4;
-      height: 429px;
+      height:429px;
       background:url("/static/ceo (2).jpeg") center/contain no-repeat;
-      border-radius: 8px;
+      border-radius:8px;
       filter:grayscale(10%);
     }
     .ceo-frame{
@@ -510,211 +350,90 @@
     .ceo-role{font-size:.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:4px;}
 
     /* ============================================================
-       PROMOTIONAL FLYERS SECTION
+       MEDIA GALLERY CAROUSEL
     ============================================================ */
-    .flyers-section {
-      padding: 5rem 5%;
-      background: var(--charcoal2);
+    .media-section{padding:5rem 5%;background:var(--black);}
+    .carousel-wrapper{
+      position:relative;width:100%;max-width:1300px;margin:0 auto;
     }
-    .flyers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2.5rem;
+    .carousel-container{
+      position:relative;width:100%;overflow:hidden;
+      border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.5);
     }
-    .flyer-card {
-      background: var(--charcoal);
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+    .carousel-track{display:flex;transition:transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);}
+    .carousel-slide-img{
+      flex-shrink:0;width:100%;height:auto;object-fit:contain;
+      max-height:65vh;min-height:400px;
     }
-    .flyer-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(212, 160, 23, 0.15);
-    }
-    .flyer-img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      display: block;
-      border-bottom: 1px solid var(--border);
-    }
-    .flyer-info {
-      padding: 1.2rem;
-    }
-    .flyer-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.4rem;
-      letter-spacing: 1px;
-      margin-bottom: 0.3rem;
-    }
-    .flyer-desc {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
-    .flyer-link {
-      font-size: 0.65rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s;
-    }
-    .flyer-link:hover {
-      border-color: var(--gold);
-    }
-
-    /* ============================================================
-       LIGHTBOX STYLES
-    ============================================================ */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.96);
-      z-index: 10001;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .lightbox.active {
-      display: flex;
-    }
-    .lightbox-content {
-      max-width: 90vw;
-      max-height: 85vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .lightbox-img {
-      max-width: 100%;
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 20px 60px rgba(212, 160, 23, 0.2);
-      border: 1px solid rgba(212, 160, 23, 0.3);
-    }
-    .lightbox-close {
-      position: absolute;
-      top: -40px;
-      right: -10px;
-      background: none;
-      border: none;
-      color: var(--gold);
-      font-size: 2.5rem;
-      cursor: pointer;
-      z-index: 10;
-      transition: color 0.3s;
-      line-height: 1;
-    }
-    .lightbox-close:hover {
-      color: var(--crimson);
-    }
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      border: 1px solid rgba(212,160,23,0.4);
-      color: var(--gold);
-      font-size: 2rem;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 10;
-      transition: all 0.3s;
-    }
-    .lightbox-nav:hover {
-      background: var(--gold);
-      color: var(--black);
-    }
-    .lightbox-prev {
-      left: 20px;
-    }
-    .lightbox-next {
-      right: 20px;
-    }
-    @media (max-width: 768px) {
-      .lightbox-nav {
-        width: 36px;
-        height: 36px;
-        font-size: 1.2rem;
-      }
-      .lightbox-prev {
-        left: 10px;
-      }
-      .lightbox-next {
-        right: 10px;
-      }
-      .lightbox-close {
-        top: -35px;
-        right: 0;
-      }
-    }
-
-    /* ============================================================
-       WHATSAPP CTA
-    ============================================================ */
-    .whatsapp-section{
-      padding:5rem 5%;
-      background:linear-gradient(135deg,#0a1a0a 0%,var(--black) 50%,#0a0a0a 100%);
-      text-align:center;
-      position:relative;overflow:hidden;
-    }
-    .whatsapp-section::before{
-      content:'';position:absolute;inset:0;
-      background:radial-gradient(ellipse at center,rgba(37,211,102,.05) 0%,transparent 65%);
-    }
-    .wa-eyebrow{font-size:.65rem;letter-spacing:5px;text-transform:uppercase;color:#25D366;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:10px;}
-    .wa-eyebrow::before,.wa-eyebrow::after{content:'';width:32px;height:1px;background:#25D366;}
-    .wa-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,4.5rem);line-height:1;margin-bottom:1rem;}
-    .wa-title span{color:var(--gold);}
-    .wa-sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(245,240,232,.65);font-size:1rem;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;}
-    .btn-whatsapp{
-      display:inline-flex;align-items:center;gap:12px;
-      background:#25D366;color:#fff;
-      padding:1rem 2.5rem;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:500;
-      text-decoration:none;border:none;cursor:none;
-      transition:all .3s;position:relative;z-index:1;
-    }
-    .btn-whatsapp:hover{background:#1ebe5a;transform:translateY(-3px);box-shadow:0 12px 40px rgba(37,211,102,.25);}
-    .wa-icon{width:20px;height:20px;flex-shrink:0;}
-
-    .wa-float{
-      position:fixed;bottom:1.5rem;right:1.5rem;z-index:400;
-      width:52px;height:52px;border-radius:50%;
-      background:#25D366;
+    .carousel-btn{
+      position:absolute;top:50%;transform:translateY(-50%);
+      width:52px;height:52px;
+      background:rgba(0,0,0,.7);backdrop-filter:blur(8px);
+      border:1px solid rgba(212,160,23,.4);border-radius:50%;
       display:flex;align-items:center;justify-content:center;
-      text-decoration:none;cursor:none;
-      box-shadow:0 4px 20px rgba(37,211,102,.4);
-      animation:waPulse 2.5s infinite;
+      cursor:pointer;z-index:10;transition:all .3s;
+      color:var(--gold);font-size:2rem;font-weight:bold;
     }
-    @keyframes waPulse{
-      0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4);}
-      50%{box-shadow:0 4px 40px rgba(37,211,102,.7);}
-    }
-    .wa-float svg{width:24px;height:24px;}
+    .carousel-btn:hover{background:var(--gold);color:var(--black);}
+    .carousel-btn-prev{left:20px;}
+    .carousel-btn-next{right:20px;}
 
     /* ============================================================
-       CONTACT SECTION - UPDATED WITH TWO OPTIONS
+       FAQ
+    ============================================================ */
+    .faq-section{padding:5rem 5%;background:var(--charcoal2);}
+    .faq-list{max-width:850px;margin:3rem auto 0;}
+    .faq-item{border-bottom:1px solid var(--border);cursor:pointer;}
+    .faq-question{
+      font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:1px;
+      padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;
+      user-select:none;transition:color .3s;
+    }
+    .faq-question:hover{color:var(--gold);}
+    .faq-toggle{color:var(--gold);font-size:1.8rem;transition:transform .3s;}
+    .faq-item.open .faq-toggle{transform:rotate(45deg);}
+    .faq-answer{
+      max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;
+      color:var(--muted);line-height:1.8;font-size:.9rem;
+    }
+    .faq-item.open .faq-answer{max-height:200px;padding-bottom:1.5rem;}
+
+
+    /* Social Card Hover Effects */
+    .social-card {
+      position: relative;
+    }
+    .social-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255,255,255,.03) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .social-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,.5);
+    }
+    .social-card:hover::before {
+      opacity: 1;
+    }
+    .social-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .social-cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* ============================================================
+       CONTACT SECTION
     ============================================================ */
     .contact-section{
       padding:5rem 5%;
-      background:var(--charcoal2);
+      background:var(--charcoal);
       display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;
       align-items:start;
     }
@@ -730,8 +449,6 @@
     }
     .c-item p{font-size:.78rem;color:rgba(245,240,232,.55);line-height:1.6;}
     .c-item strong{display:block;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
-
-    .contact-form-wrap{}
     .cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
     .cf-field{display:flex;flex-direction:column;gap:.4rem;}
     .cf-field.full{grid-column:1/-1;}
@@ -742,89 +459,119 @@
       color:var(--offwhite);
       padding:.8rem 1rem;
       font-family:'DM Sans',sans-serif;font-size:.8rem;
-      outline:none;
-      transition:border-color .3s;
-      width:100%;
+      outline:none;transition:border-color .3s;width:100%;
     }
     .cf-field input:focus,.cf-field select:focus,.cf-field textarea:focus{border-color:var(--gold);}
     .cf-field textarea{resize:vertical;min-height:100px;}
-    .cf-field select{appearance:none;cursor:none;}
+    .cf-field select{appearance:none;cursor:pointer;}
     .cf-field select option{background:var(--charcoal);}
-
-    /* Two button layout */
-    .form-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
+    .form-buttons{display:flex;gap:1rem;margin-top:1rem;}
+    .btn-submit-email{
+      flex:1;background:var(--gold);color:var(--black);
+      padding:1rem;font-size:.75rem;letter-spacing:3px;
+      text-transform:uppercase;font-weight:500;border:none;
+      cursor:pointer;transition:all .3s;
     }
-    .btn-submit-email {
-      flex: 1;
-      background: var(--gold);
-      color: var(--black);
-      padding: 1rem;
-      font-size: .75rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
-      transition: all .3s;
+    .btn-submit-email:hover{background:var(--gold-light);}
+    .btn-submit-wa{
+      flex:1;background:#25D366;color:white;
+      padding:1rem;font-size:.75rem;letter-spacing:3px;
+      text-transform:uppercase;font-weight:500;border:none;
+      cursor:pointer;transition:all .3s;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
     }
-    .btn-submit-email:hover {
-      background: var(--gold-light);
-    }
-    .btn-submit-wa {
-      flex: 1;
-      background: #25D366;
-      color: white;
-      padding: 1rem;
-      font-size: .75rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
-      transition: all .3s;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .btn-submit-wa:hover {
-      background: #1ebe5a;
-      transform: translateY(-2px);
-    }
+    .btn-submit-wa:hover{background:#1ebe5a;transform:translateY(-2px);}
     .form-success{
-      display:none;
-      text-align:center;padding:2rem;
+      display:none;text-align:center;padding:2rem;
       border:1px solid rgba(37,211,102,.3);
-      background:rgba(37,211,102,.05);
-      border-radius: 8px;
+      background:rgba(37,211,102,.05);border-radius:8px;
     }
     .form-success p{color:#25D366;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;}
     .form-error{
-      display:none;
-      text-align:center;padding:2rem;
+      display:none;text-align:center;padding:2rem;
       border:1px solid rgba(200,16,46,.3);
-      background:rgba(200,16,46,.05);
-      border-radius: 8px;
+      background:rgba(200,16,46,.05);border-radius:8px;
     }
     .form-error p{color:var(--crimson);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;}
+
+    /* ============================================================
+       WHATSAPP FLOAT & MODALS
+    ============================================================ */
+    .wa-float{
+      position:fixed;bottom:1.5rem;right:1.5rem;z-index:400;
+      width:52px;height:52px;border-radius:50%;
+      background:#25D366;
+      display:flex;align-items:center;justify-content:center;
+      text-decoration:none;cursor:pointer;
+      box-shadow:0 4px 20px rgba(37,211,102,.4);
+      animation:waPulse 2.5s infinite;border:none;
+    }
+    @keyframes waPulse{
+      0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4);}
+      50%{box-shadow:0 4px 40px rgba(37,211,102,.7);}
+    }
+    .wa-float svg{width:24px;height:24px;}
+    .wa-modal{
+      display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,.95);z-index:10000;
+      align-items:center;justify-content:center;backdrop-filter:blur(5px);
+    }
+    .wa-modal.active{display:flex;}
+    .wa-modal-content{
+      max-width:500px;width:90%;background:#111;
+      border-radius:20px;border:1px solid #D4A017;
+      overflow:hidden;animation:modalSlideIn .3s ease;max-height:85vh;overflow-y:auto;
+    }
+    @keyframes modalSlideIn{
+      from{opacity:0;transform:translateY(-30px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    .wa-modal-header{
+      background:linear-gradient(135deg,#D4A017,#C8102E);
+      padding:1rem 1.5rem;display:flex;
+      justify-content:space-between;align-items:center;
+    }
+    .wa-modal-header h3{color:#0a0a0a;margin:0;font-family:'Bebas Neue',sans-serif;font-size:1.3rem;}
+    .wa-modal-close{background:none;border:none;color:#0a0a0a;font-size:1.8rem;cursor:pointer;line-height:1;}
+    .wa-modal-body{padding:1.5rem;}
+    .wa-greeting{color:#D4A017;font-size:1rem;margin-bottom:1rem;text-align:center;}
+    .wa-options{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.5rem;}
+    .wa-option{
+      display:flex;align-items:center;gap:1rem;padding:1rem;
+      background:rgba(255,255,255,.05);border-radius:12px;
+      cursor:pointer;transition:all .3s;border:1px solid rgba(212,160,23,.2);
+    }
+    .wa-option:hover{background:rgba(212,160,23,.1);border-color:#D4A017;transform:translateX(5px);}
+    .wa-option.selected{border-color:#25D366;background:rgba(37,211,102,.1);}
+    .wa-option-icon{font-size:1.8rem;}
+    .wa-option-text strong{display:block;color:#D4A017;font-size:.9rem;}
+    .wa-option-text small{font-size:.7rem;color:#888;}
+    .wa-custom{margin-top:1rem;border-top:1px solid rgba(212,160,23,.2);padding-top:1rem;}
+    .wa-custom-label{font-size:.75rem;color:#888;margin-bottom:.5rem;}
+    #waCustomMessage,#waPropertyCustomMessage{
+      width:100%;background:rgba(255,255,255,.05);
+      border:1px solid rgba(212,160,23,.3);color:white;
+      padding:.8rem;border-radius:10px;font-family:'DM Sans',sans-serif;resize:vertical;
+    }
+    #waCustomMessage:focus,#waPropertyCustomMessage:focus{outline:none;border-color:#D4A017;}
+    .wa-send-btn{
+      width:100%;background:#25D366;color:white;border:none;
+      padding:.8rem;border-radius:40px;font-size:.9rem;
+      font-weight:600;cursor:pointer;margin-top:1rem;transition:all .3s;
+    }
+    .wa-send-btn:hover{background:#1ebe5a;transform:translateY(-2px);}
 
     /* ============================================================
        FOOTER
     ============================================================ */
     footer{
-      background:var(--black);
-      border-top:1px solid var(--border);
+      background:var(--black);border-top:1px solid var(--border);
       padding:4rem 5% 2rem;
     }
     .footer-grid{
-      display:grid;
-      grid-template-columns:1.6fr 1fr 1fr 1fr;
+      display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;
       gap:2rem;margin-bottom:3rem;
     }
-    .footer-brand .logo-name{font-size:1.5rem;}
     .footer-tagline{
       font-family:'Cormorant Garamond',serif;font-style:italic;
       color:var(--muted);font-size:.9rem;line-height:1.7;
@@ -841,14 +588,14 @@
       display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
     }
     .footer-bottom p{font-size:.6rem;letter-spacing:1px;color:rgba(245,240,232,.25);}
-    .footer-socials{display:flex;gap:1rem;}
+    .footer-socials{display:flex;gap:1.5rem;}
     .footer-socials a{
-      width:30px;height:30px;border:1px solid rgba(245,240,232,.12);
+      width:36px;height:36px;border:1px solid rgba(245,240,232,.12);
       display:flex;align-items:center;justify-content:center;
-      font-size:.65rem;color:rgba(245,240,232,.4);text-decoration:none;
-      transition:all .3s;
+      font-size:.7rem;color:rgba(245,240,232,.4);text-decoration:none;
+      border-radius:50%;transition:all .3s;
     }
-    .footer-socials a:hover{border-color:var(--gold);color:var(--gold);}
+    .footer-socials a:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,160,23,.1);}
 
     /* ============================================================
        ANIMATIONS
@@ -859,157 +606,15 @@
     .reveal.visible{opacity:1;transform:none;}
     .reveal-delay-1{transition-delay:.1s;}
     .reveal-delay-2{transition-delay:.2s;}
-
-    /* ============================================================
-       WHATSAPP MODAL STYLES
-    ============================================================ */
-    .wa-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 10000;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(5px);
-    }
-    .wa-modal.active {
-      display: flex;
-    }
-    .wa-modal-content {
-      max-width: 500px;
-      width: 90%;
-      background: #111111;
-      border-radius: 20px;
-      border: 1px solid #D4A017;
-      overflow: hidden;
-      animation: modalSlideIn 0.3s ease;
-      max-height: 85vh;
-      overflow-y: auto;
-    }
-    @keyframes modalSlideIn {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .wa-modal-header {
-      background: linear-gradient(135deg, #D4A017, #C8102E);
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .wa-modal-header h3 {
-      color: #0a0a0a;
-      margin: 0;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
-      letter-spacing: 1px;
-    }
-    .wa-modal-close {
-      background: none;
-      border: none;
-      color: #0a0a0a;
-      font-size: 1.8rem;
-      cursor: pointer;
-      line-height: 1;
-    }
-    .wa-modal-body {
-      padding: 1.5rem;
-    }
-    .wa-greeting {
-      color: #D4A017;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    .wa-options {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-    .wa-option {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      cursor: pointer;
-      transition: all 0.3s;
-      border: 1px solid rgba(212, 160, 23, 0.2);
-    }
-    .wa-option:hover {
-      background: rgba(212, 160, 23, 0.1);
-      border-color: #D4A017;
-      transform: translateX(5px);
-    }
-    .wa-option-icon {
-      font-size: 1.8rem;
-    }
-    .wa-option-text strong {
-      display: block;
-      color: #D4A017;
-      font-size: 0.9rem;
-    }
-    .wa-option-text small {
-      font-size: 0.7rem;
-      color: #888;
-    }
-    .wa-custom {
-      margin-top: 1rem;
-      border-top: 1px solid rgba(212, 160, 23, 0.2);
-      padding-top: 1rem;
-    }
-    .wa-custom-label {
-      font-size: 0.75rem;
-      color: #888;
-      margin-bottom: 0.5rem;
-    }
-    #waCustomMessage, #waPropertyCustomMessage {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(212, 160, 23, 0.3);
-      color: white;
-      padding: 0.8rem;
-      border-radius: 10px;
-      font-family: 'DM Sans', sans-serif;
-      resize: vertical;
-    }
-    #waCustomMessage:focus, #waPropertyCustomMessage:focus {
-      outline: none;
-      border-color: #D4A017;
-    }
-    .wa-send-btn {
-      width: 100%;
-      background: #25D366;
-      color: white;
-      border: none;
-      padding: 0.8rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 1rem;
-      transition: all 0.3s;
-    }
-    .wa-send-btn:hover {
-      background: #1ebe5a;
-      transform: translateY(-2px);
-    }
+    .reveal-delay-3{transition-delay:.3s;}
 
     /* ============================================================
        RESPONSIVE
     ============================================================ */
     @media(max-width:1024px){
-      .estates-grid{grid-template-columns:1fr 1fr;}
-      .estate-card.big{grid-column:span 2;grid-row:auto;}
-      .estate-card.big .e-img{min-height:380px;}
+      .estate-detail{grid-template-columns:1fr;}
       .ceo-section{grid-template-columns:1fr;gap:3rem;}
-      .ceo-img-wrap{position: relative; max-width:320px;margin:0 auto;}
+      .ceo-img-wrap{max-width:320px;margin:0 auto;}
       .contact-section{grid-template-columns:1fr;gap:2.5rem;}
       .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}
       .form-buttons{flex-direction:column;}
@@ -1023,33 +628,61 @@
       .hero-btns{flex-direction:column;}
       .btn-gold,.btn-outline{width:100%;text-align:center;justify-content:center;}
       .stats-bar{grid-template-columns:1fr;gap:2.5rem;padding:2rem 5%;}
-      .stats-bar .stat-item:nth-child(3){display:block;}
-      .estates-grid{grid-template-columns:1fr;}
-      .estate-card.big{grid-column:auto;}
-      .estate-card.big .e-img{min-height:280px;}
-      .estate-card .e-img{height:200px;}
+      .estate-detail{grid-template-columns:1fr;padding:1.5rem;}
+      .detail-main-img{height:250px;}
+      .estate-specs{grid-template-columns:1fr;gap:1rem;}
+      .estate-actions{flex-direction:column;}
+      .estate-tabs{gap:.5rem;}
+      .estate-tab{padding:.6rem 1.2rem;font-size:.65rem;}
       .services-grid{grid-template-columns:1fr;}
+      .reach-grid{grid-template-columns:1fr 1fr;}
       .ceo-section{padding:3rem 5%;}
-      .ceo-badge{bottom:-1rem;right:-1rem;padding:0.8rem;min-width:80px;}
+      .ceo-badge{bottom:-1rem;right:-1rem;padding:.8rem;min-width:80px;}
       .ceo-badge-num{font-size:1.5rem;}
       .footer-grid{grid-template-columns:1fr;}
       .footer-col:nth-child(2),.footer-col:nth-child(3),.footer-col:nth-child(4){display:none;}
       .cf-grid{grid-template-columns:1fr;}
-      nav{padding:1rem 5%;}
-      .video-wrapper video{max-height:45vh;}
-      .hero-scroll{display:none;}
       .form-buttons{flex-direction:column;}
+      .hero-scroll{display:none;}
     }
     @media(max-width:480px){
       .section-title{font-size:1.8rem;}
       .service-card{padding:1.5rem;}
       .service-name{font-size:1.2rem;}
-      .carousel-slide-img{min-height:220px;}
+      .carousel-slide-img{min-height:250px;}
       .wa-float{width:44px;height:44px;bottom:1rem;right:1rem;}
       .wa-float svg{width:20px;height:20px;}
-      .carousel-btn{width:32px;height:32px;font-size:1rem;}
+      .reach-grid{grid-template-columns:1fr;}
+      .carousel-btn{width:36px;height:36px;font-size:1.5rem;}
+      .estate-tab{padding:.5rem 1rem;font-size:.6rem;letter-spacing:1px;}
     }
   </style>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Crownbee Global Services Ltd",
+    "description": "Nigeria's premier luxury real estate company specializing in premium plots, luxury homes, and off-plan investments.",
+    "url": "https://crownbeeglobal.com",
+    "logo": "https://crownbeeglobal.com/static/logo.jpeg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2nd Floor, Westwood Plaza, beside Keystone Bank, Asokoro",
+      "addressLocality": "Abuja",
+      "addressCountry": "NG"
+    },
+    "telephone": ["+2349099997342", "+2349010677777"],
+    "email": "crownbeeluxury@gmail.com",
+    "sameAs": [
+      "https://www.facebook.com/crownbeeabujaproperties/",
+      "https://www.instagram.com/crownbeepropertiesabuja/",
+      "https://www.youtube.com/@crownbeeproperties"
+    ],
+    "areaServed": ["Abuja", "Lagos", "Ibadan", "Osun State", "NG"],
+    "priceRange": "₦9,000,000 - ₦195,000,000"
+  }
+  </script>
 </head>
 <body>
 
@@ -1058,7 +691,7 @@
 <div class="cursor-ring" id="cursorRing"></div>
 
 <!-- WHATSAPP FLOAT -->
-<button class="wa-float" onclick="openWhatsAppModal()" aria-label="Chat on WhatsApp" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:400;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:waPulse 2.5s infinite;">
+<button class="wa-float" onclick="openWhatsAppModal()" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="white" width="24" height="24">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
@@ -1071,7 +704,7 @@
   <a href="/property" onclick="toggleMenu()">Estates</a>
   <a href="#services" onclick="toggleMenu()">Services</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
-  <button class="btn-whatsapp" onclick="openWhatsAppModal()">WhatsApp Us</button>
+  <button class="btn-submit-wa" style="margin-top:1rem;" onclick="openWhatsAppModal()">WhatsApp Us</button>
 </div>
 
 <!-- NAV -->
@@ -1089,7 +722,7 @@
     <li><a href="/about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-cta" onclick="bookConsultation()">Book Consultation</button>
+  <button class="nav-cta" onclick="openWhatsAppModal()">Book Consultation</button>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -1128,7 +761,7 @@
         Explore Estates
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </button>
-      <button class="btn-outline" onclick="bookConsultation()">Book Consultation</button>
+      <button class="btn-outline" onclick="openWhatsAppModal()">Book Consultation</button>
     </div>
   </div>
 
@@ -1163,102 +796,68 @@
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-track">
     <span class="marquee-item">Gracefilled Resort &amp; Park</span><span class="marquee-sep"> ✦ </span>
-    <span class="marquee-item">Araoluwa  Solar City Apo</span><span class="marquee-sep"> ✦ </span>
-    <span class="marquee-item">Victory Prime Estate</span><span class="marquee-sep"> ✦ </span>
-    <span class="marquee-item">Luxury Land Sales</span><span class="marquee-sep"> ✦ </span>
+    <span class="marquee-item">Araoluwa Solar City</span><span class="marquee-sep"> ✦ </span>
+    <span class="marquee-item">Audacity Prime Estate</span><span class="marquee-sep"> ✦ </span>
+    <span class="marquee-item">Abuja · Lagos · Ibadan · Osun</span><span class="marquee-sep"> ✦ </span>
     <span class="marquee-item">Off-Plan Investments</span><span class="marquee-sep"> ✦ </span>
-    <span class="marquee-item">Abuja, Nigeria</span><span class="marquee-sep"> ✦ </span>
+    <span class="marquee-item">Luxury Land Sales Nationwide</span><span class="marquee-sep"> ✦ </span>
     <span class="marquee-item">Gracefilled Resort &amp; Park</span><span class="marquee-sep"> ✦ </span>
-    <span class="marquee-item">Araoluwa  Solar City Apo</span><span class="marquee-sep"> ✦ </span>
-    <span class="marquee-item">Victory Prime Estate</span><span class="marquee-sep"> ✦ </span>
-    <span class="marquee-item">Luxury Land Sales</span><span class="marquee-sep"> ✦ </span>
+    <span class="marquee-item">Araoluwa Solar City</span><span class="marquee-sep"> ✦ </span>
+    <span class="marquee-item">Audacity Prime Estate</span><span class="marquee-sep"> ✦ </span>
+    <span class="marquee-item">Abuja · Lagos · Ibadan · Osun</span><span class="marquee-sep"> ✦ </span>
     <span class="marquee-item">Off-Plan Investments</span><span class="marquee-sep"> ✦ </span>
-    <span class="marquee-item">Abuja, Nigeria</span><span class="marquee-sep"> ✦ </span>
+    <span class="marquee-item">Luxury Land Sales Nationwide</span><span class="marquee-sep"> ✦ </span>
   </div>
 </div>
 
 <!-- ========================================================
-     VIDEO SECTION
-======================================================== -->
-<section class="video-section" id="gracefilled">
-  <p class="section-label">Signature Development</p>
-  <h2 class="section-title reveal">GRACEFILLED RESORT &amp; PARK</h2>
-  <p class="section-sub reveal reveal-delay-1">A resort-style gated community in Karsana, Abuja — landscaped gardens, 24/7 security, and premium plots in one of the capital's fastest-appreciating corridors.</p>
-
-  <div class="video-wrapper">
-    <div class="video-overlay" id="videoOverlay">
-      <button class="play-btn" id="playBtn">▶</button>
-    </div>
-    <video id="mainVideo" muted playsinline poster="/static/karsana1.jpeg">
-      <source src="/static/videos/gracefilled.mp4" type="video/mp4">
-    </video>
-  </div>
-</section>
-
-<!-- ========================================================
-     FLAGSHIP ESTATES
+     INTERACTIVE FLAGSHIP ESTATES
 ======================================================== -->
 <section class="estates-section" id="estates">
   <div class="section-head-row">
     <div>
       <p class="section-label">Our Portfolio</p>
-      <h2 class="section-title reveal">FLAGSHIP ESTATES</h2>
+      <h2 class="section-title reveal">DISCOVER YOUR LEGACY ESTATE</h2>
     </div>
-    <a href="/property" class="view-all">View All Properties</a>
   </div>
 
-  <div class="estates-grid reveal">
-    <div class="estate-card big">
-      <div class="e-img" style="background-image:url('/static/karsana1.jpeg');height:100%;min-height:530px;"></div>
-      <div class="e-overlay">
-        <span class="e-tag">Signature Development</span>
-        <h3 class="e-name">Gracefilled Resort &amp; Park</h3>
-        <p class="e-loc">Karsana, Abuja</p>
-        <p class="e-price">Plots from ₦12,500,000 · Gated Community</p>
-      </div>
-    </div>
-    <div class="estate-card">
-      <div class="e-img" style="background-image:url('/static/solar1.jpeg');"></div>
-      <div class="e-overlay">
-        <span class="e-tag">Eco-Luxury</span>
-        <h3 class="e-name">Araoluwa Solar City</h3>
-        <p class="e-loc">Apo, Abuja</p>
-        <p class="e-price">Solar homes · EV Charging · Pools</p>
-      </div>
-    </div>
-    <div class="estate-card">
-      <div class="e-img" style="background-image:url('/static/victory1.jpeg');"></div>
-      <div class="e-overlay">
-        <span class="e-tag">Value Luxury</span>
-        <h3 class="e-name">Victory Prime Estate</h3>
-        <p class="e-loc">Sheretti, Abuja</p>
-        <p class="e-price">200–500sqm · From ₦8,000,000</p>
-      </div>
-    </div>
+  <!-- Estate Tabs -->
+  <div class="estate-tabs reveal" id="estateTabs">
+    <button class="estate-tab active" data-estate="gracefilled">Gracefilled Resort</button>
+    <button class="estate-tab" data-estate="araoluwa">Araoluwa Solar City</button>
+    <button class="estate-tab" data-estate="audacity">Audacity Prime</button>
+    <button class="estate-tab" data-estate="victory">Victory Prime</button>
+    <button class="estate-tab" data-estate="crownbee">Crownbee Prime</button>
+    <button class="estate-tab" data-estate="amagee">Ama Gee Luxe Court</button>
+    <button class="estate-tab" data-estate="ayomide">Ayomide Luxury</button>
   </div>
-</section>
 
-<!-- ========================================================
-     IMAGE CAROUSEL WITH TITLE & ARROWS
-======================================================== -->
-<section class="carousel-section" aria-label="Property Gallery Carousel">
-  <div class="carousel-title">
-    <h2>OUR RECENT PROJECTS</h2>
-    <p>Explore our latest luxury developments</p>
-  </div>
-  <div class="carousel-wrapper">
-    <div class="carousel-container" id="imageCarousel">
-      <div class="carousel-track" id="carouselTrack">
-        <img class="carousel-slide-img" src="/static/karsana2.jpeg" alt="Luxury property exterior">
-        <img class="carousel-slide-img" src="/static/victory2.jpeg" alt="Modern living room">
-        <img class="carousel-slide-img" src="/static/solar2.jpeg" alt="Luxury mansion">
-        <img class="carousel-slide-img" src="/static/amma1.jpeg" alt="Elegant interior">
-        <img class="carousel-slide-img" src="/static/audacity2.jpeg" alt="Swimming pool">
-        <img class="carousel-slide-img" src="/static/crownbee1.jpeg" alt="Swimming pool">
+  <!-- Dynamic Estate Detail -->
+  <div class="estate-detail reveal" id="estateDetail">
+    <div class="detail-images">
+      <img id="estateMainImg" class="detail-main-img" src="/static/karsana1.jpeg" alt="Gracefilled Resort">
+      <div class="detail-thumbs">
+        <img class="detail-thumb active" src="/static/karsana1.jpeg" alt="Thumb 1" onclick="updateMainImage('/static/karsana1.jpeg', this)">
+        <img class="detail-thumb" src="/static/karsana2.jpeg" alt="Thumb 2" onclick="updateMainImage('/static/karsana2.jpeg', this)">
       </div>
     </div>
-    <button class="carousel-btn carousel-btn-prev" id="carouselPrev">‹</button>
-    <button class="carousel-btn carousel-btn-next" id="carouselNext">›</button>
+    <div class="detail-info">
+      <span class="e-tag" style="background:var(--crimson);color:#fff;font-size:.58rem;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;width:fit-content;margin-bottom:1rem;">Signature Development</span>
+      <h3 class="section-title" style="font-size:2.2rem;margin-bottom:.5rem;" id="estateTitle">Gracefilled Resort &amp; Park</h3>
+      <p class="e-loc" style="font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(245,240,232,.55);margin-bottom:1rem;" id="estateLoc">Karsana, Abuja</p>
+      <p class="ceo-quote" style="margin:1rem 0;max-width:100%;" id="estateDesc">A resort-style gated community featuring landscaped gardens, 24/7 security, and premium plots in one of the capital's fastest-appreciating corridors.</p>
+
+      <div class="estate-specs" id="estateSpecs">
+        <div class="spec-item"><strong>Plot Sizes</strong><span>500 - 1,000 SQM</span></div>
+        <div class="spec-item"><strong>Price Starts</strong><span>₦12,500,000</span></div>
+        <div class="spec-item"><strong>Title</strong><span>C of O</span></div>
+        <div class="spec-item"><strong>Status</strong><span>Selling Fast</span></div>
+      </div>
+
+      <div class="estate-actions">
+        <button class="btn-gold" id="estateInquire">📞 Inquire Now</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1267,136 +866,69 @@
 ======================================================== -->
 <section class="services-section" id="services">
   <p class="section-label">What We Offer</p>
-  <h2 class="section-title reveal">SERVICES WE PROVIDE</h2>
-  <p class="section-sub reveal reveal-delay-1">From premium land to fully developed homes, we guide you every step of the way.</p>
+  <h2 class="section-title reveal">COMPREHENSIVE REAL ESTATE SERVICES</h2>
+  <p class="section-sub reveal reveal-delay-1">From premium land acquisition to fully developed luxury homes, we guide you every step of the way.</p>
 
   <div class="services-grid">
     <div class="service-card reveal">
-      <span class="service-num">01</span>
       <div class="service-icon">🏗️</div>
       <h3 class="service-name">Luxury Land Sales</h3>
       <p class="service-desc">Curated plots in exclusive gated estates across Nigeria's fastest-growing districts. 200sqm to 650sqm with clean government titles.</p>
-      <a href="#contact" class="service-link">Enquire Now →</a>
     </div>
     <div class="service-card reveal reveal-delay-1">
-      <span class="service-num">02</span>
-      <div class="service-icon">🏡</div>
-      <h3 class="service-name">Luxury Home Sales</h3>
-      <p class="service-desc">2-bedroom townhouses to 4-bedroom duplexes with smart home features, solar backup, and premium finishes.</p>
-      <a href="#contact" class="service-link">Explore Homes →</a>
+      <div class="service-icon">🏢</div>
+      <h3 class="service-name">Apartment Service</h3>
+      <p class="service-desc">Premium apartment units in prime locations. Modern finishes, smart features, and excellent rental yields for investors and homeowners.</p>
     </div>
     <div class="service-card reveal reveal-delay-2">
-      <span class="service-num">03</span>
-      <div class="service-icon">📈</div>
-      <h3 class="service-name">Investment Advisory</h3>
-      <p class="service-desc">Personalised guidance through property selection, legal documentation, and projected resale/rental yield analysis.</p>
-      <a href="#contact" class="service-link">Get Advice →</a>
+      <div class="service-icon">🏗️</div>
+      <h3 class="service-name">Construction</h3>
+      <p class="service-desc">End-to-end construction services for residential and commercial projects. Quality builds with strict timelines and transparent pricing.</p>
     </div>
     <div class="service-card reveal">
-      <span class="service-num">04</span>
-      <div class="service-icon">🔑</div>
-      <h3 class="service-name">Off-Plan &amp; Pre-Construction</h3>
-      <p class="service-desc">Lock in your property before prices rise. Secure the best plots at development-phase prices.</p>
-      <a href="#contact" class="service-link">View Opportunities →</a>
+      <div class="service-icon">📈</div>
+      <h3 class="service-name">Investment Advisory</h3>
+      <p class="service-desc">Personalised guidance through property selection, legal documentation, and projected resale/rental yield analysis for maximum ROI.</p>
     </div>
     <div class="service-card reveal reveal-delay-1">
-      <span class="service-num">05</span>
-      <div class="service-icon">📋</div>
-      <h3 class="service-name">Legal &amp; Documentation</h3>
-      <p class="service-desc">Full support with C of O, deed of assignment, survey plans, and government approvals. Clean ownership transfer guaranteed.</p>
-      <a href="#contact" class="service-link">Learn More →</a>
+      <div class="service-icon">🔑</div>
+      <h3 class="service-name">Off-Plan Deals</h3>
+      <p class="service-desc">Lock in your property before prices rise. Secure the best plots at development-phase prices with significant appreciation potential.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">🏡</div>
+      <h3 class="service-name">Real Estate</h3>
+      <p class="service-desc">Full-service real estate solutions — sales, leasing, property management, and market analysis backed by deep local expertise.</p>
     </div>
   </div>
 </section>
 
 <!-- ========================================================
-     PROMOTIONAL FLYERS WITH LIGHTBOX
+     NATIONWIDE REACH
 ======================================================== -->
-<section class="flyers-section" id="flyers">
-  <p class="section-label">Latest Offers</p>
-  <h2 class="section-title reveal">PROMOTIONAL FLYERS</h2>
-  <p class="section-sub reveal reveal-delay-1">Click on any flyer to view it in full size. Discover exclusive deals on prime properties.</p>
+<section class="reach-section" id="locations">
+  <p class="section-label" style="justify-content:center;">Our Coverage</p>
+  <h2 class="section-title reveal">SERVING NIGERIA'S<br>FASTEST-GROWING MARKETS</h2>
 
-  <div class="flyers-grid reveal" id="flyersGrid">
-    <div class="flyer-card" data-full-img="/static/flyer1.jpeg">
-      <img src="/static/flyer1.jpeg" alt="Promotional Flyer 1" class="flyer-img">
-      <div class="flyer-info">
-        <h3 class="flyer-title">Exclusive Launch</h3>
-        <p class="flyer-desc">Be the first to access our newest development with special pre-launch pricing.</p>
-        <span class="flyer-link" onclick="event.stopPropagation(); openWhatsAppModal(); return false;">Download Brochure →</span>
-      </div>
+  <div class="reach-grid">
+    <div class="reach-card reveal">
+      <span class="reach-city">ABUJA</span>
     </div>
-    <div class="flyer-card" data-full-img="/static/flyer2.jpeg">
-      <img src="/static/flyer2.jpeg" alt="Promotional Flyer 2" class="flyer-img">
-      <div class="flyer-info">
-        <h3 class="flyer-title">Promotional flyer</h3>
-        <p class="flyer-desc">Profitable Real Estate</p>
-        <span class="flyer-link" onclick="event.stopPropagation(); openWhatsAppModal(); return false;">Get Your Copy →</span>
-      </div>
+    <div class="reach-card reveal reveal-delay-1">
+      <span class="reach-city">LAGOS</span>
     </div>
-    <div class="flyer-card" data-full-img="/static/flyer3 (2).jpeg">
-      <img src="/static/flyer3 (2).jpeg" alt="Promotional Flyer 3" class="flyer-img">
-      <div class="flyer-info">
-        <h3 class="flyer-title">Limited Plots</h3>
-        <p class="flyer-desc">Get your plot today in our beautiful location</p>
-        <span class="flyer-link" onclick="event.stopPropagation(); openWhatsAppModal(); return false;">Claim Yours →</span>
-      </div>
+    <div class="reach-card reveal reveal-delay-2">
+      <span class="reach-city">IBADAN</span>
     </div>
-    <div class="flyer-card" data-full-img="/static/flyer4.jpeg">
-      <img src="/static/flyer4.jpeg" alt="Promotional Flyer 4" class="flyer-img">
-      <div class="flyer-info">
-        <h3 class="flyer-title">Flexible Payment</h3>
-        <p class="flyer-desc">Explore our tailored payment plans designed to fit your budget comfortably.</p>
-        <span class="flyer-link" onclick="event.stopPropagation(); openWhatsAppModal(); return false;">Learn More →</span>
-      </div>
-    </div>
-    <div class="flyer-card" data-full-img="/static/flyer5.jpeg">
-      <img src="/static/flyer5.jpeg" alt="Promotional Flyer 5" class="flyer-img">
-      <div class="flyer-info">
-        <h3 class="flyer-title">Site Visit</h3>
-        <p class="flyer-desc">Schedule a guided tour and experience the luxury lifestyle firsthand.</p>
-        <span class="flyer-link" onclick="event.stopPropagation(); openWhatsAppModal(); return false;">Book Now →</span>
-      </div>
-    </div>
-    <div class="flyer-card" data-full-img="/static/flyer6.jpeg">
-      <img src="/static/flyer6.jpeg" alt="Promotional Flyer 6" class="flyer-img">
-      <div class="flyer-info">
-        <h3 class="flyer-title">Promotional Flyer</h3>
-        <p class="flyer-desc">Own your own property today</p>
-        <span class="flyer-link" onclick="event.stopPropagation(); openWhatsAppModal(); return false;">Get Now →</span>
-      </div>
-    </div>
-    <div class="flyer-card" data-full-img="/static/flyer7.jpeg">
-      <img src="/static/flyer7.jpeg" alt="Promotional Flyer 7" class="flyer-img">
-      <div class="flyer-info">
-        <h3 class="flyer-title">Holiday Special</h3>
-        <p class="flyer-desc">Seasonal discounts and exclusive packages for a limited time only.</p>
-        <span class="flyer-link" onclick="event.stopPropagation(); openWhatsAppModal(); return false;">View Offer →</span>
-      </div>
-    </div>
-    <div class="flyer-card" data-full-img="/static/flyer8.jpeg">
-      <img src="/static/flyer8.jpeg" alt="Promotional Flyer 8" class="flyer-img">
-      <div class="flyer-info">
-        <h3 class="flyer-title">New Year Deal</h3>
-        <p class="flyer-desc">Start the year with a smart investment.</p>
-        <span class="flyer-link" onclick="event.stopPropagation(); openWhatsAppModal(); return false;">Invest Now →</span>
-      </div>
+    <div class="reach-card reveal reveal-delay-3">
+      <span class="reach-city">OSUN</span>
     </div>
   </div>
+  <p class="reveal" style="margin-top:2rem;color:var(--muted);font-size:.85rem;letter-spacing:2px;text-transform:uppercase;">And Delivering Excellence Nationwide</p>
 </section>
 
-<!-- LIGHTBOX -->
-<div id="flyerLightbox" class="lightbox">
-  <button class="lightbox-close" id="lightboxClose">&times;</button>
-  <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
-  <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
-  <div class="lightbox-content">
-    <img id="lightboxImg" class="lightbox-img" src="" alt="Promotional Flyer">
-  </div>
-</div>
-
 <!-- ========================================================
-     CEO / ABOUT
+     CEO / LEADERSHIP
 ======================================================== -->
 <section class="ceo-section" id="about">
   <div class="ceo-img-wrap reveal">
@@ -1414,33 +946,185 @@
       "To democratize access to premium real estate investments while maintaining uncompromising standards of luxury, transparency, and long-term value creation for every client."
     </blockquote>
     <p class="ceo-name">Amb Dr Mrs Olubunmi Mary Gbadewole</p>
-    <p class="ceo-role">CEO &amp; Founder, Crownbee Global Services Ltd</p>
+    <p class="ceo-role">CEO &amp; MD, Crownbee Global Services Ltd</p>
     <br/>
-    <button class="btn-gold" onclick="bookConsultation()">
-      Meet Our Team
+    <button class="btn-gold" onclick="openWhatsAppModal()">
+      Get To Know Us
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </button>
   </div>
 </section>
 
 <!-- ========================================================
-     WHATSAPP CTA
+     MEDIA GALLERY
 ======================================================== -->
-<section class="whatsapp-section">
-  <p class="wa-eyebrow">Instant Response Guaranteed</p>
-  <h2 class="wa-title reveal">CLAIM YOUR<br><span>PROPERTY NOW</span></h2>
-  <p class="wa-sub reveal reveal-delay-1">Don't miss out on Nigeria's fastest-appreciating estates. Chat with us directly and secure your plot today.</p>
-  <button class="btn-whatsapp reveal reveal-delay-2" onclick="openWhatsAppModal()">
-    <svg class="wa-icon" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    WhatsApp Us Now
-  </button>
+<section class="media-section" aria-label="Property Gallery">
+  <p class="section-label" style="justify-content:center;">Visual Tour</p>
+  <h2 class="section-title reveal" style="text-align:center;margin-bottom:3rem;">EXPLORE OUR PROJECTS</h2>
+
+  <div class="carousel-wrapper reveal">
+    <div class="carousel-container" id="imageCarousel">
+      <div class="carousel-track" id="carouselTrack">
+        <img class="carousel-slide-img" src="/static/karsana2.jpeg" alt="Gracefilled Resort exterior">
+        <img class="carousel-slide-img" src="/static/victory2.jpeg" alt="Victory Prime Estate">
+        <img class="carousel-slide-img" src="/static/solar2.jpeg" alt="Araoluwa Solar City">
+        <img class="carousel-slide-img" src="/static/amma1.jpeg" alt="Ama Gee Luxe Court">
+        <img class="carousel-slide-img" src="/static/audacity2.jpeg" alt="Audacity Prime Estate">
+        <img class="carousel-slide-img" src="/static/crownbee1.jpeg" alt="Crownbee Prime Estate">
+      </div>
+    </div>
+    <button class="carousel-btn carousel-btn-prev" id="carouselPrev">‹</button>
+    <button class="carousel-btn carousel-btn-next" id="carouselNext">›</button>
+  </div>
 </section>
 
 <!-- ========================================================
-     CONTACT SECTION - WITH TWO OPTIONS (EMAIL OR WHATSAPP)
+     FAQ
 ======================================================== -->
+<section class="faq-section" id="faq">
+  <p class="section-label" style="justify-content:center;">Got Questions?</p>
+  <h2 class="section-title reveal" style="text-align:center;">FREQUENTLY ASKED QUESTIONS</h2>
+
+  <div class="faq-list reveal">
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        What type of land titles do you offer?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>We deal exclusively in government-approved titles, primarily Certificates of Occupancy (C of O) and Deeds of Assignment, ensuring your investment is 100% secure and legally protected. Every property undergoes rigorous due diligence before being listed.</p>
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        Can I pay in installments?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Absolutely. We offer flexible, structured payment plans tailored to your budget. Speak with our team to find a plan that works best for you. Many of our estates feature zero-interest installment options spread over comfortable periods.</p>
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        What is an off-plan investment?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Buying off-plan means securing your property at today's price before construction is completed. This allows you to benefit from significant capital appreciation — typically 25-40% — by the time the project is finished. It's one of the smartest ways to build wealth through real estate.</p>
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        Which locations do you cover?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>We operate across Nigeria with a strong presence in Abuja (Headquarters), Lagos, Ibadan, and Osun State. We also facilitate property acquisitions nationwide through our extensive network of verified partners and agents.</p>
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFAQ(this)">
+      <div class="faq-question">
+        How quickly can I secure a property?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Once you've selected your plot or home, the documentation and transfer process typically takes 7-14 working days for immediate-payment purchases. Our legal team ensures a smooth, transparent handover with complete peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ========================================================
-     CONTACT SECTION - WITH MAILTO & WHATSAPP
+     SOCIAL MEDIA HUB
+======================================================== -->
+<section class="social-hub-section" style="padding:5rem 5%; background:var(--black); text-align:center;">
+  <p class="section-label" style="justify-content:center;">Stay Connected</p>
+  <h2 class="section-title reveal">FOLLOW OUR JOURNEY</h2>
+  <p class="section-sub reveal reveal-delay-1" style="margin-left:auto;margin-right:auto;max-width:600px;">
+    Get exclusive first looks at new properties, behind-the-scenes content, and real-time market updates across all platforms.
+  </p>
+
+  <!-- Social Cards Grid -->
+  <div class="social-cards-grid reveal" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem; margin-top:3rem;">
+
+    <!-- Facebook Card -->
+    <a href="https://www.facebook.com/crownbeeabujaproperties/" target="_blank" rel="noopener" class="social-card" style="background:linear-gradient(135deg, #1877F2, #0a0a0a 80%); border:1px solid rgba(24,119,242,0.3); border-radius:16px; padding:2.5rem 2rem; text-decoration:none; position:relative; overflow:hidden; transition:all 0.4s; display:flex; flex-direction:column; align-items:center; gap:1.5rem; cursor:pointer;">
+      <div style="width:70px;height:70px;background:#1877F2;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;z-index:1;">📘</div>
+      <div style="z-index:1;">
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:2px;color:white;margin-bottom:.5rem;">FACEBOOK</h3>
+        <p style="color:rgba(255,255,255,.6);font-size:.8rem;letter-spacing:1px;">@crownbeeabujaproperties</p>
+      </div>
+      <span style="color:#1877F2;font-size:.65rem;letter-spacing:3px;text-transform:uppercase;z-index:1;display:flex;align-items:center;gap:6px;">
+        View Page
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+    <!-- Instagram Card -->
+    <a href="https://www.instagram.com/crownbeepropertiesabuja/" target="_blank" rel="noopener" class="social-card" style="background:linear-gradient(135deg, #E4405F, #F77737, #0a0a0a 80%); border:1px solid rgba(228,64,95,0.3); border-radius:16px; padding:2.5rem 2rem; text-decoration:none; position:relative; overflow:hidden; transition:all 0.4s; display:flex; flex-direction:column; align-items:center; gap:1.5rem; cursor:pointer;">
+      <div style="width:70px;height:70px;background:linear-gradient(45deg, #F77737, #E4405F, #833AB4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;z-index:1;">📸</div>
+      <div style="z-index:1;">
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:2px;color:white;margin-bottom:.5rem;">INSTAGRAM</h3>
+        <p style="color:rgba(255,255,255,.6);font-size:.8rem;letter-spacing:1px;">@crownbeepropertiesabuja</p>
+      </div>
+      <span style="color:#E4405F;font-size:.65rem;letter-spacing:3px;text-transform:uppercase;z-index:1;display:flex;align-items:center;gap:6px;">
+        View Profile
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+
+    <!-- YouTube Card -->
+    <a href="https://www.youtube.com/@crownbeeproperties" target="_blank" rel="noopener" class="social-card" style="background:linear-gradient(135deg, #FF0000, #0a0a0a 80%); border:1px solid rgba(255,0,0,0.3); border-radius:16px; padding:2.5rem 2rem; text-decoration:none; position:relative; overflow:hidden; transition:all 0.4s; display:flex; flex-direction:column; align-items:center; gap:1.5rem; cursor:pointer;">
+      <div style="width:70px;height:70px;background:#FF0000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;z-index:1;">▶️</div>
+      <div style="z-index:1;">
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:2px;color:white;margin-bottom:.5rem;">YOUTUBE</h3>
+        <p style="color:rgba(255,255,255,.6);font-size:.8rem;letter-spacing:1px;">@crownbeeproperties</p>
+      </div>
+      <span style="color:#FF0000;font-size:.65rem;letter-spacing:3px;text-transform:uppercase;z-index:1;display:flex;align-items:center;gap:6px;">
+        Watch Videos
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </span>
+    </a>
+  </div>
+
+  <!-- Content Preview Teaser -->
+  <div class="reveal reveal-delay-2" style="margin-top:3rem; padding:2rem; background:var(--charcoal2); border-radius:16px; border:1px solid var(--border); max-width:800px; margin-left:auto; margin-right:auto;">
+    <p style="color:var(--gold); font-size:.7rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:1rem;">What You'll Find</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:1.5rem; text-align:left;">
+      <div style="display:flex;align-items:flex-start;gap:.8rem;">
+        <span style="font-size:1.5rem;flex-shrink:0;">🏘️</span>
+        <div>
+          <strong style="display:block;color:var(--offwhite);font-size:.8rem;margin-bottom:.2rem;">Property Tours</strong>
+          <small style="color:var(--muted);font-size:.7rem;line-height:1.5;">Walkthrough videos & drone shots</small>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:.8rem;">
+        <span style="font-size:1.5rem;flex-shrink:0;">🎉</span>
+        <div>
+          <strong style="display:block;color:var(--offwhite);font-size:.8rem;margin-bottom:.2rem;">Client Allocations</strong>
+          <small style="color:var(--muted);font-size:.7rem;line-height:1.5;">Real people getting their plots</small>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:.8rem;">
+        <span style="font-size:1.5rem;flex-shrink:0;">💎</span>
+        <div>
+          <strong style="display:block;color:var(--offwhite);font-size:.8rem;margin-bottom:.2rem;">Exclusive Deals</strong>
+          <small style="color:var(--muted);font-size:.7rem;line-height:1.5;">Limited-time offers & launches</small>
+        </div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:.8rem;">
+        <span style="font-size:1.5rem;flex-shrink:0;">⭐</span>
+        <div>
+          <strong style="display:block;color:var(--offwhite);font-size:.8rem;margin-bottom:.2rem;">Testimonials</strong>
+          <small style="color:var(--muted);font-size:.7rem;line-height:1.5;">Client success stories</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     CONTACT SECTION
 ======================================================== -->
 <section class="contact-section" id="contact">
   <div class="contact-info">
@@ -1451,15 +1135,15 @@
       <div class="c-item">
         <div class="c-icon">📍</div>
         <div>
-          <strong>Office</strong>
-          <p> Jima Plaza, Adjacent GT Bank, Plot 1267, Ahmadu Bello Way, Nigeria</p>
+          <strong>Headquarters</strong>
+          <p>2nd Floor, Westwood Plaza, beside Keystone Bank, Asokoro, Abuja, Nigeria</p>
         </div>
       </div>
       <div class="c-item">
         <div class="c-icon">📞</div>
         <div>
           <strong>Phone / WhatsApp</strong>
-          <p>+234 909 999 7342</p>
+          <p>0909 999 7342 · 0901 067 7777</p>
         </div>
       </div>
       <div class="c-item">
@@ -1489,7 +1173,7 @@
         </div>
         <div class="cf-field">
           <label for="phone">Phone / WhatsApp</label>
-          <input type="tel" id="phone" name="phone" placeholder="+234 909 999 7342"/>
+          <input type="tel" id="phone" name="phone" placeholder="0909 999 7342"/>
         </div>
         <div class="cf-field full">
           <label for="interest">I'm Interested In</label>
@@ -1500,9 +1184,11 @@
             <option>Victory Prime Estate – Land Plot</option>
             <option>Crownbee Prime Estate – Land Plot</option>
             <option>Audacity Prime Estate – Home/Land</option>
-            <option>Amaa Gee Luxe Court – Commercial Plot</option>
+            <option>Ama Gee Luxe Court – Commercial Plot</option>
             <option>Off-Plan Investment Opportunity</option>
             <option>Investment Advisory Session</option>
+            <option>Apartment Service</option>
+            <option>Construction Service</option>
             <option>Other</option>
           </select>
         </div>
@@ -1523,7 +1209,6 @@
         </div>
       </div>
 
-      <!-- TWO BUTTONS: Email (mailto) OR WhatsApp -->
       <div class="form-buttons">
         <button type="button" class="btn-submit-email" onclick="sendViaMailTo()">📧 Send via Email</button>
         <button type="button" class="btn-submit-wa" onclick="sendViaWhatsApp()">💬 Send via WhatsApp</button>
@@ -1531,7 +1216,7 @@
     </form>
 
     <div class="form-success" id="formSuccess">
-      <p>✓ &nbsp; Opening your email client...</p>
+      <p>✓ &nbsp; Opening your client...</p>
     </div>
     <div class="form-error" id="formError">
       <p>⚠️ &nbsp; Please fill in all required fields.</p>
@@ -1554,31 +1239,32 @@
       </div>
       <p class="footer-tagline">Where every investment is a legacy, and every client is a partner for life.</p>
       <div class="footer-contact-info">
-        <strong>Headquarters:</strong> Westwood plaza beside keystone bank Asokoro, Abuja, Nigeria<br/>
-        <strong>Serving:</strong> Lagos, Port Harcourt, Kano & nationwide<br/>
+        <strong>Headquarters:</strong> 2nd Floor, Westwood Plaza, beside Keystone Bank, Asokoro, Abuja, Nigeria<br/>
+        <strong>Serving:</strong> Abuja · Lagos · Ibadan · Osun · Nationwide<br/>
         crownbeeluxury@gmail.com<br/>
-        +234 909 999 7342
+        0909 999 7342 · 0901 067 7777
       </div>
     </div>
     <div class="footer-col">
       <h4>Estates</h4>
       <ul>
-        <li><a href="/properties">Gracefilled Resort &amp; Park</a></li>
-        <li><a href="/properties">Araoluwa Solar City, Apo</a></li>
-        <li><a href="/properties">Victory Prime Estate</a></li>
-        <li><a href="/properties">Crownbee Prime Estate</a></li>
-        <li><a href="/properties">Audacity Prime Estate</a></li>
-        <li><a href="/properties">Amaa Gee Luxe Court</a></li>
+        <li><a href="#estates">Gracefilled Resort &amp; Park</a></li>
+        <li><a href="#estates">Araoluwa Solar City</a></li>
+        <li><a href="#estates">Victory Prime Estate</a></li>
+        <li><a href="#estates">Crownbee Prime Estate</a></li>
+        <li><a href="#estates">Audacity Prime Estate</a></li>
+        <li><a href="#estates">Ama Gee Luxe Court</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="#services">Luxury Land Sales</a></li>
-        <li><a href="#services">Home Sales</a></li>
-        <li><a href="#services">Investment Advisory</a></li>
+        <li><a href="#services">Real Estate</a></li>
+        <li><a href="#services">Apartment Service</a></li>
+        <li><a href="#services">Investment</a></li>
         <li><a href="#services">Off-Plan Deals</a></li>
-        <li><a href="#services">Legal & Documentation</a></li>
+        <li><a href="#services">Luxury Land Sales</a></li>
+        <li><a href="#services">Construction</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1586,7 +1272,7 @@
       <ul>
         <li><a href="/about">About Us</a></li>
         <li><a href="/about">Leadership</a></li>
-        <li><a href="#contact">Client Enquiries</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -1594,9 +1280,10 @@
   <div class="footer-bottom">
     <p>© 2026 Crownbee Global Services Ltd. All rights reserved. Abuja, Nigeria.</p>
     <div class="footer-socials">
-      <a href="https://www.instagram.com/crownbeepropertiesabuja/" aria-label="Instagram">IG</a>
-      <a href="https://www.facebook.com/crownbeeabujaproperties/" aria-label="Facebook">FB</a>
-      <a href="https://wa.me/2349099997342" aria-label="WhatsApp">WA</a>
+      <a href="https://www.facebook.com/crownbeeabujaproperties/" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+      <a href="https://www.instagram.com/crownbeepropertiesabuja/" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+      <a href="https://www.youtube.com/@crownbeeproperties" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
+      <a href="https://wa.me/2349099997342" aria-label="WhatsApp" target="_blank" rel="noopener">WA</a>
     </div>
   </div>
 </footer>
@@ -1683,7 +1370,7 @@
 </div>
 
 <!-- ========================================================
-     SCRIPTS - UPDATED WITH EMAIL & WHATSAPP FUNCTIONS
+     SCRIPTS
 ======================================================== -->
 <script>
 /* ----- Custom Cursor ----- */
@@ -1693,7 +1380,7 @@ let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;if(cur){cur.style.left=mx+'px';cur.style.top=my+'px';}});
 function animRing(){if(ring){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';}requestAnimationFrame(animRing);}
 animRing();
-document.querySelectorAll('a,button,.estate-card,.service-card,.flyer-card').forEach(el=>{
+document.querySelectorAll('a,button,.estate-tab,.service-card,.reach-card,.faq-item,.wa-option').forEach(el=>{
   el.addEventListener('mouseenter',()=>{if(cur)cur.classList.add('hover');if(ring)ring.classList.add('hover');});
   el.addEventListener('mouseleave',()=>{if(cur)cur.classList.remove('hover');if(ring)ring.classList.remove('hover');});
 });
@@ -1713,16 +1400,181 @@ function toggleMenu(){
 
 /* ----- Hero Carousel ----- */
 const slides = document.querySelectorAll('.hero-slide');
-let cur2 = 0;
+let curSlide = 0;
 if(slides.length){
   setInterval(()=>{
-    slides[cur2].classList.remove('active');
-    cur2 = (cur2+1) % slides.length;
-    slides[cur2].classList.add('active');
-    const bg = slides[cur2].querySelector('.hero-bg');
+    slides[curSlide].classList.remove('active');
+    curSlide = (curSlide+1) % slides.length;
+    slides[curSlide].classList.add('active');
+    const bg = slides[curSlide].querySelector('.hero-bg');
     if(bg){bg.style.animation='none';void bg.offsetWidth;bg.style.animation='';}
   }, 6000);
 }
+
+/* ============================================================
+   INTERACTIVE ESTATES SHOWCASE - UPDATED PRICES
+============================================================ */
+const estatesData = {
+  gracefilled: {
+    name: 'Gracefilled Resort & Park',
+    tag: 'Signature Development',
+    loc: 'Karsana, Abuja',
+    desc: 'A resort-style gated community featuring landscaped gardens, 24/7 security, and premium plots in one of the capital\'s fastest-appreciating corridors.',
+    price: 'From ₦24M (Land) · ₦70M (Homes)',
+    size: '200 - 650 SQM (Land) · 2 & 3 Bed Homes',
+    title: 'C of O',
+    status: 'Selling Fast',
+    mainImg: '/static/karsana1.jpeg',
+    thumbs: ['/static/karsana1.jpeg', '/static/karsana2.jpeg'],
+    inquiryMsg: 'Hello Crownbee! I\'m interested in Gracefilled Resort & Park, Karsana. Please send me the full price breakdown for all plot sizes (200 SQM - 650 SQM) and the 2 & 3 bedroom homes. I\'d also like to know about payment plans and site visit availability.'
+  },
+  araoluwa: {
+    name: 'Araoluwa Solar City',
+    tag: 'Eco-Luxury',
+    loc: 'Apo, Abuja',
+    desc: 'Nigeria\'s premier solar-powered community featuring smart homes, EV charging stations, swimming pools, and sustainable luxury living. Fully solar-powered estate.',
+    price: 'From ₦9M',
+    size: '170 - 1,000 SQM',
+    title: 'C of O',
+    status: 'Limited Units',
+    mainImg: '/static/solar1.jpeg',
+    thumbs: ['/static/solar1.jpeg', '/static/solar2.jpeg'],
+    inquiryMsg: 'Hello Crownbee! I\'m interested in Araoluwa Solar City, Apo. Please send me the full price list (170 SQM - 1,000 SQM) and details about the solar features, payment plans, and available plots.'
+  },
+  audacity: {
+    name: 'Audacity Prime Estate',
+    tag: 'Premium Living',
+    loc: 'Asokoro, Abuja',
+    desc: 'An exclusive enclave in prestigious Asokoro designed for discerning investors seeking premium residential plots and luxury homes with excellent connectivity.',
+    price: 'From ₦90M (Land) · ₦100M (Homes)',
+    size: '300 - 650 SQM (Land) · 2 & 3 Bed Homes',
+    title: 'C of O',
+    status: 'Premium',
+    mainImg: '/static/audacity2.jpeg',
+    thumbs: ['/static/audacity2.jpeg', '/static/audacity2.jpeg'],
+    inquiryMsg: 'Hello Crownbee! I\'m interested in Audacity Prime Estate, Asokoro. Please send me the full price breakdown for land (300 SQM - 650 SQM) and the 2 & 3 bedroom homes. I\'d also like to schedule a site visit.'
+  },
+  victory: {
+    name: 'Victory Prime Estate',
+    tag: 'Value Luxury',
+    loc: 'Sheretti, Abuja',
+    desc: 'Premium residential plots offering exceptional value in a rapidly developing corridor. Flexible payment plans available for early investors.',
+    price: 'From ₦9.75M',
+    size: '200 - 500 SQM',
+    title: 'Deed of Assignment',
+    status: 'Selling',
+    mainImg: '/static/victory1.jpeg',
+    thumbs: ['/static/victory1.jpeg', '/static/victory2.jpeg'],
+    inquiryMsg: 'Hello Crownbee! I\'m interested in Victory Prime Estate, Sheretti. Please send me the full price breakdown for all plot sizes (200 SQM - 500 SQM) and details about the flexible payment plans available.'
+  },
+  crownbee: {
+    name: 'Crownbee Prime Estate',
+    tag: 'Flagship',
+    loc: 'Lugbe, Abuja',
+    desc: 'Our namesake estate representing the pinnacle of luxury land investment. Features 300 SQM semi-detached and 400 SQM full-detached options with guaranteed title.',
+    price: 'From ₦15M',
+    size: '300 SQM (Semi-Detached) · 400 SQM (Full-Detached)',
+    title: 'C of O',
+    status: 'Premium',
+    mainImg: '/static/crownbee1.jpeg',
+    thumbs: ['/static/crownbee1.jpeg', '/static/crownbee1.jpeg'],
+    inquiryMsg: 'Hello Crownbee! I\'m interested in Crownbee Prime Estate, Lugbe. Please send me full details and pricing for the 300 SQM Semi-Detached (₦15M) and 400 SQM Full-Detached (₦40M) options. I\'d like to know about payment plans and availability.'
+  },
+  amagee: {
+    name: 'Ama Gee Luxe Court',
+    tag: 'Commercial',
+    loc: 'New Bodija, Ibadan',
+    desc: 'Premium 4-bedroom duplexes in the heart of Ibadan\'s most sought-after district. Available fully finished or semi-finished with flexible payment options.',
+    price: 'From ₦100M (Semi-Finished) · ₦120M (Finished)',
+    size: '4 Bedroom Duplexes',
+    title: 'C of O',
+    status: 'Available',
+    mainImg: '/static/amma1.jpeg',
+    thumbs: ['/static/amma1.jpeg', '/static/amma1.jpeg'],
+    inquiryMsg: 'Hello Crownbee! I\'m interested in Ama Gee Luxe Court, New Bodija, Ibadan. Please send me full details on the 4-bedroom duplexes — both semi-finished (₦100M) and finished (₦120M) options. I\'d like to know about payment plans and site visit availability.'
+  },
+  ayomide: {
+    name: 'Ayomide Luxury Estate',
+    tag: 'New Launch',
+    loc: 'Osun State',
+    desc: 'Beautiful luxury homes in Osun State featuring 3 and 4 bedroom options, available finished or semi-finished. Perfect for homeowners and investors in the Southwest region.',
+    price: 'From ₦14M',
+    size: '3 & 4 Bedroom Homes',
+    title: 'C of O',
+    status: 'Now Selling',
+    mainImg: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800',
+    thumbs: [
+      'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400',
+      'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=400'
+    ],
+    inquiryMsg: 'Hello Crownbee! I\'m interested in Ayomide Luxury Estate, Osun State. Please send me the full price breakdown — 3 Bedroom (₦14M), 4 Bedroom (₦15M), and the semi-finished options (₦17.5M - ₦20M). I\'d like to know about payment plans available.'
+  },
+};
+
+let currentEstate = 'gracefilled';
+
+function switchEstate(estateKey) {
+  const data = estatesData[estateKey];
+  if (!data) return;
+
+  currentEstate = estateKey;
+
+  // Update main image
+  document.getElementById('estateMainImg').src = data.mainImg;
+
+  // Update thumbnails
+  const thumbContainer = document.querySelector('.detail-thumbs');
+  if (data.thumbs && thumbContainer) {
+    thumbContainer.innerHTML = data.thumbs.map((src, i) =>
+      `<img class="detail-thumb${i === 0 ? ' active' : ''}" src="${src}" alt="Thumb ${i+1}" onclick="updateMainImage('${src}', this)" style="width:100%;height:100px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid ${i === 0 ? 'var(--gold)' : 'transparent'};transition:all 0.3s;">`
+    ).join('');
+  }
+
+  // Update text content
+  document.getElementById('estateTitle').textContent = data.name;
+  document.querySelector('#estateDetail .e-tag').textContent = data.tag;
+  document.getElementById('estateLoc').textContent = data.loc;
+  document.getElementById('estateDesc').textContent = data.desc;
+
+  // Update specs
+  const specs = document.getElementById('estateSpecs').children;
+  specs[0].querySelector('span').textContent = data.size;
+  specs[1].querySelector('span').textContent = data.price;
+  specs[2].querySelector('span').textContent = data.title;
+  specs[3].querySelector('span').textContent = data.status;
+
+  // Update inquire button - sends pre-filled WhatsApp message
+  document.getElementById('estateInquire').onclick = function() {
+    const msg = data.inquiryMsg || `Hello Crownbee! I'm interested in ${data.name} located in ${data.loc}. Please send me full details including pricing, payment plans, and availability.`;
+    window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(msg)}`, '_blank');
+  };
+
+  // Update brochure button - opens general WhatsApp
+  document.getElementById('estateBrochure').onclick = function() {
+    const msg = `Hello Crownbee! I'm interested in ${data.name} (${data.loc}). Could you please send me the brochure and full details about this property?`;
+    window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(msg)}`, '_blank');
+  };
+}
+
+function updateMainImage(src, thumbElement) {
+  document.getElementById('estateMainImg').src = src;
+  // Update active state on thumbnails
+  document.querySelectorAll('.detail-thumb').forEach(t => {
+    t.style.borderColor = 'transparent';
+  });
+  if (thumbElement) {
+    thumbElement.style.borderColor = 'var(--gold)';
+  }
+}
+
+// Tab click handlers
+document.querySelectorAll('.estate-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.estate-tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+    switchEstate(this.dataset.estate);
+  });
+});
 
 /* ----- Image Carousel ----- */
 const track = document.getElementById('carouselTrack');
@@ -1766,19 +1618,14 @@ if(track && carouselImages.length) {
   if(nextBtn) nextBtn.addEventListener('click', nextSlide);
   const carouselContainer = document.querySelector('.carousel-container');
   if(carouselContainer) {
-    carouselContainer.addEventListener('mouseenter', () => {
-      if(autoInterval) clearInterval(autoInterval);
-    });
-    carouselContainer.addEventListener('mouseleave', () => {
-      autoInterval = setInterval(nextSlide, 5000);
-    });
+    carouselContainer.addEventListener('mouseenter', () => { if(autoInterval) clearInterval(autoInterval); });
+    carouselContainer.addEventListener('mouseleave', () => { autoInterval = setInterval(nextSlide, 5000); });
   }
 }
 
-/* ----- Book Consultation Function ----- */
-function bookConsultation() {
-  const message = "Hello Crownbee, I'd like to book a free consultation to discuss real estate investment opportunities across Nigeria.";
-  window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(message)}`, '_blank');
+/* ----- FAQ Toggle ----- */
+function toggleFAQ(item) {
+  item.classList.toggle('open');
 }
 
 /* ----- Scroll reveal ----- */
@@ -1817,38 +1664,9 @@ const statsObs = new IntersectionObserver(entries=>{
 const statsSection = document.getElementById('statsSection');
 if(statsSection) statsObs.observe(statsSection);
 
-/* ----- Video Toggle ----- */
-document.addEventListener('DOMContentLoaded', function() {
-  const video = document.getElementById('mainVideo');
-  const overlay = document.getElementById('videoOverlay');
-  const playBtn = document.getElementById('playBtn');
-
-  if (!video || !overlay || !playBtn) return;
-
-  function toggleVideo(e) {
-    e.stopPropagation();
-    if (video.paused) {
-      video.play();
-      overlay.style.display = 'none';
-    } else {
-      video.pause();
-      overlay.style.display = 'flex';
-    }
-  }
-
-  overlay.addEventListener('click', toggleVideo);
-  playBtn.addEventListener('click', toggleVideo);
-  video.addEventListener('click', toggleVideo);
-  video.addEventListener('pause', () => { overlay.style.display = 'flex'; });
-  video.addEventListener('ended', () => { overlay.style.display = 'flex'; });
-});
-
 /* ============================================================
-   CONTACT FORM FUNCTIONS - EMAIL & WHATSAPP
+   CONTACT FORM FUNCTIONS
 ============================================================ */
-
-
-// Helper function to get form data
 function getFormData() {
   return {
     fname: document.getElementById('fname').value.trim(),
@@ -1861,7 +1679,6 @@ function getFormData() {
   };
 }
 
-// Helper function to validate form
 function validateForm(data) {
   if (!data.fname || !data.email || !data.message) {
     showError('Please fill in your name, email, and message.');
@@ -1870,17 +1687,14 @@ function validateForm(data) {
   return true;
 }
 
-// Helper function to show success
 function showSuccess(message) {
   const form = document.getElementById('contactForm');
   const successDiv = document.getElementById('formSuccess');
   const errorDiv = document.getElementById('formError');
-
   errorDiv.style.display = 'none';
   form.style.display = 'none';
   successDiv.querySelector('p').textContent = message || '✓ Opening your email client...';
   successDiv.style.display = 'block';
-
   setTimeout(() => {
     successDiv.style.display = 'none';
     form.style.display = 'block';
@@ -1888,30 +1702,18 @@ function showSuccess(message) {
   }, 3000);
 }
 
-// Helper function to show error
 function showError(message) {
   const errorDiv = document.getElementById('formError');
   errorDiv.querySelector('p').textContent = `⚠️ ${message}`;
   errorDiv.style.display = 'block';
-
-  setTimeout(() => {
-    errorDiv.style.display = 'none';
-  }, 4000);
+  setTimeout(() => { errorDiv.style.display = 'none'; }, 4000);
 }
 
-// Send via MAILTO - Opens user's default email client
 function sendViaMailTo() {
   const data = getFormData();
-
   if (!validateForm(data)) return;
-
-  // Email address to send to
   const toEmail = 'crownbeeluxury@gmail.com';
-
-  // Email subject
   const subject = `New Enquiry from ${data.fname} ${data.lname} - Crownbee Global`;
-
-  // Build email body
   let body = '';
   body += `Name: ${data.fname} ${data.lname}\n`;
   body += `Email: ${data.email}\n`;
@@ -1920,30 +1722,16 @@ function sendViaMailTo() {
   if (data.budget) body += `Budget: ${data.budget}\n`;
   body += `\nMessage:\n${data.message}\n\n`;
   body += `---\nSent from Crownbee Global website contact form`;
-
-  // Encode for URL
   const encodedSubject = encodeURIComponent(subject);
   const encodedBody = encodeURIComponent(body);
-
-  // Create mailto link
   const mailtoLink = `mailto:${toEmail}?subject=${encodedSubject}&body=${encodedBody}`;
-
-  // Show success message
   showSuccess('✓ Opening your email client...');
-
-  // Open email client after short delay
-  setTimeout(() => {
-    window.location.href = mailtoLink;
-  }, 500);
+  setTimeout(() => { window.location.href = mailtoLink; }, 500);
 }
 
-// Send via WhatsApp - Opens WhatsApp with pre-filled message
 function sendViaWhatsApp() {
   const data = getFormData();
-
   if (!validateForm(data)) return;
-
-  // Build WhatsApp message
   let whatsappMessage = `🏢 *NEW ENQUIRY - Crownbee Global* 🏢\n\n`;
   whatsappMessage += `*Name:* ${data.fname} ${data.lname}\n`;
   whatsappMessage += `*Email:* ${data.email}\n`;
@@ -1952,36 +1740,25 @@ function sendViaWhatsApp() {
   if (data.budget) whatsappMessage += `*Budget:* ${data.budget}\n`;
   whatsappMessage += `\n*Message:*\n${data.message}\n\n`;
   whatsappMessage += `_Sent from Crownbee Global website_`;
-
   const phoneNumber = '2349099997342';
   const encodedMessage = encodeURIComponent(whatsappMessage);
-
-  // Show success message
   showSuccess('✓ Redirecting to WhatsApp...');
-
-  // Open WhatsApp after short delay
-  setTimeout(() => {
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
-  }, 500);
+  setTimeout(() => { window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank'); }, 500);
 }
 
-/* ----- WhatsApp Modal Functions ----- */
+/* ============================================================
+   WHATSAPP MODAL FUNCTIONS
+============================================================ */
 let currentPropertyName = '';
 
 function openWhatsAppModal() {
   const modal = document.getElementById('whatsappModal');
-  if(modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+  if(modal) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
 }
 
 function closeWhatsAppModal() {
   const modal = document.getElementById('whatsappModal');
-  if(modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
+  if(modal) { modal.classList.remove('active'); document.body.style.overflow = ''; }
 }
 
 function openPropertyWhatsAppModal(propertyName) {
@@ -1989,32 +1766,21 @@ function openPropertyWhatsAppModal(propertyName) {
   const nameSpan = document.getElementById('waPropertyName');
   const modal = document.getElementById('propertyWhatsAppModal');
   if(nameSpan) nameSpan.textContent = propertyName;
-  if(modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+  if(modal) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
 }
 
 function closePropertyWhatsAppModal() {
   const modal = document.getElementById('propertyWhatsAppModal');
-  if(modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
+  if(modal) { modal.classList.remove('active'); document.body.style.overflow = ''; }
 }
 
 function sendWhatsAppMessage() {
   let message = document.getElementById('waCustomMessage').value.trim();
   if (!message) {
     const selected = document.querySelector('#whatsappModal .wa-option.selected');
-    if (selected) {
-      message = selected.getAttribute('data-message');
-    }
+    if (selected) message = selected.getAttribute('data-message');
   }
-  if (!message) {
-    alert('Please select an option or type a message');
-    return;
-  }
+  if (!message) { alert('Please select an option or type a message'); return; }
   window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(message)}`, '_blank');
   closeWhatsAppModal();
 }
@@ -2028,93 +1794,41 @@ function sendPropertyWhatsAppMessage() {
       message = template.replace('{PROPERTY}', currentPropertyName);
     }
   }
-  if (!message) {
-    alert('Please select an option or type a message');
-    return;
-  }
+  if (!message) { alert('Please select an option or type a message'); return; }
   window.open(`https://wa.me/2349099997342?text=${encodeURIComponent(message)}`, '_blank');
   closePropertyWhatsAppModal();
 }
 
-// Add click handlers to WA options
+// WA option click handlers
 document.querySelectorAll('.wa-option').forEach(option => {
   option.addEventListener('click', function() {
-    document.querySelectorAll('.wa-option').forEach(opt => opt.classList.remove('selected'));
+    const parent = this.closest('.wa-modal');
+    if (parent) {
+      parent.querySelectorAll('.wa-option').forEach(opt => opt.classList.remove('selected'));
+    }
     this.classList.add('selected');
   });
 });
 
-// Close modals when clicking outside
+// Close modals on outside click
 window.onclick = function(event) {
   const modal = document.getElementById('whatsappModal');
   const propertyModal = document.getElementById('propertyWhatsAppModal');
-  const lightbox = document.getElementById('flyerLightbox');
-  if (event.target === modal) {
+  if (event.target === modal) closeWhatsAppModal();
+  if (event.target === propertyModal) closePropertyWhatsAppModal();
+}
+
+// Keyboard navigation for modals
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
     closeWhatsAppModal();
-  }
-  if (event.target === propertyModal) {
     closePropertyWhatsAppModal();
   }
-  if (event.target === lightbox) {
-    closeLightbox();
-  }
-}
-
-/* ----- LIGHTBOX FUNCTIONALITY ----- */
-const flyerCards = document.querySelectorAll('.flyer-card');
-const lightbox = document.getElementById('flyerLightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const lightboxClose = document.getElementById('lightboxClose');
-const lightboxPrev = document.getElementById('lightboxPrev');
-const lightboxNext = document.getElementById('lightboxNext');
-let currentFlyerIndex = 0;
-const flyerImages = Array.from(flyerCards).map(card => card.getAttribute('data-full-img'));
-
-function openLightbox(index) {
-  if (flyerImages.length === 0) return;
-  currentFlyerIndex = index;
-  lightboxImg.src = flyerImages[currentFlyerIndex];
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  lightbox.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-function showNextFlyer() {
-  if (flyerImages.length === 0) return;
-  currentFlyerIndex = (currentFlyerIndex + 1) % flyerImages.length;
-  lightboxImg.src = flyerImages[currentFlyerIndex];
-}
-
-function showPrevFlyer() {
-  if (flyerImages.length === 0) return;
-  currentFlyerIndex = (currentFlyerIndex - 1 + flyerImages.length) % flyerImages.length;
-  lightboxImg.src = flyerImages[currentFlyerIndex];
-}
-
-flyerCards.forEach((card, index) => {
-  card.addEventListener('click', function(e) {
-    if (e.target.classList.contains('flyer-link')) return;
-    openLightbox(index);
-  });
 });
 
-if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-if (lightboxNext) lightboxNext.addEventListener('click', showNextFlyer);
-if (lightboxPrev) lightboxPrev.addEventListener('click', showPrevFlyer);
-
-document.addEventListener('keydown', function(e) {
-  if (!lightbox.classList.contains('active')) return;
-  if (e.key === 'Escape') {
-    closeLightbox();
-  } else if (e.key === 'ArrowRight') {
-    showNextFlyer();
-  } else if (e.key === 'ArrowLeft') {
-    showPrevFlyer();
-  }
+// Initialize first estate
+document.addEventListener('DOMContentLoaded', function() {
+  switchEstate('gracefilled');
 });
 </script>
 </body>
