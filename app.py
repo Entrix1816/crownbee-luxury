@@ -14,7 +14,7 @@ def robots():
 
 @app.route('/sitemap.xml')
 def sitemap():
-    base_url = "https://crownbeeglobal.com"
+    base_url = "https://crownbeeglobalservices.com"
     pages = [
         {"loc": "/", "priority": "1.0"},
         {"loc": "/about", "priority": "0.8"},
